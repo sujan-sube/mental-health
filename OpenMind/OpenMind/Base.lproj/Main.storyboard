@@ -12,7 +12,7 @@
         <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" userLabel="Home" customClass="FirstViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" userLabel="Home" customClass="HomeViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -31,7 +31,7 @@
         <!--Trends-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" userLabel="Trends" customClass="SecondViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" userLabel="Trends" customClass="TrendsViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -50,7 +50,7 @@
         <!--Insights-->
         <scene sceneID="SMY-pV-zZx">
             <objects>
-                <viewController id="LXu-GO-C9G" userLabel="Insights" sceneMemberID="viewController">
+                <viewController id="LXu-GO-C9G" userLabel="Insights" customClass="InsightViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KzI-SA-e9A"/>
                         <viewControllerLayoutGuide type="bottom" id="Uqd-Yj-Zut"/>
@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="982" y="92"/>
         </scene>
-        <!--Groups-->
+        <!--Contacts-->
         <scene sceneID="SfH-f3-Aqr">
             <objects>
-                <viewController id="K39-dI-phY" userLabel="Groups" sceneMemberID="viewController">
+                <viewController id="K39-dI-phY" customClass="ContactsViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YPc-U1-ODz"/>
                         <viewControllerLayoutGuide type="bottom" id="wfq-eb-2Uo"/>
@@ -88,7 +88,7 @@
         <!--Settings-->
         <scene sceneID="V83-yg-W8d">
             <objects>
-                <viewController id="1rt-Xv-hnl" userLabel="Settings" sceneMemberID="viewController">
+                <viewController id="1rt-Xv-hnl" userLabel="Settings" customClass="SettingsViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zfc-T3-Iwh"/>
                         <viewControllerLayoutGuide type="bottom" id="c5H-nQ-C7j"/>
