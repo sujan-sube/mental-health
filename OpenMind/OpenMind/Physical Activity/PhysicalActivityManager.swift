@@ -26,12 +26,7 @@ class PhysicalActivityManager{
             ]
         
         // 2. Set the types you want to write to HK Store
-        let healthKitTypesToWrite : Set<HKSampleType> = [
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMassIndex)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!,
-            HKQuantityType.workoutType()
-            ]
+        let healthKitTypesToWrite : Set<HKSampleType> = []
         
         // 3. If the store is not available (for instance, iPad) return an error and don't go on.
         if !HKHealthStore.isHealthDataAvailable()
@@ -52,5 +47,9 @@ class PhysicalActivityManager{
                 completion?(success,error as NSError?)
             }
         }
+    }
+    
+    func patternRecog() {
+        
     }
 }

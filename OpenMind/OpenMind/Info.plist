@@ -60,6 +60,10 @@
 			<false/>
 		</dict>
 	</dict>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Updates Health Data</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Uses Health Data</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
