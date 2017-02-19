@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08509D03DD268ED612A8DF68 /* Pods_OpenMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2626765EFE09D487AC4AB7 /* Pods_OpenMind.framework */; };
+		25233F891E492A1400A396BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25233F881E492A1400A396BE /* GoogleService-Info.plist */; };
+		256419971E3EF0FF00BB0009 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 256419961E3EF0FF00BB0009 /* HealthKit.framework */; };
+		25920C821E457C5400B07EAB /* PhysicalActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256419931E3EF07C00BB0009 /* PhysicalActivityManager.swift */; };
+		25E82B0C1E4BE8D800BEE11F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E82B0B1E4BE8D800BEE11F /* SignInViewController.swift */; };
 		92D708A31E341F4C00CBD84B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D708A21E341F4C00CBD84B /* AppDelegate.swift */; };
 		92D708AA1E341F4C00CBD84B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D708A81E341F4C00CBD84B /* Main.storyboard */; };
 		92D708AC1E341F4C00CBD84B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D708AB1E341F4C00CBD84B /* Assets.xcassets */; };
@@ -17,6 +22,7 @@
 		92D708CD1E34356A00CBD84B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D708CC1E34356A00CBD84B /* HomeViewController.swift */; };
 		92D708CF1E34358300CBD84B /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D708CE1E34358300CBD84B /* TrendsViewController.swift */; };
 		92D708D11E3436D300CBD84B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D708D01E3436D300CBD84B /* SettingsViewController.swift */; };
+		D00865734C7388DE71EE8CE1 /* Pods_OpenMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DB759203604820F57A8070 /* Pods_OpenMindTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +35,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		256419921E3EEF4B00BB0009 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		053673C221E0A2C76DCDA253 /* Pods-OpenMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenMindTests/Pods-OpenMindTests.release.xcconfig"; sourceTree = "<group>"; };
+		25233F881E492A1400A396BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		256419931E3EF07C00BB0009 /* PhysicalActivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicalActivityManager.swift; path = "Physical Activity/PhysicalActivityManager.swift"; sourceTree = "<group>"; };
+		256419951E3EF0FF00BB0009 /* OpenMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenMind.entitlements; sourceTree = "<group>"; };
+		256419961E3EF0FF00BB0009 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		2570ED5F1E3D4DF100929B84 /* OpenMind-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenMind-Bridging-Header.h"; sourceTree = "<group>"; };
+		25E82B0B1E4BE8D800BEE11F /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		3C69791396948315E706ABC3 /* Pods-OpenMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenMind/Pods-OpenMind.release.xcconfig"; sourceTree = "<group>"; };
+		42DB759203604820F57A8070 /* Pods_OpenMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenMindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D7089F1E341F4C00CBD84B /* OpenMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D708A21E341F4C00CBD84B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92D708A91E341F4C00CBD84B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +72,9 @@
 		92D708CC1E34356A00CBD84B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		92D708CE1E34358300CBD84B /* TrendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
 		92D708D01E3436D300CBD84B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A5E54302A91613160C000241 /* Pods-OpenMindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMindTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenMindTests/Pods-OpenMindTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC2626765EFE09D487AC4AB7 /* Pods_OpenMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE40E6379015136E03F122B0 /* Pods-OpenMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenMind/Pods-OpenMind.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				256419971E3EF0FF00BB0009 /* HealthKit.framework in Frameworks */,
+				08509D03DD268ED612A8DF68 /* Pods_OpenMind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,18 +91,43 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00865734C7388DE71EE8CE1 /* Pods_OpenMindTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E884B89738139B9BFAF18BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				256419961E3EF0FF00BB0009 /* HealthKit.framework */,
+				DC2626765EFE09D487AC4AB7 /* Pods_OpenMind.framework */,
+				42DB759203604820F57A8070 /* Pods_OpenMindTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52437DB490AAC26E53C13664 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE40E6379015136E03F122B0 /* Pods-OpenMind.debug.xcconfig */,
+				3C69791396948315E706ABC3 /* Pods-OpenMind.release.xcconfig */,
+				A5E54302A91613160C000241 /* Pods-OpenMindTests.debug.xcconfig */,
+				053673C221E0A2C76DCDA253 /* Pods-OpenMindTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		92D708961E341F4C00CBD84B = {
 			isa = PBXGroup;
 			children = (
+				25233F881E492A1400A396BE /* GoogleService-Info.plist */,
 				92D708A11E341F4C00CBD84B /* OpenMind */,
 				92D708B81E341F4C00CBD84B /* OpenMindTests */,
 				92D708A01E341F4C00CBD84B /* Products */,
+				52437DB490AAC26E53C13664 /* Pods */,
+				2E884B89738139B9BFAF18BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +143,7 @@
 		92D708A11E341F4C00CBD84B /* OpenMind */ = {
 			isa = PBXGroup;
 			children = (
+				256419951E3EF0FF00BB0009 /* OpenMind.entitlements */,
 				92D708A21E341F4C00CBD84B /* AppDelegate.swift */,
 				92D708A81E341F4C00CBD84B /* Main.storyboard */,
 				92D708AB1E341F4C00CBD84B /* Assets.xcassets */,
@@ -95,6 +154,9 @@
 				92D708CC1E34356A00CBD84B /* HomeViewController.swift */,
 				92D708CE1E34358300CBD84B /* TrendsViewController.swift */,
 				92D708D01E3436D300CBD84B /* SettingsViewController.swift */,
+				2570ED5F1E3D4DF100929B84 /* OpenMind-Bridging-Header.h */,
+				256419931E3EF07C00BB0009 /* PhysicalActivityManager.swift */,
+				25E82B0B1E4BE8D800BEE11F /* SignInViewController.swift */,
 			);
 			path = OpenMind;
 			sourceTree = "<group>";
@@ -115,9 +177,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92D708BE1E341F4C00CBD84B /* Build configuration list for PBXNativeTarget "OpenMind" */;
 			buildPhases = (
+				FFD08A6BE3A4506F5AB28FF1 /* [CP] Check Pods Manifest.lock */,
 				92D7089B1E341F4C00CBD84B /* Sources */,
 				92D7089C1E341F4C00CBD84B /* Frameworks */,
 				92D7089D1E341F4C00CBD84B /* Resources */,
+				FE944B543D53AA7E0B49E05D /* [CP] Embed Pods Frameworks */,
+				4A03A5B3FE79E7DBE9203E23 /* [CP] Copy Pods Resources */,
+				256419921E3EEF4B00BB0009 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92D708C11E341F4C00CBD84B /* Build configuration list for PBXNativeTarget "OpenMindTests" */;
 			buildPhases = (
+				09DBDE023839AC5895CE7062 /* [CP] Check Pods Manifest.lock */,
 				92D708B11E341F4C00CBD84B /* Sources */,
 				92D708B21E341F4C00CBD84B /* Frameworks */,
 				92D708B31E341F4C00CBD84B /* Resources */,
+				770500D23BEFC2EC14FAC75D /* [CP] Embed Pods Frameworks */,
+				655092C4AB73CE18726735A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,7 +227,14 @@
 				TargetAttributes = {
 					92D7089E1E341F4C00CBD84B = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = JP87T6TS4E;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					92D708B41E341F4C00CBD84B = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -192,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92D708AF1E341F4C00CBD84B /* LaunchScreen.storyboard in Resources */,
+				25233F891E492A1400A396BE /* GoogleService-Info.plist in Resources */,
 				92D708AC1E341F4C00CBD84B /* Assets.xcassets in Resources */,
 				92D708AA1E341F4C00CBD84B /* Main.storyboard in Resources */,
 			);
@@ -206,6 +283,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09DBDE023839AC5895CE7062 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4A03A5B3FE79E7DBE9203E23 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenMind/Pods-OpenMind-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		655092C4AB73CE18726735A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenMindTests/Pods-OpenMindTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		770500D23BEFC2EC14FAC75D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenMindTests/Pods-OpenMindTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE944B543D53AA7E0B49E05D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenMind/Pods-OpenMind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFD08A6BE3A4506F5AB28FF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		92D7089B1E341F4C00CBD84B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -215,7 +385,9 @@
 				92D708CD1E34356A00CBD84B /* HomeViewController.swift in Sources */,
 				92D708A31E341F4C00CBD84B /* AppDelegate.swift in Sources */,
 				92D708C71E3433DA00CBD84B /* InsightViewController.swift in Sources */,
+				25E82B0C1E4BE8D800BEE11F /* SignInViewController.swift in Sources */,
 				92D708CB1E34354B00CBD84B /* ContactsViewController.swift in Sources */,
+				25920C821E457C5400B07EAB /* PhysicalActivityManager.swift in Sources */,
 				92D708D11E3436D300CBD84B /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,30 +523,46 @@
 		};
 		92D708BF1E341F4C00CBD84B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE40E6379015136E03F122B0 /* Pods-OpenMind.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = OpenMind/OpenMind.entitlements;
+				DEVELOPMENT_TEAM = JP87T6TS4E;
 				INFOPLIST_FILE = OpenMind/Info.plist;
+				INFOPLIST_PREPROCESS = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.OpenMind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenMind/OpenMind-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		92D708C01E341F4C00CBD84B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C69791396948315E706ABC3 /* Pods-OpenMind.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = OpenMind/OpenMind.entitlements;
+				DEVELOPMENT_TEAM = JP87T6TS4E;
 				INFOPLIST_FILE = OpenMind/Info.plist;
+				INFOPLIST_PREPROCESS = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.OpenMind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenMind/OpenMind-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		92D708C21E341F4C00CBD84B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5E54302A91613160C000241 /* Pods-OpenMindTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -389,6 +577,7 @@
 		};
 		92D708C31E341F4C00CBD84B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 053673C221E0A2C76DCDA253 /* Pods-OpenMindTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

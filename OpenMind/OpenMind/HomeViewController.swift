@@ -10,10 +10,27 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Testing
+        let physical:PhysicalActivityManager = PhysicalActivityManager()
+        physical.authorizeHealthKit { (authorized, error) in
+            if authorized {
+                
+                // Add code for authorization
+                //self.setHeight()
+            } else {
+                if error != nil {
+                    //print(error)
+                }
+                print("Permission denied.")
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
