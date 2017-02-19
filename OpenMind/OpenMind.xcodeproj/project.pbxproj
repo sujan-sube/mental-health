@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		08509D03DD268ED612A8DF68 /* Pods_OpenMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2626765EFE09D487AC4AB7 /* Pods_OpenMind.framework */; };
 		25233F891E492A1400A396BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25233F881E492A1400A396BE /* GoogleService-Info.plist */; };
-		2564198E1E3EEF4B00BB0009 /* AIToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 256419831E3EEEF600BB0009 /* AIToolbox.framework */; };
-		2564198F1E3EEF4B00BB0009 /* AIToolbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 256419831E3EEEF600BB0009 /* AIToolbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		256419971E3EF0FF00BB0009 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 256419961E3EF0FF00BB0009 /* HealthKit.framework */; };
 		25920C821E457C5400B07EAB /* PhysicalActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256419931E3EF07C00BB0009 /* PhysicalActivityManager.swift */; };
 		25E82B0C1E4BE8D800BEE11F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E82B0B1E4BE8D800BEE11F /* SignInViewController.swift */; };
@@ -28,48 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2564197E1E3EEEF600BB0009 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 256419761E3EEEF600BB0009 /* AIToolbox.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0EBA29AB1A91350C0012CEC9;
-			remoteInfo = AIToolbox;
-		};
-		256419801E3EEEF600BB0009 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 256419761E3EEEF600BB0009 /* AIToolbox.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0EBA29B61A91350C0012CEC9;
-			remoteInfo = AIToolboxTests;
-		};
-		256419821E3EEEF600BB0009 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 256419761E3EEEF600BB0009 /* AIToolbox.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0E0A4F931C133E8800AD5AAE;
-			remoteInfo = AIToolboxIOS;
-		};
-		256419841E3EEEF600BB0009 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 256419761E3EEEF600BB0009 /* AIToolbox.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0E0A4F9C1C133E8800AD5AAE;
-			remoteInfo = AIToolboxIOSTests;
-		};
-		256419861E3EEEF600BB0009 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 256419761E3EEEF600BB0009 /* AIToolbox.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FB0D5A231CAF09230097590B;
-			remoteInfo = "AIToolbox copy";
-		};
-		256419901E3EEF4B00BB0009 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 256419761E3EEEF600BB0009 /* AIToolbox.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0E0A4F921C133E8800AD5AAE;
-			remoteInfo = AIToolboxIOS;
-		};
 		92D708B61E341F4C00CBD84B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 92D708971E341F4C00CBD84B /* Project object */;
@@ -86,7 +42,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2564198F1E3EEF4B00BB0009 /* AIToolbox.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,7 +51,6 @@
 /* Begin PBXFileReference section */
 		053673C221E0A2C76DCDA253 /* Pods-OpenMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenMindTests/Pods-OpenMindTests.release.xcconfig"; sourceTree = "<group>"; };
 		25233F881E492A1400A396BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		256419761E3EEEF600BB0009 /* AIToolbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AIToolbox.xcodeproj; path = ../../AIToolBox/AIToolbox/AIToolbox.xcodeproj; sourceTree = "<group>"; };
 		256419931E3EF07C00BB0009 /* PhysicalActivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicalActivityManager.swift; path = "Physical Activity/PhysicalActivityManager.swift"; sourceTree = "<group>"; };
 		256419951E3EF0FF00BB0009 /* OpenMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenMind.entitlements; sourceTree = "<group>"; };
 		256419961E3EF0FF00BB0009 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -129,7 +83,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				256419971E3EF0FF00BB0009 /* HealthKit.framework in Frameworks */,
-				2564198E1E3EEF4B00BB0009 /* AIToolbox.framework in Frameworks */,
 				08509D03DD268ED612A8DF68 /* Pods_OpenMind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,18 +98,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		256419771E3EEEF600BB0009 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2564197F1E3EEEF600BB0009 /* AIToolbox.framework */,
-				256419811E3EEEF600BB0009 /* AIToolboxTests.xctest */,
-				256419831E3EEEF600BB0009 /* AIToolbox.framework */,
-				256419851E3EEEF600BB0009 /* AIToolboxIOSTests.xctest */,
-				256419871E3EEEF600BB0009 /* AIToolbox copy.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		2E884B89738139B9BFAF18BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +128,6 @@
 				92D708A01E341F4C00CBD84B /* Products */,
 				52437DB490AAC26E53C13664 /* Pods */,
 				2E884B89738139B9BFAF18BB /* Frameworks */,
-				256419761E3EEEF600BB0009 /* AIToolbox.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -248,7 +188,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				256419911E3EEF4B00BB0009 /* PBXTargetDependency */,
 			);
 			name = OpenMind;
 			productName = OpenMind;
@@ -288,7 +227,7 @@
 				TargetAttributes = {
 					92D7089E1E341F4C00CBD84B = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = L8Y3RJ6QZX;
+						DevelopmentTeam = JP87T6TS4E;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -315,12 +254,6 @@
 			mainGroup = 92D708961E341F4C00CBD84B;
 			productRefGroup = 92D708A01E341F4C00CBD84B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 256419771E3EEEF600BB0009 /* Products */;
-					ProjectRef = 256419761E3EEEF600BB0009 /* AIToolbox.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				92D7089E1E341F4C00CBD84B /* OpenMind */,
@@ -328,44 +261,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		2564197F1E3EEEF600BB0009 /* AIToolbox.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AIToolbox.framework;
-			remoteRef = 2564197E1E3EEEF600BB0009 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		256419811E3EEEF600BB0009 /* AIToolboxTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AIToolboxTests.xctest;
-			remoteRef = 256419801E3EEEF600BB0009 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		256419831E3EEEF600BB0009 /* AIToolbox.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AIToolbox.framework;
-			remoteRef = 256419821E3EEEF600BB0009 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		256419851E3EEEF600BB0009 /* AIToolboxIOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AIToolboxIOSTests.xctest;
-			remoteRef = 256419841E3EEEF600BB0009 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		256419871E3EEEF600BB0009 /* AIToolbox copy.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = "AIToolbox copy.framework";
-			remoteRef = 256419861E3EEEF600BB0009 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		92D7089D1E341F4C00CBD84B /* Resources */ = {
@@ -508,11 +403,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		256419911E3EEF4B00BB0009 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AIToolboxIOS;
-			targetProxy = 256419901E3EEF4B00BB0009 /* PBXContainerItemProxy */;
-		};
 		92D708B71E341F4C00CBD84B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 92D7089E1E341F4C00CBD84B /* OpenMind */;
@@ -639,7 +529,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OpenMind/OpenMind.entitlements;
-				DEVELOPMENT_TEAM = L8Y3RJ6QZX;
+				DEVELOPMENT_TEAM = JP87T6TS4E;
 				INFOPLIST_FILE = OpenMind/Info.plist;
 				INFOPLIST_PREPROCESS = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -659,7 +549,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OpenMind/OpenMind.entitlements;
-				DEVELOPMENT_TEAM = L8Y3RJ6QZX;
+				DEVELOPMENT_TEAM = JP87T6TS4E;
 				INFOPLIST_FILE = OpenMind/Info.plist;
 				INFOPLIST_PREPROCESS = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -22,6 +22,19 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let gradient: CAGradientLayer = CAGradientLayer()
+        
+        gradient.colors = [UIColor(red: 20.0/255.0, green: 97.0/255.0, blue: 160.0/255.0, alpha: 1.0).cgColor, UIColor(red: 45.0/255.0, green: 154.0/255.0, blue: 206.0/255.0, alpha: 1.0).cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        
+        self.view.layer.insertSublayer(gradient, at: 0)
+        
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
         GIDSignIn.sharedInstance().uiDelegate = self
         
         // Uncomment to automatically sign in the user.
@@ -32,7 +45,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
                                                selector: #selector(SignInViewController.receiveToggleAuthUINotification(_:)),
                                                name: NSNotification.Name(rawValue: "ToggleAuthUINotification"),
                                                object: nil)
-        let signInButton = GIDSignInButton(frame: CGRect(x: 20, y: 0, width: 200, height: 21))
+        let signInButton = GIDSignInButton(frame: CGRect(x: screenWidth/2 - 100, y: screenHeight/2 - 12, width: 200, height: 21))
         self.view.addSubview(signInButton)
         
         

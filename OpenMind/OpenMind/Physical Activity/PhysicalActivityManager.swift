@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import AIToolbox
+//import AIToolbox
 import HealthKit
 
 class PhysicalActivityManager{
