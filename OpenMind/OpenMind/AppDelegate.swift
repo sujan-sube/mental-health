@@ -63,10 +63,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             
             // Once signed in redirect to Home Page
             
+            
             let homeViewController:UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+            
+            
             
             homeViewController.selectedIndex = 0
             window?.rootViewController = homeViewController
+            
+            //print(idToken)
+            let alert = UIAlertController(title: "Alert", message: idToken, preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
+            window?.rootViewController?.present(alert, animated: true, completion: nil)
+            
         }
         
     }

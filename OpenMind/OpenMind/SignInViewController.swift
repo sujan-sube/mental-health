@@ -25,14 +25,16 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance().uiDelegate = self
         
         // Uncomment to automatically sign in the user.
-        //GIDSignIn.sharedInstance().signInSilently()
+        GIDSignIn.sharedInstance().signInSilently()
         // TODO(developer) Configure the sign-in button look/feel
         // [START_EXCLUDE]
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(SignInViewController.receiveToggleAuthUINotification(_:)),
                                                name: NSNotification.Name(rawValue: "ToggleAuthUINotification"),
                                                object: nil)
-        let signInButton = GIDSignInButton(frame: CGRect(x: 20, y: 0, width: 200, height: 21))
+        let screenSize: CGRect = UIScreen.main.bounds
+        
+        let signInButton = GIDSignInButton(frame: CGRect(x: screenSize.width/2-100, y: screenSize.height/2-10, width: 200, height: 20))
         self.view.addSubview(signInButton)
         
         
