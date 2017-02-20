@@ -22,7 +22,6 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Sign In UI
         let gradient: CAGradientLayer = CAGradientLayer()
         
         gradient.colors = [UIColor(red: 20.0/255.0, green: 97.0/255.0, blue: 160.0/255.0, alpha: 1.0).cgColor, UIColor(red: 45.0/255.0, green: 154.0/255.0, blue: 206.0/255.0, alpha: 1.0).cgColor]
@@ -38,10 +37,6 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         let screenHeight = screenSize.height
         GIDSignIn.sharedInstance().uiDelegate = self
         
-        let signInButton = GIDSignInButton(frame: CGRect(x: screenWidth/2 - 100, y: screenHeight/2 - 12, width: 200, height: 21))
-        
-        self.view.addSubview(signInButton)
-        
         // Uncomment to automatically sign in the user.
         GIDSignIn.sharedInstance().signInSilently()
         // TODO(developer) Configure the sign-in button look/feel
@@ -50,12 +45,14 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
                                                selector: #selector(SignInViewController.receiveToggleAuthUINotification(_:)),
                                                name: NSNotification.Name(rawValue: "ToggleAuthUINotification"),
                                                object: nil)
+<<<<<<< HEAD
+        let screenSize: CGRect = UIScreen.main.bounds
         
-        
-        
-        
-        
-        
+        let signInButton = GIDSignInButton(frame: CGRect(x: screenSize.width/2-100, y: screenSize.height/2-10, width: 200, height: 20))
+=======
+        let signInButton = GIDSignInButton(frame: CGRect(x: screenWidth/2 - 100, y: screenHeight/2 - 12, width: 200, height: 21))
+>>>>>>> d12ec7a68bce5ef7527b5c512b131c0dc1f1849c
+        self.view.addSubview(signInButton)
         
         
         //statusText.text = "Initialized Swift app..."
