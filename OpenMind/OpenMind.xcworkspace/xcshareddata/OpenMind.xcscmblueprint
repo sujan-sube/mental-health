@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B7EF3AF85C0E6C094B9B17118A29BCF8B6128E38",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B7EF3AF85C0E6C094B9B17118A29BCF8B6128E38" : 9223372036854775807,
+    "6AB161CB95A524A3E3A05331D0CDC2D6123C1811" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "923295BD-34EF-4775-A534-8432A13710FD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B7EF3AF85C0E6C094B9B17118A29BCF8B6128E38" : "open-mind\/",
+    "6AB161CB95A524A3E3A05331D0CDC2D6123C1811" : "AIToolBox\/AIToolbox\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "OpenMind",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "OpenMind\/OpenMind.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KevinCoble\/AIToolbox",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6AB161CB95A524A3E3A05331D0CDC2D6123C1811"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sujan-sube\/open-mind.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B7EF3AF85C0E6C094B9B17118A29BCF8B6128E38"
+    }
+  ]
+}

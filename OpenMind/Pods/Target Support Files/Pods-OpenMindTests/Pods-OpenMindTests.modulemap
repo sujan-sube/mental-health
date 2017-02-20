@@ -1,0 +1,6 @@
+framework module Pods_OpenMindTests {
+  umbrella header "Pods-OpenMindTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

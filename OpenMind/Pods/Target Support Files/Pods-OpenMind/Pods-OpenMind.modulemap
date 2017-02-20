@@ -1,0 +1,6 @@
+framework module Pods_OpenMind {
+  umbrella header "Pods-OpenMind-umbrella.h"
+
+  export *
+  module * { export * }
+}

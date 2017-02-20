@@ -7,13 +7,39 @@
 //
 
 import UIKit
+import Google
+import GoogleSignIn
 
 class HomeViewController: UIViewController {
 
+    
+    var userInfo: GIDGoogleUser = GIDGoogleUser()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.userLogin(_:)), name: NSNotification.Name(rawValue: "signIn_Google"), object: nil)
+        //print(self.userInfo.userID)
+        // Testing
+        let physical:PhysicalActivityManager = PhysicalActivityManager()
+        physical.authorizeHealthKit { (authorized, error) in
+            if authorized {
+                
+                // Add code for authorization
+                //self.setHeight()
+            } else {
+                if error != nil {
+                    //print(error)
+                }
+                print("Permission denied.")
+            }
+        }
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +47,15 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @objc func userLogin(_ notification: NSNotification) {
+        if notification.name.rawValue == "signIn_Google" {
+            //self.toggleAuthUI()
+            if notification.userInfo != nil {
+                guard let userInfo = notification.userInfo as? [String:String] else { return }
+                //self.statusText.text = userInfo["statusText"]!
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
