@@ -404,8 +404,11 @@
 				92D708CD1E34356A00CBD84B /* HomeViewController.swift in Sources */,
 				92D708A31E341F4C00CBD84B /* AppDelegate.swift in Sources */,
 				92D708C71E3433DA00CBD84B /* InsightViewController.swift in Sources */,
-				8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */,
+<<<<<<< HEAD
 				25100AA91E5B92FA005B0348 /* RESTCommunication.swift in Sources */,
+=======
+				8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */,
+>>>>>>> ac085b6190ed5ac9f2d63a598058f875cde45921
 				25E82B0C1E4BE8D800BEE11F /* SignInViewController.swift in Sources */,
 				8CA22CF81E679EE600E19B6E /* History.swift in Sources */,
 				8CA22CF51E679EE600E19B6E /* AddJournalEntryViewController.swift in Sources */,
