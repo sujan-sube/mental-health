@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
         
+        
+        GIDSignIn.sharedInstance().clientID = "244090642066-03iqlpq54om9u4da4hu6gfkbno10pqlb.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().serverClientID = "244090642066-789ii5nf638o81ojcslbqflgqobn114p.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
         
         return true
@@ -49,17 +52,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             // Perform any operations on signed in user here.
             let userId = user.userID                  // For client-side use only!
             let idToken = user.authentication.idToken // Safe to send to the server
+            let serverAuthCode = user.serverAuthCode
             let fullName = user.profile.name
             let givenName = user.profile.givenName
             let familyName = user.profile.familyName
             let email = user.profile.email
+           
             // [START_EXCLUDE]
             NotificationCenter.default.post(
                 name: Notification.Name(rawValue: "ToggleAuthUINotification"),
                 object: nil,
                 userInfo: ["statusText": "Signed in user:\n\(fullName)"])
             
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SignIn_Google"), object: nil)
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SignIn_Google"), object: nil)
 
             
             window?.becomeKey()
@@ -76,7 +81,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             homeViewController.selectedIndex = 0
             window?.rootViewController = homeViewController
             
-            print(idToken)
+            //let server = "http://ec2-52-11-1-30.us-west-2.compute.amazonaws.com/rest-auth/google/"
+            
+            //RESTCommunication.getToken(server, idToken!)
+            print(userId)
+            GIDSignIn.sharedInstance().signOut()
 //            let alert = UIAlertController(title: "Alert", message: idToken, preferredStyle: UIAlertControllerStyle.alert)
 //            
 //            alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))

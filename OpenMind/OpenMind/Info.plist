@@ -25,7 +25,7 @@
 			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.481119782428-pr87cjd7eh71pbl60afv004okkcf83rn</string>
+				<string>com.googleusercontent.apps.244090642066-03iqlpq54om9u4da4hu6gfkbno10pqlb</string>
 			</array>
 		</dict>
 		<dict>
@@ -41,6 +41,17 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict/>
+	</dict>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Uses Health Data</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Updates Health Data</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -60,10 +71,6 @@
 			<false/>
 		</dict>
 	</dict>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>Updates Health Data</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Uses Health Data</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
