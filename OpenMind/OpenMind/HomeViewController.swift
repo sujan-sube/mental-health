@@ -19,8 +19,8 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.userLogin(_:)), name: NSNotification.Name(rawValue: "signIn_Google"), object: nil)
-        //print(self.userInfo.userID)
+//        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.userLogin(_:)), name: NSNotification.Name(rawValue: "signIn_Google"), object: nil)
+//        print(self.userInfo.userID)
         // Testing
         let physical:PhysicalActivityManager = PhysicalActivityManager()
         physical.authorizeHealthKit { (authorized, error) in

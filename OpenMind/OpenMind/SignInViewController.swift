@@ -43,7 +43,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         self.view.addSubview(signInButton)
         
         // Uncomment to automatically sign in the user.
-        GIDSignIn.sharedInstance().signInSilently()
+        //GIDSignIn.sharedInstance().signInSilently()
         // TODO(developer) Configure the sign-in button look/feel
         // [START_EXCLUDE]
         NotificationCenter.default.addObserver(self,

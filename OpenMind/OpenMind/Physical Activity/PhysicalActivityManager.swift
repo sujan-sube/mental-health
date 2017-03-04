@@ -26,7 +26,7 @@ class PhysicalActivityManager{
             ]
         
         // 2. Set the types you want to write to HK Store
-        let healthKitTypesToWrite : Set<HKSampleType> = []
+        //let healthKitTypesToWrite : Set<HKSampleType> = nil
         
         // 3. If the store is not available (for instance, iPad) return an error and don't go on.
         if !HKHealthStore.isHealthDataAvailable()
@@ -40,7 +40,7 @@ class PhysicalActivityManager{
         }
         
         // 4.  Request HealthKit authorization
-        healthKitStore.requestAuthorization(toShare: healthKitTypesToWrite, read: healthKitTypesToRead) { (success, error) -> Void in
+        healthKitStore.requestAuthorization(toShare: nil, read: healthKitTypesToRead) { (success, error) -> Void in
             
             if( completion != nil )
             {
