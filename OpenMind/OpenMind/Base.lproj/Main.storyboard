@@ -127,11 +127,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Trends" image="stats" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="amI-hj-PP2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981.60000000000002" y="-658.02098950524737"/>
+            <point key="canvasLocation" x="1920.8" y="-658.02098950524737"/>
         </scene>
         <!--Insights-->
         <scene sceneID="SMY-pV-zZx">
@@ -168,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ALN-My-GaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2135" y="-658"/>
+            <point key="canvasLocation" x="3072.8000000000002" y="-658.02098950524737"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="SfH-f3-Aqr">
@@ -220,7 +220,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="5ZL-u8-ppv" kind="relationship" relationship="viewControllers" id="rfS-XQ-ySx"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="dYX-f8-VXE"/>
+                        <segue destination="Uh3-NM-BO2" kind="relationship" relationship="viewControllers" id="dYX-f8-VXE"/>
                         <segue destination="LXu-GO-C9G" kind="relationship" relationship="viewControllers" id="m7p-dY-eGN"/>
                         <segue destination="K39-dI-phY" kind="relationship" relationship="viewControllers" id="poe-or-DNL"/>
                         <segue destination="1rt-Xv-hnl" kind="relationship" relationship="viewControllers" id="Y9W-gg-jOB"/>
@@ -236,7 +236,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ZL-u8-ppv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house-outline" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GKc-IC-0hi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GKc-IC-0hi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -350,6 +350,25 @@
                 <exit id="kh5-ea-Yvk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3840.8000000000002" y="-1433.433283358321"/>
+        </scene>
+        <!--Trends-->
+        <scene sceneID="UUd-5T-Ghg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uh3-NM-BO2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Trends" image="stats" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U6O-zj-3bR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="nAF-jz-YJq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SDv-kv-bFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981.60000000000002" y="-658.02098950524737"/>
         </scene>
     </scenes>
     <resources>
