@@ -65,39 +65,13 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhw-5I-wRE">
-                                <rect key="frame" x="136" y="402" width="102" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Daily Journal"/>
-                                <connections>
-                                    <segue destination="Rl3-Is-Hof" kind="show" id="EN8-uu-jr6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kl9-pI-i1a">
-                                <rect key="frame" x="136" y="490" width="102" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Emotion"/>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="EZP-vs-4nA">
-                                <rect key="frame" x="67" y="124" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Todays Entries (Only Journal Button Works)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjt-1z-N9V">
-                                <rect key="frame" x="21" y="333" width="332" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Dashboard" id="Qvn-X6-wd1"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house-outline" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1920.8" y="-1432.5337331334333"/>
+            <point key="canvasLocation" x="983" y="-1432"/>
         </scene>
         <!--Trends-->
         <scene sceneID="O6k-da-DaC">
@@ -340,130 +314,8 @@
             </objects>
             <point key="canvasLocation" x="3047" y="-655"/>
         </scene>
-        <!--Home-->
-        <scene sceneID="q5S-CQ-67x">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ZL-u8-ppv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house-outline" id="acW-dT-cKf"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GKc-IC-0hi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="g6h-Nm-YkR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="85b-Mk-cIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="981.60000000000002" y="-1432.5337331334333"/>
-        </scene>
-        <!--Journal Entries-->
-        <scene sceneID="64u-Ug-I5b">
-            <objects>
-                <tableViewController id="Rl3-Is-Hof" customClass="JournalHistoryTableViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="6BU-C7-3Su">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryTableViewCell" rowHeight="90" id="Qnh-gH-e2I" customClass="HistoryTableViewCell" customModule="OpenMind" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qnh-gH-e2I" id="ZWK-c4-TqZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61K-bt-Vrb">
-                                            <rect key="frame" x="286" y="4" width="81" height="81"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-eS-bwR">
-                                            <rect key="frame" x="8" y="21" width="270" height="47"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="dateLabel" destination="gdf-eS-bwR" id="fTn-DM-e18"/>
-                                    <outlet property="photoImageView" destination="61K-bt-Vrb" id="nwb-qV-yTa"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Rl3-Is-Hof" id="QRc-4R-giZ"/>
-                            <outlet property="delegate" destination="Rl3-Is-Hof" id="rot-5H-XYh"/>
-                        </connections>
-                    </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Journal Entries" id="2R7-PC-Yuv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="D13-bU-opW">
-                            <connections>
-                                <segue destination="LdM-e9-Q1e" kind="show" id="Tt0-yS-1vY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3q2-P8-XNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2908" y="-1433"/>
-        </scene>
-        <!--Add Journal Entry View Controller-->
-        <scene sceneID="Bux-eb-ihy">
-            <objects>
-                <viewController id="LdM-e9-Q1e" customClass="AddJournalEntryViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="J0a-ur-Ibt"/>
-                        <viewControllerLayoutGuide type="bottom" id="GpS-cI-hZf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xQj-Dg-5MC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebm-Nr-vYI">
-                                <rect key="frame" x="56" y="127" width="263" height="341"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Lets talk about your day!">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="14"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcm-Cm-EZT">
-                                <rect key="frame" x="145" y="92" width="84" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveButton:" destination="LdM-e9-Q1e" eventType="touchUpInside" id="i6t-Hx-WfU"/>
-                                    <segue destination="kh5-ea-Yvk" kind="unwind" unwindAction="unwindToJournalListWithSender:" id="Auh-ST-3Gx"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <connections>
-                        <outlet property="JournalTextView" destination="ebm-Nr-vYI" id="hbr-lH-a1F"/>
-                        <outlet property="saveButton" destination="Qcm-Cm-EZT" id="Wbh-2V-FiR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ea9-r9-AKd" sceneMemberID="firstResponder"/>
-                <exit id="kh5-ea-Yvk" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="3840.8000000000002" y="-1433.433283358321"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="Heart" width="256" height="256"/>
         <image name="house-outline" width="30" height="27"/>
         <image name="light-bulb" width="24" height="30"/>
         <image name="multiple-users-silhouette" width="33" height="28"/>
