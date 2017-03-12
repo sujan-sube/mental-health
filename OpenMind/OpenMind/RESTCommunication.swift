@@ -11,17 +11,20 @@ import Foundation
 class RESTCommunication {
     
     // Send Request to the server
-    static func sendRequest(_ serverAddress:String, _ type:String, _ headers:String?, _ body:Data) -> String{
+    static func sendRequest(_ serverAddress:String, _ type:String, _ headers:String?, _ body:Data?) -> String{
         var token:String = ""
         var request = URLRequest(url: URL(string: serverAddress)!)
         
         request.httpMethod = type
         if (headers != nil){
             //Add headers here
+            //request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         }
+        if (body != nil){
         request.httpBody = body
-        
-        /*let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        }
+        //print(String(data: body, encoding: String.Encoding.utf8))
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil else {
                 print(error!)
                 return
@@ -35,7 +38,7 @@ class RESTCommunication {
             token = self.jsonToString(json: json)
         }
         
-        //task.resume()*/
+        task.resume()
         //let reply = NSURLConnection.sendSynchronousRequest(request, returningResponse:&response, error:&error)
         
         return token
@@ -45,12 +48,18 @@ class RESTCommunication {
         
         
         let jsonObject: [String: AnyObject]  = [
-                "access_token": idToken as AnyObject
+                "code": idToken as AnyObject
         ]
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         //print (jsonObject)
         let accessToken = self.sendRequest(serverAddress, "POST", nil, jsonData!)
         print (accessToken)
+    }
+    
+    static func test_journal(_ serverAddress:String) {
+    
+        //print (jsonObject)
+        let accessToken = self.sendRequest(serverAddress, "GET", nil, nil)
     }
     
     static func jsonToString(json: AnyObject) -> String{
