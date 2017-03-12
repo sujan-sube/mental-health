@@ -14,15 +14,12 @@
 		256419971E3EF0FF00BB0009 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 256419961E3EF0FF00BB0009 /* HealthKit.framework */; };
 		25920C821E457C5400B07EAB /* PhysicalActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256419931E3EF07C00BB0009 /* PhysicalActivityManager.swift */; };
 		25E82B0C1E4BE8D800BEE11F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E82B0B1E4BE8D800BEE11F /* SignInViewController.swift */; };
-		92BB1BD31E5F8A6B007434D3 /* TrendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BB1BD21E5F8A6B007434D3 /* TrendsTableViewCell.swift */; };
-		92BB1BD51E5F8D80007434D3 /* TrendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BB1BD41E5F8D80007434D3 /* TrendsTableViewController.swift */; };
-		92BB1BDC1E5FA10A007434D3 /* WDLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BB1BD61E5FA10A007434D3 /* WDLineChartView.m */; };
-		92BB1BDD1E5FA10A007434D3 /* WDChartNodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BB1BD91E5FA10A007434D3 /* WDChartNodeView.m */; };
-		92BB1BDE1E5FA10A007434D3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BB1BDB1E5FA10A007434D3 /* MainViewController.m */; };
 		8CA22CF51E679EE600E19B6E /* AddJournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF11E679EE600E19B6E /* AddJournalEntryViewController.swift */; };
 		8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF21E679EE600E19B6E /* HistoryTableViewCell.swift */; };
 		8CA22CF71E679EE600E19B6E /* JournalHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */; };
 		8CA22CF81E679EE600E19B6E /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF41E679EE600E19B6E /* History.swift */; };
+		922CDE4C1E7487C2003598D5 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CDE4B1E7487C1003598D5 /* GraphViewController.swift */; };
+		92A77E5E1E722E7C00421A4E /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A77E5D1E722E7C00421A4E /* LineChart.swift */; };
 		92D708A31E341F4C00CBD84B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D708A21E341F4C00CBD84B /* AppDelegate.swift */; };
 		92D708AA1E341F4C00CBD84B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D708A81E341F4C00CBD84B /* Main.storyboard */; };
 		92D708AC1E341F4C00CBD84B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D708AB1E341F4C00CBD84B /* Assets.xcassets */; };
@@ -31,6 +28,7 @@
 		92D708C71E3433DA00CBD84B /* InsightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D708C61E3433DA00CBD84B /* InsightViewController.swift */; };
 		92D708CB1E34354B00CBD84B /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D708CA1E34354B00CBD84B /* ContactsViewController.swift */; };
 		92D708CD1E34356A00CBD84B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D708CC1E34356A00CBD84B /* HomeViewController.swift */; };
+		92D708CF1E34358300CBD84B /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D708CE1E34358300CBD84B /* TrendsViewController.swift */; };
 		92D708D11E3436D300CBD84B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D708D01E3436D300CBD84B /* SettingsViewController.swift */; };
 		D00865734C7388DE71EE8CE1 /* Pods_OpenMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DB759203604820F57A8070 /* Pods_OpenMindTests.framework */; };
 /* End PBXBuildFile section */
@@ -70,18 +68,12 @@
 		25E82B0B1E4BE8D800BEE11F /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		3C69791396948315E706ABC3 /* Pods-OpenMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenMind/Pods-OpenMind.release.xcconfig"; sourceTree = "<group>"; };
 		42DB759203604820F57A8070 /* Pods_OpenMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenMindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		92BB1BD21E5F8A6B007434D3 /* TrendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendsTableViewCell.swift; sourceTree = "<group>"; };
-		92BB1BD41E5F8D80007434D3 /* TrendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendsTableViewController.swift; sourceTree = "<group>"; };
-		92BB1BD61E5FA10A007434D3 /* WDLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDLineChartView.m; path = "../../../../Documents/Waterloo/SYDE 4A/GENE 403/Project/iOS-10-Steps-Widget-master/WDLineChartView/WDLineChartView.m"; sourceTree = "<group>"; };
-		92BB1BD71E5FA10A007434D3 /* WDLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDLineChartView.h; path = "../../../../Documents/Waterloo/SYDE 4A/GENE 403/Project/iOS-10-Steps-Widget-master/WDLineChartView/WDLineChartView.h"; sourceTree = "<group>"; };
-		92BB1BD81E5FA10A007434D3 /* WDChartNodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDChartNodeView.h; path = "../../../../Documents/Waterloo/SYDE 4A/GENE 403/Project/iOS-10-Steps-Widget-master/WDLineChartView/WDChartNodeView.h"; sourceTree = "<group>"; };
-		92BB1BD91E5FA10A007434D3 /* WDChartNodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDChartNodeView.m; path = "../../../../Documents/Waterloo/SYDE 4A/GENE 403/Project/iOS-10-Steps-Widget-master/WDLineChartView/WDChartNodeView.m"; sourceTree = "<group>"; };
-		92BB1BDA1E5FA10A007434D3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = "../../../../Documents/Waterloo/SYDE 4A/GENE 403/Project/iOS-10-Steps-Widget-master/Main App/MainViewController.h"; sourceTree = "<group>"; };
-		92BB1BDB1E5FA10A007434D3 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = "../../../../Documents/Waterloo/SYDE 4A/GENE 403/Project/iOS-10-Steps-Widget-master/Main App/MainViewController.m"; sourceTree = "<group>"; };
 		8CA22CF11E679EE600E19B6E /* AddJournalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddJournalEntryViewController.swift; sourceTree = "<group>"; };
 		8CA22CF21E679EE600E19B6E /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalHistoryTableViewController.swift; sourceTree = "<group>"; };
 		8CA22CF41E679EE600E19B6E /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		922CDE4B1E7487C1003598D5 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		92A77E5D1E722E7C00421A4E /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		92D7089F1E341F4C00CBD84B /* OpenMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D708A21E341F4C00CBD84B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92D708A91E341F4C00CBD84B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +86,7 @@
 		92D708C61E3433DA00CBD84B /* InsightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightViewController.swift; sourceTree = "<group>"; };
 		92D708CA1E34354B00CBD84B /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		92D708CC1E34356A00CBD84B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		92D708CE1E34358300CBD84B /* TrendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
 		92D708D01E3436D300CBD84B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A5E54302A91613160C000241 /* Pods-OpenMindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMindTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenMindTests/Pods-OpenMindTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC2626765EFE09D487AC4AB7 /* Pods_OpenMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,19 +137,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		92BB1BE01E5FA183007434D3 /* Graphs */ = {
-			isa = PBXGroup;
-			children = (
-				92BB1BD61E5FA10A007434D3 /* WDLineChartView.m */,
-				92BB1BD71E5FA10A007434D3 /* WDLineChartView.h */,
-				92BB1BD81E5FA10A007434D3 /* WDChartNodeView.h */,
-				92BB1BD91E5FA10A007434D3 /* WDChartNodeView.m */,
-				92BB1BDA1E5FA10A007434D3 /* MainViewController.h */,
-				92BB1BDB1E5FA10A007434D3 /* MainViewController.m */,
-			);
-			name = Graphs;
-			sourceTree = "<group>";
-		};
 		92D708961E341F4C00CBD84B = {
 			isa = PBXGroup;
 			children = (
@@ -188,20 +168,20 @@
 				256419951E3EF0FF00BB0009 /* OpenMind.entitlements */,
 				92D708A21E341F4C00CBD84B /* AppDelegate.swift */,
 				92D708A81E341F4C00CBD84B /* Main.storyboard */,
-				92BB1BD41E5F8D80007434D3 /* TrendsTableViewController.swift */,
-				92BB1BD21E5F8A6B007434D3 /* TrendsTableViewCell.swift */,
 				92D708AB1E341F4C00CBD84B /* Assets.xcassets */,
 				92D708AD1E341F4C00CBD84B /* LaunchScreen.storyboard */,
 				92D708B01E341F4C00CBD84B /* Info.plist */,
 				92D708C61E3433DA00CBD84B /* InsightViewController.swift */,
 				92D708CA1E34354B00CBD84B /* ContactsViewController.swift */,
 				92D708CC1E34356A00CBD84B /* HomeViewController.swift */,
+				92D708CE1E34358300CBD84B /* TrendsViewController.swift */,
+				922CDE4B1E7487C1003598D5 /* GraphViewController.swift */,
 				92D708D01E3436D300CBD84B /* SettingsViewController.swift */,
 				2570ED5F1E3D4DF100929B84 /* OpenMind-Bridging-Header.h */,
 				256419931E3EF07C00BB0009 /* PhysicalActivityManager.swift */,
 				25E82B0B1E4BE8D800BEE11F /* SignInViewController.swift */,
-				92BB1BE01E5FA183007434D3 /* Graphs */,
 				25100AA81E5B92FA005B0348 /* RESTCommunication.swift */,
+				92A77E5D1E722E7C00421A4E /* LineChart.swift */,
 			);
 			path = OpenMind;
 			sourceTree = "<group>";
@@ -426,22 +406,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92BB1BD51E5F8D80007434D3 /* TrendsTableViewController.swift in Sources */,
+				92D708CF1E34358300CBD84B /* TrendsViewController.swift in Sources */,
 				92D708CD1E34356A00CBD84B /* HomeViewController.swift in Sources */,
 				92D708A31E341F4C00CBD84B /* AppDelegate.swift in Sources */,
 				92D708C71E3433DA00CBD84B /* InsightViewController.swift in Sources */,
-				92BB1BDC1E5FA10A007434D3 /* WDLineChartView.m in Sources */,
+				92A77E5E1E722E7C00421A4E /* LineChart.swift in Sources */,
 				8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */,
+				922CDE4C1E7487C2003598D5 /* GraphViewController.swift in Sources */,
 				25100AA91E5B92FA005B0348 /* RESTCommunication.swift in Sources */,
 				25E82B0C1E4BE8D800BEE11F /* SignInViewController.swift in Sources */,
-				92BB1BDD1E5FA10A007434D3 /* WDChartNodeView.m in Sources */,
-				92BB1BDE1E5FA10A007434D3 /* MainViewController.m in Sources */,
 				8CA22CF81E679EE600E19B6E /* History.swift in Sources */,
 				8CA22CF51E679EE600E19B6E /* AddJournalEntryViewController.swift in Sources */,
 				92D708CB1E34354B00CBD84B /* ContactsViewController.swift in Sources */,
 				25920C821E457C5400B07EAB /* PhysicalActivityManager.swift in Sources */,
 				92D708D11E3436D300CBD84B /* SettingsViewController.swift in Sources */,
-				92BB1BD31E5F8A6B007434D3 /* TrendsTableViewCell.swift in Sources */,
 				8CA22CF71E679EE600E19B6E /* JournalHistoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
