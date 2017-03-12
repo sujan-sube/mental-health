@@ -81,11 +81,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             homeViewController.selectedIndex = 0
             window?.rootViewController = homeViewController
             
-            //let server = "http://ec2-52-11-1-30.us-west-2.compute.amazonaws.com/rest-auth/google/"
+//            let server = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/rest-auth/google/"
+            let server = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/journal/"
             
-            //RESTCommunication.getToken(server, idToken!)
-            print(userId)
+//            RESTCommunication.getToken(server, serverAuthCode!)
+            RESTCommunication.test_journal(server)
             GIDSignIn.sharedInstance().signOut()
+//            print(serverAuthCode)
+            
 //            let alert = UIAlertController(title: "Alert", message: idToken, preferredStyle: UIAlertControllerStyle.alert)
 //            
 //            alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
