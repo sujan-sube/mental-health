@@ -17,7 +17,7 @@ class APICommunication {
     
     
     
-    //Takes EndPointType, the method and the body to post and connects to API.
+    //Takes EndPointType, the method and the body to post and connect to API.
     //Posts response data to NotificationCenter with EndPointType NotificationName
     
     static func apirequest(data: EndPointTypes, httpMethod: String, httpBody: [String: Any]?) -> Void {
@@ -55,7 +55,8 @@ class APICommunication {
             
             
             DispatchQueue.main.async {
-                
+            
+            //Listen to this notification in your viewcontroller to get data
             NotificationCenter.default.post(name:Notification.Name(rawValue:"MyNotification" + NotificationName),
                                             object: nil,
                                             userInfo: dictionary as? [AnyHashable : Any])

@@ -61,14 +61,21 @@ class testViewController: UIViewController {
             return
         }
         
-        guard let user = id.first as? [String: Any],
-            let content = user["content"] as? String,
-            let date = user["date"] as? String else {
-                print ("key-value pairs do not match JSON response")
-                return
+        for index in 0..<id.count
+        {
+            guard let user = id[index] as? [String: Any],
+                let content = user["content"] as? String,
+                let date = user["date"] as? String else {
+                    print ("key-value pairs do not match JSON response")
+                    return
+            }
+            
+            self.textview.font?.withSize(2)
+            self.textview.text = self.textview.text.appending("the content is \(content) and the date is " + date + "\n\n")
+
         }
+    
         //Print json elements in label
-        self.textview.text = ("the content is \(content) and the date is " + date)
         
     }
 
