@@ -14,6 +14,9 @@
 		256419971E3EF0FF00BB0009 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 256419961E3EF0FF00BB0009 /* HealthKit.framework */; };
 		25920C821E457C5400B07EAB /* PhysicalActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256419931E3EF07C00BB0009 /* PhysicalActivityManager.swift */; };
 		25E82B0C1E4BE8D800BEE11F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E82B0B1E4BE8D800BEE11F /* SignInViewController.swift */; };
+		8C2B93731E7740BA00A6DA00 /* APIConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B93701E7740BA00A6DA00 /* APIConnection.swift */; };
+		8C2B93741E7740BA00A6DA00 /* ServerEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B93711E7740BA00A6DA00 /* ServerEndpoints.swift */; };
+		8C2B93751E7740BA00A6DA00 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B93721E7740BA00A6DA00 /* testViewController.swift */; };
 		8CA22CF51E679EE600E19B6E /* AddJournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF11E679EE600E19B6E /* AddJournalEntryViewController.swift */; };
 		8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF21E679EE600E19B6E /* HistoryTableViewCell.swift */; };
 		8CA22CF71E679EE600E19B6E /* JournalHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */; };
@@ -68,6 +71,9 @@
 		25E82B0B1E4BE8D800BEE11F /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		3C69791396948315E706ABC3 /* Pods-OpenMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenMind/Pods-OpenMind.release.xcconfig"; sourceTree = "<group>"; };
 		42DB759203604820F57A8070 /* Pods_OpenMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenMindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2B93701E7740BA00A6DA00 /* APIConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnection.swift; sourceTree = "<group>"; };
+		8C2B93711E7740BA00A6DA00 /* ServerEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerEndpoints.swift; sourceTree = "<group>"; };
+		8C2B93721E7740BA00A6DA00 /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		8CA22CF11E679EE600E19B6E /* AddJournalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddJournalEntryViewController.swift; sourceTree = "<group>"; };
 		8CA22CF21E679EE600E19B6E /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalHistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +143,68 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8C2B93691E773EA600A6DA00 /* ServerConnection */ = {
+			isa = PBXGroup;
+			children = (
+				8C2B93701E7740BA00A6DA00 /* APIConnection.swift */,
+				8C2B93711E7740BA00A6DA00 /* ServerEndpoints.swift */,
+				8C2B93721E7740BA00A6DA00 /* testViewController.swift */,
+			);
+			name = ServerConnection;
+			sourceTree = "<group>";
+		};
+		8C2B936A1E773ED400A6DA00 /* Journaling */ = {
+			isa = PBXGroup;
+			children = (
+				8CA22CF11E679EE600E19B6E /* AddJournalEntryViewController.swift */,
+				8CA22CF21E679EE600E19B6E /* HistoryTableViewCell.swift */,
+				8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */,
+				8CA22CF41E679EE600E19B6E /* History.swift */,
+			);
+			name = Journaling;
+			sourceTree = "<group>";
+		};
+		8C2B936B1E773EF700A6DA00 /* Insights */ = {
+			isa = PBXGroup;
+			children = (
+				92D708C61E3433DA00CBD84B /* InsightViewController.swift */,
+			);
+			name = Insights;
+			sourceTree = "<group>";
+		};
+		8C2B936C1E773F0200A6DA00 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				92D708CA1E34354B00CBD84B /* ContactsViewController.swift */,
+			);
+			name = Contacts;
+			sourceTree = "<group>";
+		};
+		8C2B936D1E773F0B00A6DA00 /* Trends */ = {
+			isa = PBXGroup;
+			children = (
+				92D708CE1E34358300CBD84B /* TrendsViewController.swift */,
+				922CDE4B1E7487C1003598D5 /* GraphViewController.swift */,
+			);
+			name = Trends;
+			sourceTree = "<group>";
+		};
+		8C2B936E1E773F1000A6DA00 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				92D708D01E3436D300CBD84B /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		8C2B936F1E77403900A6DA00 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				92D708CC1E34356A00CBD84B /* HomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 		92D708961E341F4C00CBD84B = {
 			isa = PBXGroup;
 			children = (
@@ -161,22 +229,19 @@
 		92D708A11E341F4C00CBD84B /* OpenMind */ = {
 			isa = PBXGroup;
 			children = (
-				8CA22CF11E679EE600E19B6E /* AddJournalEntryViewController.swift */,
-				8CA22CF21E679EE600E19B6E /* HistoryTableViewCell.swift */,
-				8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */,
-				8CA22CF41E679EE600E19B6E /* History.swift */,
+				8C2B936F1E77403900A6DA00 /* Home */,
+				8C2B936E1E773F1000A6DA00 /* Settings */,
+				8C2B936D1E773F0B00A6DA00 /* Trends */,
+				8C2B936C1E773F0200A6DA00 /* Contacts */,
+				8C2B936B1E773EF700A6DA00 /* Insights */,
+				8C2B936A1E773ED400A6DA00 /* Journaling */,
+				8C2B93691E773EA600A6DA00 /* ServerConnection */,
 				256419951E3EF0FF00BB0009 /* OpenMind.entitlements */,
 				92D708A21E341F4C00CBD84B /* AppDelegate.swift */,
 				92D708A81E341F4C00CBD84B /* Main.storyboard */,
 				92D708AB1E341F4C00CBD84B /* Assets.xcassets */,
 				92D708AD1E341F4C00CBD84B /* LaunchScreen.storyboard */,
 				92D708B01E341F4C00CBD84B /* Info.plist */,
-				92D708C61E3433DA00CBD84B /* InsightViewController.swift */,
-				92D708CA1E34354B00CBD84B /* ContactsViewController.swift */,
-				92D708CC1E34356A00CBD84B /* HomeViewController.swift */,
-				92D708CE1E34358300CBD84B /* TrendsViewController.swift */,
-				922CDE4B1E7487C1003598D5 /* GraphViewController.swift */,
-				92D708D01E3436D300CBD84B /* SettingsViewController.swift */,
 				2570ED5F1E3D4DF100929B84 /* OpenMind-Bridging-Header.h */,
 				256419931E3EF07C00BB0009 /* PhysicalActivityManager.swift */,
 				25E82B0B1E4BE8D800BEE11F /* SignInViewController.swift */,
@@ -408,14 +473,17 @@
 			files = (
 				92D708CF1E34358300CBD84B /* TrendsViewController.swift in Sources */,
 				92D708CD1E34356A00CBD84B /* HomeViewController.swift in Sources */,
+				8C2B93741E7740BA00A6DA00 /* ServerEndpoints.swift in Sources */,
 				92D708A31E341F4C00CBD84B /* AppDelegate.swift in Sources */,
 				92D708C71E3433DA00CBD84B /* InsightViewController.swift in Sources */,
 				92A77E5E1E722E7C00421A4E /* LineChart.swift in Sources */,
 				8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */,
 				922CDE4C1E7487C2003598D5 /* GraphViewController.swift in Sources */,
 				25100AA91E5B92FA005B0348 /* RESTCommunication.swift in Sources */,
+				8C2B93731E7740BA00A6DA00 /* APIConnection.swift in Sources */,
 				25E82B0C1E4BE8D800BEE11F /* SignInViewController.swift in Sources */,
 				8CA22CF81E679EE600E19B6E /* History.swift in Sources */,
+				8C2B93751E7740BA00A6DA00 /* testViewController.swift in Sources */,
 				8CA22CF51E679EE600E19B6E /* AddJournalEntryViewController.swift in Sources */,
 				92D708CB1E34354B00CBD84B /* ContactsViewController.swift in Sources */,
 				25920C821E457C5400B07EAB /* PhysicalActivityManager.swift in Sources */,
