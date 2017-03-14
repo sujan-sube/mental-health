@@ -85,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let server = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/journal/"
             
 //            RESTCommunication.getToken(server, serverAuthCode!)
-            RESTCommunication.test_journal(server)
+            
             GIDSignIn.sharedInstance().signOut()
 //            print(serverAuthCode)
             
