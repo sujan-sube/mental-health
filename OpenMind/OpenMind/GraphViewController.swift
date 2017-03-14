@@ -8,19 +8,26 @@
 
 import UIKit
 import QuartzCore
+import HealthKit
 
 class GraphViewController: UIViewController, LineChartDelegate {
     
-    
+    let healthStore = HKHealthStore()
     
     var label = UILabel()
     var lineChart: LineChart!
-    
+    var stepsArray = [Double]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkAvailability()
+        getStepCount(sender: self)
         
+        
+    }
+    
+    func drawGraph(steps: [CGFloat]) {
         var views: [String: AnyObject] = [:]
         
         label.text = "..."
@@ -32,8 +39,9 @@ class GraphViewController: UIViewController, LineChartDelegate {
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-80-[label]", options: [], metrics: nil, views: views))
         
         // simple arrays
-        let data: [CGFloat] = [3, 4, -2, 11, 13, 15]
-        let data2: [CGFloat] = [1, 3, 5, 13, 17, 20]
+//        let data: [CGFloat] = [3, 4, -2, 11, 13, 15]
+        let data = steps
+//        let data2: [CGFloat] = [1, 3, 5, 13, 17, 20]
         
         // simple line with custom x axis labels
         let xLabels: [String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
@@ -47,7 +55,7 @@ class GraphViewController: UIViewController, LineChartDelegate {
         lineChart.x.labels.values = xLabels
         lineChart.y.labels.visible = true
         lineChart.addLine(data)
-        lineChart.addLine(data2)
+//        lineChart.addLine(data2)
         
         lineChart.translatesAutoresizingMaskIntoConstraints = false
         lineChart.delegate = self
@@ -77,8 +85,92 @@ class GraphViewController: UIViewController, LineChartDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    func checkAvailability() {
+        
+        
+        if HKHealthStore.isHealthDataAvailable() {
+            
+            print("Health Data is Available")
+            
+            let stepsCount = NSSet(object: HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount))
+            
+            healthStore.requestAuthorization(toShare: nil, read: stepsCount as? Set<HKObjectType>, completion: { (Success, Error) in
+                self.getStepCount(sender: self)
+            })
+        }
+        
+        else {
+            print("Health data NOT available")
+        }
+    }
     
+    func recentSteps(completion: @escaping (Double, [Double], NSError?) -> ()) {
+        let type = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let curryear = calendar.component(.year, from: date)
+        let currmonth = calendar.component(.month, from: date)
+        let currday = calendar.component(.day, from: date)
+        let last = DateComponents(calendar: nil,
+                                  timeZone: nil,
+                                  era: nil,
+                                  year: curryear,
+                                  month: currmonth,
+                                  day: currday-7,
+                                  hour: nil,
+                                  minute: nil,
+                                  second: nil,
+                                  nanosecond: nil,
+                                  weekday: nil,
+                                  weekdayOrdinal: nil,
+                                  quarter: nil,
+                                  weekOfMonth: nil,
+                                  weekOfYear: nil,
+                                  yearForWeekOfYear: nil)
+        
+        let dates = calendar.date(from: last)!
+        
+        let predicate = HKQuery.predicateForSamples(withStart: dates, end: Date(), options: [])
+        let query = HKSampleQuery(sampleType: type!, predicate: predicate, limit: 0, sortDescriptors: nil) {
+            query, results, error in
+            var steps: Double = 0
+            var allSteps = [Double]()
+            if let myResults = results {
+                for result in myResults as! [HKQuantitySample] {
+                    print(myResults)
+                    steps += result.quantity.doubleValue(for: HKUnit.count())
+                    allSteps.append(result.quantity.doubleValue(for: HKUnit.count()))
+                }
+            }
+            completion(steps, allSteps, error as NSError?)
+            
+        }
+        healthStore.execute(query)
+    }
     
+    @IBAction func getStepCount(sender: AnyObject) {
+        recentSteps() { steps, allSteps, error in
+            DispatchQueue.main.sync {
+                var avgStep: Double = 0
+                avgStep = steps/7
+                var converted = self.convertSteps(steps: allSteps)
+                self.drawGraph(steps: converted)
+                
+                
+            }
+            
+        };
+    }
+    
+    func convertSteps(steps: [Double]) -> [CGFloat] {
+        var converted = [CGFloat]()
+        for step in steps {
+            converted.append(CGFloat(step))
+        }
+        return converted
+    }
     
     /**
      * Line chart delegate method.
