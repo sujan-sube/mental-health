@@ -64,7 +64,7 @@ class JournalHistoryTableViewController: UITableViewController {
                     return
             }
             
-            let temp = journal_date.index(journal_date.startIndex, offsetBy: 9)
+            let temp = journal_date.index(journal_date.startIndex, offsetBy: 10)
             let temp_1 = journal_date.substring(to: temp)
             
             let newEntry = History(date: temp_1, photo: photo1!)
