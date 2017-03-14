@@ -1,0 +1,106 @@
+//
+//  APIConnection.swift
+//  apiconnection2
+//
+//  Created by Rehan Anwar on 2017-03-11.
+//  Copyright © 2017 Rehan Anwar. All rights reserved.
+//
+
+
+
+import Foundation
+
+var EndPoint = String()
+var NotificationName = String()
+
+class APICommunication {
+    
+    
+    
+    //Takes EndPointType, the method and the body to post and connect to API.
+    //Posts response data to NotificationCenter with EndPointType NotificationName
+    
+    static func apirequest(data: EndPointTypes, httpMethod: String, httpBody: [String: Any]?) -> Void {
+        
+        
+        let datatype = data
+        EndPoint = getserveraddress(data: datatype)
+        let url = URL(string: EndPoint)
+        var urlRequest = NSMutableURLRequest(url: url!)
+        urlRequest.httpMethod = httpMethod
+        
+        
+        if httpMethod=="POST" {
+            createPostBody(urlRequest: &urlRequest, httpMethod: httpMethod, httpDictionary: httpBody)
+        }
+        
+        let session = URLSession.shared
+        
+        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+            (data, response, error) in
+            // this is where the completion handler code goes
+            
+            guard error == nil else {
+                print ("Error calling GET request")
+                print (error!)
+                return
+            }
+            
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                return
+            }
+            
+            let dictionary: NSDictionary = ["response": responseData]
+            
+            
+            DispatchQueue.main.async {
+            
+            //Listen to this notification in your viewcontroller to get data
+            NotificationCenter.default.post(name:Notification.Name(rawValue:"MyNotification" + NotificationName),
+                                            object: nil,
+                                            userInfo: dictionary as? [AnyHashable : Any])
+            }
+            
+        }
+        
+        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: myCompletionHandler)
+        
+        task.resume()
+        
+    }
+    
+    
+
+    
+    static func createPostBody (urlRequest: inout NSMutableURLRequest, httpMethod: String, httpDictionary:[String:Any]?)
+    {
+        urlRequest.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: httpDictionary!)
+        urlRequest.httpBody = jsonData
+    }
+    
+    
+    //Converts response data to Dictionary of type [String:Any] which can be parsed
+    
+    static func convertDatatoDictionary (data: Data) -> [String: Any]?
+    {
+        do {
+            guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                else {
+                    print("error trying to convert data to JSON")
+                    return nil
+            }
+            
+            return json
+            
+        } catch  {
+            print("error trying to convert data to JSON")
+            return nil
+        }
+    }
+    
+    
+    
+}
