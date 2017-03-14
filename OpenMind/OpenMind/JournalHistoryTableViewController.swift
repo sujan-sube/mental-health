@@ -14,6 +14,75 @@ class JournalHistoryTableViewController: UITableViewController {
     //MARK: Properties
     
     var history = [History]()
+    let data = EndPointTypes.Journal
+    //Listen to notification with name of endpoint and call the catchNotification method once data is received from server
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.catchNotification(notification:)),
+            name: Notification.Name(rawValue:"MyNotification" + self.data.rawValue),
+            object: nil)
+        
+        APICommunication.apirequest(data: EndPointTypes.Journal , httpMethod: "GET", httpBody: nil)
+//        loadSampleHistory()
+    }
+    
+    
+    //Stop listening to notifications. If not included, the catchNotification method will be run multiple times.
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func catchNotification(notification: Notification) -> Void {
+        print("Caught Graph notification")
+        
+        guard let jsonResponse = notification.userInfo else {
+            print("No userInfo found in notification")
+            return
+        }
+        
+        //Convert data received to dictionary of [String:Any] to parse later
+        let json = APICommunication.convertDatatoDictionary(data: jsonResponse["response"] as! Data)
+        
+        
+        //Parse json response
+        guard let id = json?["results"] as? [Any] else {
+            print ("Could not find results element")
+            return
+        }
+        let photo1 = UIImage(named: "Thumbsup")
+
+        for index in 0..<id.count
+        {
+            guard let user = id[index] as? [String: Any],
+                let content = user["content"] as? String,
+                let journal_date = user["date"] as? String else {
+                print ("key-value pairs do not match JSON response")
+                    return
+            }
+            
+            let temp = journal_date.index(journal_date.startIndex, offsetBy: 10)
+            let temp_1 = journal_date.substring(to: temp)
+            
+            let newEntry = History(date: temp_1, photo: photo1!)
+            let newIndexPath = IndexPath(row: history.count, section: 0)
+            
+            
+            
+            history.append(newEntry!)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
+            //self.textview.font?.withSize(2)
+            //self.textview.text = self.textview.text.appending("the content is \(content) and the date is " + date + "\n\n")
+            
+        }
+        
+        //Print json elements in label
+        
+    }
     
     //MARK :Actions
     
@@ -28,7 +97,10 @@ class JournalHistoryTableViewController: UITableViewController {
         }
     }
     
-    
+    private func find_Pic() -> UIImage{
+        let pic = UIImage(named: "Thumbsup")
+        return pic!
+    }
     
     
     //Mark: Private Methods 
@@ -58,13 +130,6 @@ class JournalHistoryTableViewController: UITableViewController {
         history += [history1, history2, history3, history4]
         
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //Load the sample history data
-        loadSampleHistory()
     }
 
     override func didReceiveMemoryWarning() {
