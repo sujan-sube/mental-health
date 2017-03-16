@@ -149,6 +149,25 @@ class JournalHistoryTableViewController: UITableViewController {
         return cell
     }
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //if such cell exists and destination controller (the one to show) exists too..
+        if let JournalEntryCell = tableView.cellForRow(at: indexPath) as? HistoryTableViewCell, let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "DestinationVC") as? IndividualJournalPageViewController{
+            //This is a bonus, I will be showing at destionation controller the same text of the cell from where it comes...
+    
+            if let date = JournalEntryCell.dateLabel.text, let time = JournalEntryCell.timeeLabel.text {
+                destinationViewController.date = date
+                destinationViewController.time = time
+
+            } else {
+                destinationViewController.date = "No Date"
+                destinationViewController.time = "No Time"
+
+            }
+            //Then just push the controller into the view hierarchy
+            navigationController?.pushViewController(destinationViewController, animated: true)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
