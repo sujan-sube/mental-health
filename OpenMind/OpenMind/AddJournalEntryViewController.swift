@@ -8,61 +8,96 @@
 
 import UIKit
 import os.log
+import CDAlertView
 
 
 class AddJournalEntryViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
     
     //MARK: Properties
     
+    let data = EndPointTypes.Journal
     
     @IBOutlet weak var JournalTextView: UITextView!
     
-
-    @IBOutlet weak var saveButton: UIButton!
-    
-    
     var JournalEntry : History?
     
+    //Listen to notification with name of endpoint and call the catchNotification method once data is received from server
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.catchNotification(notification:)),
+            name: Notification.Name(rawValue:"MyNotification" + self.data.rawValue),
+            object: nil)
+        
+    }
+    
+    //Stop listening to notifications. If not included, the catchNotification method will be run multiple times.
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        NotificationCenter.default.removeObserver(self)
+    }
     
     
     
     //MARK: Navigation
     
     
+    @IBAction func submitButton(_ sender: Any) {
+        let httpbody = createHttpBody()
+        APICommunication.apirequest(data: self.data, httpMethod: "POST", httpBody: httpbody)
+        
+    }
     
-    // This method lets you configure a view controller before it's presented
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    func catchNotification(notification: Notification) -> Void {
+        print("Caught Journal Submission notification")
         
-        super.prepare(for: segue, sender: sender)
-        
-        // Configure the destination view controller only when the save button is pressed.
-        guard let button = sender as? UIButton, button === saveButton else {
-            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+        guard let jsonResponse = notification.userInfo else {
+            print("No userInfo found in notification")
             return
         }
         
-        let JournalText = JournalTextView.text ?? ""
-        let date = "March 55 2017"
-        let dummyphoto = UIImage(named: "Thumbsup")
+        //Success popup
+        self.popup()
         
-        JournalEntry = History(date: date, time:date, photo: dummyphoto!)
+        //Convert data received to dictionary of [String:Any] to parse later
+        let json = APICommunication.convertDatatoDictionary(data: jsonResponse["response"] as! Data)
+        
+        
+        //Parse json response
+        guard let id = json?["results"] as? [Any] else {
+            print ("Could not find results element")
+            return
+        }
+        
     }
     
     
-    @IBAction func saveButton(_ sender: Any) {
+    func createHttpBody() -> [String:Any] {
+        
+        let date = DateFormatting.getCurrentDate()
+        let body = ["content":"\(self.JournalTextView.text)", "date":"\(date)"]
+        
+        return body
     }
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    func popup() {
+        
+        let alert = CDAlertView(title: "Success!", message: "Journal Entry Submitted!", type: .success)
+        //let action = CDAlertViewAction(title: "OK")
+        alert.isTextFieldHidden = true
+        //alert.add(action: action)
+        alert.hideAnimations = { (center, transform, alpha) in
+            transform = .identity
+            alpha = 0
+        }
+        alert.hideAnimationDuration = 0.1
+        alert.show() { (alert) in
+            print("completed")
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
+    
 }
 

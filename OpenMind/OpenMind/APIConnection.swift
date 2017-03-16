@@ -79,6 +79,8 @@ class APICommunication {
         
         let jsonData = try? JSONSerialization.data(withJSONObject: httpDictionary!)
         urlRequest.httpBody = jsonData
+        urlRequest.allHTTPHeaderFields = ["Authorization":"Token 4ee282b0ddfd0ae8debeeae49115682869c5d00a",
+                                          "Content-Type": "application/json"]
     }
     
     

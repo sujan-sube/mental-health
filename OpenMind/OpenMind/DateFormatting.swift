@@ -36,5 +36,17 @@ class DateFormatting{
     return DateandTime
     
 }
-    
+    static func getCurrentDate() -> String {
+        let date = Date()
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateformatter.timeZone = TimeZone(abbreviation: "ET")
+        
+        let DateandTime = dateformatter.string(from: date)
+        
+        return DateandTime
+
+        
+
+    }
 }
