@@ -9,6 +9,7 @@ target 'OpenMind' do
   pod 'Google/SignIn'
   pod 'CDAlertView'
   pod 'SpringIndicator'
+  pod 'KDCircularProgress'
 
   target 'OpenMindTests' do
     inherit! :search_paths

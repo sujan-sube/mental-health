@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import KDCircularProgress
 
 class IndividualJournalPageViewController: UIViewController {
 
     var date : String?
     var time : String?
-
+    
+    @IBOutlet weak var progress: KDCircularProgress!
+    @IBOutlet weak var JournalFeedbackLabel: UILabel!
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var JournalEntryTextView: UITextView!
     
@@ -20,6 +23,9 @@ class IndividualJournalPageViewController: UIViewController {
         super.viewDidLoad()
         
         self.DateLabel.text = "\(self.date) at  \(self.time)"
+        
+        self.setupJournalAnalysisProgressBar()
+
 
         // Do any additional setup after loading the view.
     }
@@ -29,6 +35,31 @@ class IndividualJournalPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func setupJournalAnalysisProgressBar() -> Void {
+        
+        progress.progressThickness = 0.4
+        progress.trackThickness = 0.6
+        progress.startAngle = -90
+        progress.trackColor = UIColor.lightGray
+        progress.clockwise = true
+        //progress.gradientRotateSpeed = 5
+        progress.roundedCorners = false
+        progress.glowMode = .constant
+        progress.glowAmount = 0.5
+        progress.progressColors = [UIColor.green, UIColor.white]
+        
+        progress.animate(fromAngle: 0, toAngle: 360, duration: 4.0) { completed in
+            if completed {
+                print("animation stopped, completed")
+            } else {
+                print("animation stopped, was interrupted")
+            }
+            self.JournalFeedbackLabel.text = "Happy Entry! Good day today"
+        }
+        
+        return
+    }
 
     /*
     // MARK: - Navigation

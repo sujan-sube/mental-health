@@ -434,12 +434,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S6S-ma-ywW" customClass="KDCircularProgress" customModule="KDCircularProgress">
+                                <rect key="frame" x="87" y="386" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                        <real key="value" value="-90"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v26-bf-dY3">
+                                <rect key="frame" x="64" y="594" width="265" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="DateLabel" destination="emB-SH-7Qi" id="zh2-qE-BNW"/>
                         <outlet property="JournalEntryTextView" destination="ucK-AH-pap" id="vlt-eh-ce5"/>
+                        <outlet property="JournalFeedbackLabel" destination="v26-bf-dY3" id="Z0S-Xr-89x"/>
+                        <outlet property="progress" destination="S6S-ma-ywW" id="jhW-Az-fAT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aau-6K-VGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
