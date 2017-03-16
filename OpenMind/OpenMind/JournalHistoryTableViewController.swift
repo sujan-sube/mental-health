@@ -75,7 +75,7 @@ class JournalHistoryTableViewController: UITableViewController {
             //let temp = journal_date.index(journal_date.startIndex, offsetBy: 10)
             //let temp_1 = journal_date.substring(to: temp)
             
-            let newEntry = History(date: DateandTime["date"]!, time: DateandTime["time"]!, photo: photo1!)
+            let newEntry = History(date: DateandTime["date"]!, time: DateandTime["time"]!, photo: photo1!, DatabaseDate: journal_date)
             let newIndexPath = IndexPath(row: history.count, section: 0)
             
             
@@ -145,6 +145,7 @@ class JournalHistoryTableViewController: UITableViewController {
         cell.dateLabel.text = currenthistory.date
         cell.timeeLabel.text = currenthistory.time
         cell.photoImageView.image = currenthistory.photo
+        cell.DatabaseDate = currenthistory.DatabaseDate
         
         return cell
     }
@@ -155,13 +156,16 @@ class JournalHistoryTableViewController: UITableViewController {
         if let JournalEntryCell = tableView.cellForRow(at: indexPath) as? HistoryTableViewCell, let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "DestinationVC") as? IndividualJournalPageViewController{
             //This is a bonus, I will be showing at destionation controller the same text of the cell from where it comes...
     
-            if let date = JournalEntryCell.dateLabel.text, let time = JournalEntryCell.timeeLabel.text {
+            if let date = JournalEntryCell.dateLabel.text, let time = JournalEntryCell.timeeLabel.text,
+                let DatabaseDate = JournalEntryCell.DatabaseDate {
                 destinationViewController.date = date
                 destinationViewController.time = time
+                destinationViewController.DatabaseDate = DatabaseDate
 
             } else {
                 destinationViewController.date = "No Date"
                 destinationViewController.time = "No Time"
+                destinationViewController.DatabaseDate = "2017-03-16T22:26:55Z"
 
             }
             //Then just push the controller into the view hierarchy

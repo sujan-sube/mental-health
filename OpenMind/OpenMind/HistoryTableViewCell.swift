@@ -15,6 +15,7 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeeLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    var DatabaseDate : String?
     
     
     override func awakeFromNib() {

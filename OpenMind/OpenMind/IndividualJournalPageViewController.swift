@@ -11,8 +11,15 @@ import KDCircularProgress
 
 class IndividualJournalPageViewController: UIViewController {
 
+    let data = EndPointTypes.Journal
     var date : String?
     var time : String?
+    var DatabaseDate : String?
+    
+    var journalEntry : String?
+    var analysis: Int?
+    var analysis_comment: String?
+    
     
     @IBOutlet weak var progress: KDCircularProgress!
     @IBOutlet weak var JournalFeedbackLabel: UILabel!
@@ -22,17 +29,31 @@ class IndividualJournalPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.DateLabel.text = "\(self.date) at  \(self.time)"
+        self.DateLabel.text = "\(self.date!) at  \(self.time!)"
         
         self.setupJournalAnalysisProgressBar()
 
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.catchNotification(notification:)),
+            name: Notification.Name(rawValue:"MyNotification" + self.data.rawValue),
+            object: nil)
+        
+        APICommunication.apirequest(data: self.data, httpMethod: "GET", httpBody: nil)
 
+        
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        NotificationCenter.default.removeObserver(self)
     }
     
     
@@ -60,6 +81,56 @@ class IndividualJournalPageViewController: UIViewController {
         
         return
     }
+    
+    
+    
+    func catchNotification(notification: Notification) -> Void {
+        print("Caught individual journal entry notification")
+        
+        guard let jsonResponse = notification.userInfo else {
+            print("No userInfo found in notification")
+            return
+        }
+        
+        //Convert data received to dictionary of [String:Any] to parse later
+        let json = APICommunication.convertDatatoDictionary(data: jsonResponse["response"] as! Data)
+        
+        
+        //Parse json response
+        guard let id = json?["results"] as? [Any] else {
+            print ("Could not find results element")
+            return
+        }
+        
+        for index in 0..<id.count
+        {
+            guard let user = id[index] as? [String: Any],
+                let content = user["content"] as? String,
+                let analysis = user["analysis"] as? String,
+                let analysis_comment = user["analysis_comment"] as? String
+            else {
+                    print ("key-value pairs do not match JSON response")
+                    return
+            }
+             self.journalEntry = content
+            
+        }
+        
+       
+        
+        self.updatePage()
+        
+        //Print json elements in label
+        
+    }
+    
+    
+    
+    func updatePage() -> Void {
+        self.JournalEntryTextView.text = self.journalEntry
+        
+    }
+    
 
     /*
     // MARK: - Navigation
