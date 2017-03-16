@@ -21,6 +21,7 @@
 		8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF21E679EE600E19B6E /* HistoryTableViewCell.swift */; };
 		8CA22CF71E679EE600E19B6E /* JournalHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */; };
 		8CA22CF81E679EE600E19B6E /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF41E679EE600E19B6E /* History.swift */; };
+		8CD03EC21E79AB9900C269C1 /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD03EC11E79AB9900C269C1 /* DateFormatting.swift */; };
 		922CDE4C1E7487C2003598D5 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CDE4B1E7487C1003598D5 /* GraphViewController.swift */; };
 		92A77E5E1E722E7C00421A4E /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A77E5D1E722E7C00421A4E /* LineChart.swift */; };
 		92D708A31E341F4C00CBD84B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D708A21E341F4C00CBD84B /* AppDelegate.swift */; };
@@ -78,6 +79,7 @@
 		8CA22CF21E679EE600E19B6E /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalHistoryTableViewController.swift; sourceTree = "<group>"; };
 		8CA22CF41E679EE600E19B6E /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		8CD03EC11E79AB9900C269C1 /* DateFormatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
 		922CDE4B1E7487C1003598D5 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		92A77E5D1E722E7C00421A4E /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		92D7089F1E341F4C00CBD84B /* OpenMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +249,7 @@
 				25E82B0B1E4BE8D800BEE11F /* SignInViewController.swift */,
 				25100AA81E5B92FA005B0348 /* RESTCommunication.swift */,
 				92A77E5D1E722E7C00421A4E /* LineChart.swift */,
+				8CD03EC11E79AB9900C269C1 /* DateFormatting.swift */,
 			);
 			path = OpenMind;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				92D708C71E3433DA00CBD84B /* InsightViewController.swift in Sources */,
 				92A77E5E1E722E7C00421A4E /* LineChart.swift in Sources */,
 				8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */,
+				8CD03EC21E79AB9900C269C1 /* DateFormatting.swift in Sources */,
 				922CDE4C1E7487C2003598D5 /* GraphViewController.swift in Sources */,
 				25100AA91E5B92FA005B0348 /* RESTCommunication.swift in Sources */,
 				8C2B93731E7740BA00A6DA00 /* APIConnection.swift in Sources */,

@@ -244,7 +244,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ZL-u8-ppv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house-outline" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GKc-IC-0hi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GKc-IC-0hi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -311,22 +311,30 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61K-bt-Vrb">
-                                            <rect key="frame" x="286" y="4" width="81" height="81"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-eS-bwR">
-                                            <rect key="frame" x="8" y="21" width="270" height="47"/>
+                                            <rect key="frame" x="8" y="8" width="270" height="47"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLV-Al-2w6">
+                                            <rect key="frame" x="8" y="48" width="270" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.43806670984455953" green="0.43806670984455953" blue="0.43806670984455953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61K-bt-Vrb">
+                                            <rect key="frame" x="306" y="19" width="51" height="51"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="gdf-eS-bwR" id="fTn-DM-e18"/>
                                     <outlet property="photoImageView" destination="61K-bt-Vrb" id="nwb-qV-yTa"/>
+                                    <outlet property="timeeLabel" destination="dLV-Al-2w6" id="ReA-bh-PSl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -347,7 +355,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3q2-P8-XNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2908" y="-1433"/>
+            <point key="canvasLocation" x="2908" y="-1433.433283358321"/>
         </scene>
         <!--Add Journal Entry View Controller-->
         <scene sceneID="Bux-eb-ihy">
@@ -403,7 +411,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uh3-NM-BO2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Trends" image="stats" id="cPa-gy-q4n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U6O-zj-3bR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="U6O-zj-3bR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

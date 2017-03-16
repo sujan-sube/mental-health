@@ -45,7 +45,7 @@ class AddJournalEntryViewController: UIViewController, UITextFieldDelegate, UINa
         let date = "March 55 2017"
         let dummyphoto = UIImage(named: "Thumbsup")
         
-        JournalEntry = History(date: date, photo: dummyphoto!)
+        JournalEntry = History(date: date, time:date, photo: dummyphoto!)
     }
     
     

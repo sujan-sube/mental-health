@@ -12,11 +12,12 @@ class History {
     //Mark: Properties
     
     var date: String
+    var time: String
     var photo: UIImage
     
     //Mark: Initialization
     
-    init?(date: String, photo: UIImage) {
+    init?(date: String, time:String, photo: UIImage) {
         
         //Initialization should fail if there is no date
         
@@ -25,7 +26,9 @@ class History {
         }
     
         self.date = date
+        self.time = time
         self.photo = photo
+        
         
     }
     

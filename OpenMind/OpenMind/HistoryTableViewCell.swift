@@ -13,6 +13,7 @@ class HistoryTableViewCell: UITableViewCell {
     //Mark: Properties
     
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeeLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     
     
