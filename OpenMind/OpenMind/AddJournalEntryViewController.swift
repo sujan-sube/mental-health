@@ -9,12 +9,14 @@
 import UIKit
 import os.log
 import CDAlertView
+import SpringIndicator
 
 
 class AddJournalEntryViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
     
     //MARK: Properties
     
+    @IBOutlet weak var LoadingIndicator: SpringIndicator!
     let data = EndPointTypes.Journal
     
     @IBOutlet weak var JournalTextView: UITextView!
@@ -46,6 +48,9 @@ class AddJournalEntryViewController: UIViewController, UITextFieldDelegate, UINa
     
     @IBAction func submitButton(_ sender: Any) {
         let httpbody = createHttpBody()
+        LoadingIndicator.lineColor=UIColor.lightGray
+        LoadingIndicator.lineWidth=CGFloat(2.0)
+        LoadingIndicator.startAnimation()
         APICommunication.apirequest(data: self.data, httpMethod: "POST", httpBody: httpbody)
         
     }
@@ -58,6 +63,10 @@ class AddJournalEntryViewController: UIViewController, UITextFieldDelegate, UINa
             return
         }
         
+        LoadingIndicator.stopAnimation(false)
+        
+        //Reset journal text view to emtpy
+        self.JournalTextView.text=""
         //Success popup
         self.popup()
         

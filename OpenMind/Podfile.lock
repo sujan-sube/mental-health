@@ -43,10 +43,12 @@ PODS:
   - GTMSessionFetcher/Core (1.1.8)
   - GTMSessionFetcher/Full (1.1.8):
     - GTMSessionFetcher/Core (= 1.1.8)
+  - SpringIndicator (1.4.1)
 
 DEPENDENCIES:
   - CDAlertView
   - Google/SignIn
+  - SpringIndicator
 
 SPEC CHECKSUMS:
   CDAlertView: e6f365fa0fac7349197e7ea4bd7810c069215cf4
@@ -61,7 +63,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
+  SpringIndicator: d2be83cf7dbab52d91d378a5d3a267187b4959e5
 
-PODFILE CHECKSUM: f24e33494478018a9cc2de035c2cef1bde93915f
+PODFILE CHECKSUM: 3630ca8c246aa4b30f023072da5dc02af9fa62df
 
 COCOAPODS: 1.2.0

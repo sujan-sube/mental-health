@@ -30,6 +30,11 @@ class JournalHistoryTableViewController: UITableViewController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+    }
+    
     //Stop listening to notifications. If not included, the catchNotification method will be run multiple times.
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)

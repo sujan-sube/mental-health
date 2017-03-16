@@ -8,7 +8,8 @@ target 'OpenMind' do
   # Pods for OpenMind
   pod 'Google/SignIn'
   pod 'CDAlertView'
-  
+  pod 'SpringIndicator'
+
   target 'OpenMindTests' do
     inherit! :search_paths
     # Pods for testing
