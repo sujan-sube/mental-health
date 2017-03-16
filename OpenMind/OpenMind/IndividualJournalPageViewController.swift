@@ -31,16 +31,15 @@ class IndividualJournalPageViewController: UIViewController {
         
         self.DateLabel.text = "\(self.date!) at  \(self.time!)"
         
-        self.setupJournalAnalysisProgressBar()
-
-        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.catchNotification(notification:)),
             name: Notification.Name(rawValue:"MyNotification" + self.data.rawValue),
             object: nil)
         
-        APICommunication.apirequest(data: self.data, httpMethod: "GET", httpBody: nil)
+        let getURL = ["date":self.DatabaseDate]
+        
+        APICommunication.apirequest(data: self.data, httpMethod: "GET", httpBody: getURL)
 
         
         // Do any additional setup after loading the view.
@@ -54,32 +53,6 @@ class IndividualJournalPageViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         NotificationCenter.default.removeObserver(self)
-    }
-    
-    
-    func setupJournalAnalysisProgressBar() -> Void {
-        
-        progress.progressThickness = 0.4
-        progress.trackThickness = 0.6
-        progress.startAngle = -90
-        progress.trackColor = UIColor.lightGray
-        progress.clockwise = true
-        //progress.gradientRotateSpeed = 5
-        progress.roundedCorners = false
-        progress.glowMode = .constant
-        progress.glowAmount = 0.5
-        progress.progressColors = [UIColor.green, UIColor.white]
-        
-        progress.animate(fromAngle: 0, toAngle: 360, duration: 4.0) { completed in
-            if completed {
-                print("animation stopped, completed")
-            } else {
-                print("animation stopped, was interrupted")
-            }
-            self.JournalFeedbackLabel.text = "Happy Entry! Good day today"
-        }
-        
-        return
     }
     
     
@@ -112,11 +85,13 @@ class IndividualJournalPageViewController: UIViewController {
                     print ("key-value pairs do not match JSON response")
                     return
             }
-             self.journalEntry = content
+            
+            self.journalEntry = content
+            self.analysis_comment = analysis_comment
+            self.analysis = Int(analysis)
+            
             
         }
-        
-       
         
         self.updatePage()
         
@@ -127,8 +102,41 @@ class IndividualJournalPageViewController: UIViewController {
     
     
     func updatePage() -> Void {
+        self.setupJournalAnalysisProgressBar()
         self.JournalEntryTextView.text = self.journalEntry
         
+    }
+    
+    
+    
+    
+    func setupJournalAnalysisProgressBar() -> Void {
+        
+        progress.progressThickness = 0.4
+        progress.trackThickness = 0.6
+        progress.startAngle = -90
+        progress.trackColor = UIColor.lightGray
+        progress.clockwise = true
+        //progress.gradientRotateSpeed = 5
+        progress.roundedCorners = false
+        progress.glowMode = .constant
+        progress.glowAmount = 0.5
+        progress.progressColors = [UIColor.green, UIColor.white]
+        
+        
+        
+        
+        
+        progress.animate(fromAngle: 0, toAngle: 360, duration: 4.0) { completed in
+            if completed {
+                print("animation stopped, completed")
+            } else {
+                print("animation stopped, was interrupted")
+            }
+            self.JournalFeedbackLabel.text = "Happy Entry! Good day today"
+        }
+        
+        return
     }
     
 

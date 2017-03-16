@@ -25,6 +25,12 @@ class APICommunication {
         
         let datatype = data
         EndPoint = getserveraddress(data: datatype)
+        
+        if httpMethod == "GET" && httpBody != nil {
+            print("this i running the get method")
+            EndPoint = createGetURL(httpBody: httpBody!, PreviousEndPoint: EndPoint)
+        }
+        
         let url = URL(string: EndPoint)
         var urlRequest = NSMutableURLRequest(url: url!)
         urlRequest.httpMethod = httpMethod
@@ -33,6 +39,8 @@ class APICommunication {
         if httpMethod=="POST" {
             createPostBody(urlRequest: &urlRequest, httpMethod: httpMethod, httpDictionary: httpBody)
         }
+        
+
         
         let session = URLSession.shared
         
@@ -70,7 +78,15 @@ class APICommunication {
         
     }
     
-    
+    static func createGetURL(httpBody: [String: Any], PreviousEndPoint: String) ->String{
+        
+        guard let urlextension = httpBody["date"] as? String else {
+            print ("not correct parameters in GET Request")
+            return EndPoint
+        }
+        return EndPoint + "?date=" + urlextension
+        
+    }
 
     
     static func createPostBody (urlRequest: inout NSMutableURLRequest, httpMethod: String, httpDictionary:[String:Any]?)
