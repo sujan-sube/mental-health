@@ -66,7 +66,7 @@ class AddJournalEntryViewController: UIViewController, UITextFieldDelegate, UINa
         LoadingIndicator.stopAnimation(false)
         
         //Reset journal text view to emtpy
-        self.JournalTextView.text=""
+        self.JournalTextView.text="Thank you for submitting todays entry"
         //Success popup
         self.popup()
         
