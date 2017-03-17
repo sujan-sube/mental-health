@@ -30,6 +30,11 @@ class JournalHistoryTableViewController: UITableViewController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+    }
+    
     //Stop listening to notifications. If not included, the catchNotification method will be run multiple times.
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
@@ -64,10 +69,13 @@ class JournalHistoryTableViewController: UITableViewController {
                     return
             }
             
-            let temp = journal_date.index(journal_date.startIndex, offsetBy: 10)
-            let temp_1 = journal_date.substring(to: temp)
             
-            let newEntry = History(date: temp_1, photo: photo1!)
+            let DateandTime = DateFormatting.getStringFromDate(datestring: journal_date)
+            
+            //let temp = journal_date.index(journal_date.startIndex, offsetBy: 10)
+            //let temp_1 = journal_date.substring(to: temp)
+            
+            let newEntry = History(date: DateandTime["date"]!, time: DateandTime["time"]!, photo: photo1!, DatabaseDate: journal_date)
             let newIndexPath = IndexPath(row: history.count, section: 0)
             
             
@@ -103,34 +111,7 @@ class JournalHistoryTableViewController: UITableViewController {
     }
     
     
-    //Mark: Private Methods 
-    
-    private func loadSampleHistory() {
-        
-        let photo1 = UIImage(named: "Thumbsup")
-        let photo2 = UIImage(named: "Thumbsdown")
-        let photo3 = UIImage(named: "Thumbsup")
-        let photo4 = UIImage(named: "Thumbsup")
-        
-        guard let history1 = History(date: "Mar 1, 2017", photo: photo1!) else {
-            fatalError("Unable to instantiate history1")
-        }
-        
-        guard let history2 = History(date: "Mar 2, 2017", photo: photo2!) else {
-            fatalError("Unable to instantiate history2")
-        }
-        
-        guard let history3 = History(date: "Mar 3, 2017", photo: photo3!) else {
-            fatalError("Unable to instantiate history3")
-        }
-        
-        guard let history4 = History(date: "Mar 4, 2017", photo: photo4!) else {
-            fatalError("Unable to instantiate history4")
-        }
-        history += [history1, history2, history3, history4]
-        
-        
-    }
+    //Mark: Private Methods
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -162,11 +143,35 @@ class JournalHistoryTableViewController: UITableViewController {
         let currenthistory = history[indexPath.row]
         
         cell.dateLabel.text = currenthistory.date
+        cell.timeeLabel.text = currenthistory.time
         cell.photoImageView.image = currenthistory.photo
+        cell.DatabaseDate = currenthistory.DatabaseDate
         
         return cell
     }
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //if such cell exists and destination controller (the one to show) exists too..
+        if let JournalEntryCell = tableView.cellForRow(at: indexPath) as? HistoryTableViewCell, let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "DestinationVC") as? IndividualJournalPageViewController{
+            //This is a bonus, I will be showing at destionation controller the same text of the cell from where it comes...
+    
+            if let date = JournalEntryCell.dateLabel.text, let time = JournalEntryCell.timeeLabel.text,
+                let DatabaseDate = JournalEntryCell.DatabaseDate {
+                destinationViewController.date = date
+                destinationViewController.time = time
+                destinationViewController.DatabaseDate = DatabaseDate
+
+            } else {
+                destinationViewController.date = "No Date"
+                destinationViewController.time = "No Time"
+                destinationViewController.DatabaseDate = "2017-03-16T22:26:55Z"
+
+            }
+            //Then just push the controller into the view hierarchy
+            navigationController?.pushViewController(destinationViewController, animated: true)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
