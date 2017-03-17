@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     var userInfo: GIDGoogleUser = GIDGoogleUser()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
         
 //        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.userLogin(_:)), name: NSNotification.Name(rawValue: "signIn_Google"), object: nil)
@@ -38,8 +38,18 @@ class HomeViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        //NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
