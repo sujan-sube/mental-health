@@ -109,7 +109,7 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lta-PA-oh3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NtL-ru-gzm">
                                 <rect key="frame" x="0.0" y="104" width="375" height="311"/>
@@ -137,7 +137,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fye-aJ-8dZ">
-                                        <rect key="frame" x="0.0" y="1" width="375" height="198"/>
+                                        <rect key="frame" x="0.0" y="2" width="375" height="198"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <connections>
                                             <segue destination="80M-7I-jFe" kind="embed" id="6ZT-ew-hEP"/>
@@ -532,7 +532,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uh3-NM-BO2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Trends" image="stats" id="cPa-gy-q4n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="U6O-zj-3bR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U6O-zj-3bR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -712,6 +712,10 @@
         <scene sceneID="w6u-aV-qFA">
             <objects>
                 <viewController id="55Y-u9-TsE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Rh-T6-qt4"/>
+                        <viewControllerLayoutGuide type="bottom" id="7jf-9m-y1w"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="O2s-dP-vj0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -726,6 +730,10 @@
         <scene sceneID="SfN-WC-ppg">
             <objects>
                 <viewController id="C6B-3K-qW4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sPE-cB-e1Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="9hH-iO-uDE"/>
+                    </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="JTB-gA-9YR">
                         <rect key="frame" x="0.0" y="0.0" width="273" height="76"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
