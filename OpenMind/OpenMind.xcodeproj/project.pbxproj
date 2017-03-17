@@ -12,6 +12,8 @@
 		253100641E63BA19009AD1A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 253100631E63BA19009AD1A2 /* GoogleService-Info.plist */; };
 		254201F91E5F967F004B6592 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254201F81E5F967F004B6592 /* AdSupport.framework */; };
 		256419971E3EF0FF00BB0009 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 256419961E3EF0FF00BB0009 /* HealthKit.framework */; };
+		257847171E7B92BE00B232D1 /* TodayTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257847161E7B92BE00B232D1 /* TodayTableView.swift */; };
+		257847191E7B935E00B232D1 /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257847181E7B935E00B232D1 /* TodayTableViewCell.swift */; };
 		25920C821E457C5400B07EAB /* PhysicalActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256419931E3EF07C00BB0009 /* PhysicalActivityManager.swift */; };
 		25E82B0C1E4BE8D800BEE11F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E82B0B1E4BE8D800BEE11F /* SignInViewController.swift */; };
 		8C2B93731E7740BA00A6DA00 /* APIConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B93701E7740BA00A6DA00 /* APIConnection.swift */; };
@@ -70,6 +72,8 @@
 		256419951E3EF0FF00BB0009 /* OpenMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenMind.entitlements; sourceTree = "<group>"; };
 		256419961E3EF0FF00BB0009 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		2570ED5F1E3D4DF100929B84 /* OpenMind-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenMind-Bridging-Header.h"; sourceTree = "<group>"; };
+		257847161E7B92BE00B232D1 /* TodayTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableView.swift; sourceTree = "<group>"; };
+		257847181E7B935E00B232D1 /* TodayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
 		25E82B0B1E4BE8D800BEE11F /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		3C69791396948315E706ABC3 /* Pods-OpenMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenMind/Pods-OpenMind.release.xcconfig"; sourceTree = "<group>"; };
 		42DB759203604820F57A8070 /* Pods_OpenMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenMindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,6 +257,8 @@
 				25100AA81E5B92FA005B0348 /* RESTCommunication.swift */,
 				92A77E5D1E722E7C00421A4E /* LineChart.swift */,
 				8CD03EC11E79AB9900C269C1 /* DateFormatting.swift */,
+				257847161E7B92BE00B232D1 /* TodayTableView.swift */,
+				257847181E7B935E00B232D1 /* TodayTableViewCell.swift */,
 			);
 			path = OpenMind;
 			sourceTree = "<group>";
@@ -483,10 +489,12 @@
 				92D708A31E341F4C00CBD84B /* AppDelegate.swift in Sources */,
 				92D708C71E3433DA00CBD84B /* InsightViewController.swift in Sources */,
 				92A77E5E1E722E7C00421A4E /* LineChart.swift in Sources */,
+				257847171E7B92BE00B232D1 /* TodayTableView.swift in Sources */,
 				8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */,
 				8CD03EC21E79AB9900C269C1 /* DateFormatting.swift in Sources */,
 				922CDE4C1E7487C2003598D5 /* GraphViewController.swift in Sources */,
 				25100AA91E5B92FA005B0348 /* RESTCommunication.swift in Sources */,
+				257847191E7B935E00B232D1 /* TodayTableViewCell.swift in Sources */,
 				8C2B93731E7740BA00A6DA00 /* APIConnection.swift in Sources */,
 				25E82B0C1E4BE8D800BEE11F /* SignInViewController.swift in Sources */,
 				8CA22CF81E679EE600E19B6E /* History.swift in Sources */,
