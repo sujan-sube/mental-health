@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08509D03DD268ED612A8DF68 /* Pods_OpenMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2626765EFE09D487AC4AB7 /* Pods_OpenMind.framework */; };
+		250CA7281E7C37CA00E86F5A /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250CA7271E7C37CA00E86F5A /* TodayTableViewController.swift */; };
 		25100AA91E5B92FA005B0348 /* RESTCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25100AA81E5B92FA005B0348 /* RESTCommunication.swift */; };
 		253100641E63BA19009AD1A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 253100631E63BA19009AD1A2 /* GoogleService-Info.plist */; };
 		254201F91E5F967F004B6592 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254201F81E5F967F004B6592 /* AdSupport.framework */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		053673C221E0A2C76DCDA253 /* Pods-OpenMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenMindTests/Pods-OpenMindTests.release.xcconfig"; sourceTree = "<group>"; };
+		250CA7271E7C37CA00E86F5A /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
 		25100AA81E5B92FA005B0348 /* RESTCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTCommunication.swift; sourceTree = "<group>"; };
 		253100631E63BA19009AD1A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		254201F81E5F967F004B6592 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -210,6 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				92D708CC1E34356A00CBD84B /* HomeViewController.swift */,
+				257847161E7B92BE00B232D1 /* TodayTableView.swift */,
+				257847181E7B935E00B232D1 /* TodayTableViewCell.swift */,
+				250CA7271E7C37CA00E86F5A /* TodayTableViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -257,8 +262,6 @@
 				25100AA81E5B92FA005B0348 /* RESTCommunication.swift */,
 				92A77E5D1E722E7C00421A4E /* LineChart.swift */,
 				8CD03EC11E79AB9900C269C1 /* DateFormatting.swift */,
-				257847161E7B92BE00B232D1 /* TodayTableView.swift */,
-				257847181E7B935E00B232D1 /* TodayTableViewCell.swift */,
 			);
 			path = OpenMind;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 			files = (
 				92D708CF1E34358300CBD84B /* TrendsViewController.swift in Sources */,
 				92D708CD1E34356A00CBD84B /* HomeViewController.swift in Sources */,
+				250CA7281E7C37CA00E86F5A /* TodayTableViewController.swift in Sources */,
 				8C2B93741E7740BA00A6DA00 /* ServerEndpoints.swift in Sources */,
 				92D708A31E341F4C00CBD84B /* AppDelegate.swift in Sources */,
 				92D708C71E3433DA00CBD84B /* InsightViewController.swift in Sources */,

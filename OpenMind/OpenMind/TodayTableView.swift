@@ -9,6 +9,5 @@
 import UIKit
 
 class TodayTableView: UITableView {
-
     
-}
+    }
