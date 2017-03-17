@@ -46,5 +46,18 @@ class TodayTableViewController: UITableViewController {
         cell.typeLabel.text = attributes[indexPath.row]
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewCell = tableView.cellForRow(at: indexPath) as? TodayTableViewCell
+        if (viewCell?.typeLabel.text == "Journal"){
+            if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "journalHistoryTableView") as? JournalHistoryTableViewController {
+                //viewController.newsObj = newsObj
+                if let navigator = navigationController {
+                    navigator.pushViewController(viewController, animated: true)
+                }
+            }        }
+        
+        
+    }
 
 }
