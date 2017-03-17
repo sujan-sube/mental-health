@@ -86,7 +86,7 @@ class AddJournalEntryViewController: UIViewController, UITextFieldDelegate, UINa
     func createHttpBody() -> [String:Any] {
         
         let date = DateFormatting.getCurrentDate()
-        let body = ["content":"\(self.JournalTextView.text)", "date":"\(date)"]
+        let body = ["content":"\(self.JournalTextView.text!)", "date":"\(date)"]
         
         return body
     }

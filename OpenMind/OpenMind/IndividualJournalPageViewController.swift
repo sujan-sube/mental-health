@@ -17,7 +17,7 @@ class IndividualJournalPageViewController: UIViewController {
     var DatabaseDate : String?
     
     var journalEntry : String?
-    var analysis: Int?
+    var analysis: Double?
     var analysis_comment: String?
     
     
@@ -88,7 +88,7 @@ class IndividualJournalPageViewController: UIViewController {
             
             self.journalEntry = content
             self.analysis_comment = analysis_comment
-            self.analysis = Int(analysis)
+            self.analysis = Double(analysis)
             
             
         }
@@ -103,7 +103,7 @@ class IndividualJournalPageViewController: UIViewController {
     
     func updatePage() -> Void {
         self.setupJournalAnalysisProgressBar()
-        self.JournalEntryTextView.text = self.journalEntry
+        self.JournalEntryTextView.text = self.journalEntry!
         
     }
     
@@ -123,17 +123,31 @@ class IndividualJournalPageViewController: UIViewController {
         progress.glowAmount = 0.5
         progress.progressColors = [UIColor.green, UIColor.white]
         
+        var barColor : [UIColor]
+        
+        if self.analysis! < 0.3 {
+            barColor = [UIColor.blue, UIColor.white]
+        }
+        else if self.analysis! > 0.3 && self.analysis! < 0.7 {
+            barColor = [UIColor.orange, UIColor.white]
+        }
+        else {
+            barColor = [UIColor.green, UIColor.white]
+        }
+        
+        progress.progressColors = barColor
+
+        var angle = self.analysis!*360
+        angle = round(angle)
         
         
-        
-        
-        progress.animate(fromAngle: 0, toAngle: 360, duration: 4.0) { completed in
+        progress.animate(fromAngle: 0, toAngle: angle, duration: 1.0) { completed in
             if completed {
                 print("animation stopped, completed")
             } else {
                 print("animation stopped, was interrupted")
             }
-            self.JournalFeedbackLabel.text = "Happy Entry! Good day today"
+            self.JournalFeedbackLabel.text = "Score : \(angle)   \(self.analysis_comment)"
         }
         
         return
