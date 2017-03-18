@@ -61,24 +61,38 @@ class JournalHistoryTableViewController: UIViewController, UITableViewDelegate, 
             print ("Could not find results element")
             return
         }
-        let photo1 = UIImage(named: "Thumbsup")
+    
 
         for index in 0..<id.count
         {
             guard let user = id[index] as? [String: Any],
                 let content = user["content"] as? String,
+                let analysis = user["analysis"] as? String,
                 let journal_date = user["date"] as? String else {
                 print ("key-value pairs do not match JSON response")
                     return
             }
             
             
+            
             let DateandTime = DateFormatting.getStringFromDate(datestring: journal_date)
             
-            //let temp = journal_date.index(journal_date.startIndex, offsetBy: 10)
-            //let temp_1 = journal_date.substring(to: temp)
+            var photo : UIImage!
+
             
-            let newEntry = History(date: DateandTime["date"]!, time: DateandTime["time"]!, photo: photo1!, DatabaseDate: journal_date)
+            if  Double(analysis)! < 0.4 {
+                photo = UIImage(named: "SadEntry")
+            }
+            else if Double(analysis)! > 0.4 && Double(analysis)! < 0.7 {
+                photo = UIImage(named: "ModerateEntry")
+            }
+            else
+            {
+                photo = UIImage(named: "PositiveEntry")
+            }
+            
+            let newEntry = History(date: DateandTime["date"]!, time: DateandTime["time"]!, photo: photo!, DatabaseDate: journal_date)
+            
             let newIndexPath = IndexPath(row: history.count, section: 0)
             
             

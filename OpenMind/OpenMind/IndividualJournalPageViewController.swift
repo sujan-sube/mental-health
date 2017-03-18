@@ -115,8 +115,8 @@ class IndividualJournalPageViewController: UIViewController {
     
     func setupJournalAnalysisProgressBar() -> Void {
         
-        progress.progressThickness = 0.4
-        progress.trackThickness = 0.6
+        progress.progressThickness = 0.1
+        progress.trackThickness = 0.1
         progress.startAngle = -90
         progress.trackColor = UIColor.lightGray
         progress.clockwise = true
@@ -138,7 +138,7 @@ class IndividualJournalPageViewController: UIViewController {
             barColor = [UIColor.green, UIColor.white]
         }
         
-        progress.progressColors = barColor
+        progress.progressColors = [UIColor(red: 1, green: 1, blue: 1, alpha: 0.8) ]
 
         var angle = self.analysis!*360
         angle = round(angle)
