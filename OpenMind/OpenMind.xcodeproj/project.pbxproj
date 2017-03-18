@@ -30,6 +30,7 @@
 		8CCC4DEA1E7DDDD500FD8A96 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC4DE91E7DDDD500FD8A96 /* Env.swift */; };
 		8CD03EC21E79AB9900C269C1 /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD03EC11E79AB9900C269C1 /* DateFormatting.swift */; };
 		922CDE4C1E7487C2003598D5 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CDE4B1E7487C1003598D5 /* GraphViewController.swift */; };
+		925C95B11E7DF1820019E2FC /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925C95B01E7DF1820019E2FC /* MessageComposer.swift */; };
 		92A77E5E1E722E7C00421A4E /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A77E5D1E722E7C00421A4E /* LineChart.swift */; };
 		92D708A31E341F4C00CBD84B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D708A21E341F4C00CBD84B /* AppDelegate.swift */; };
 		92D708AA1E341F4C00CBD84B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D708A81E341F4C00CBD84B /* Main.storyboard */; };
@@ -95,6 +96,7 @@
 		8CCC4DE91E7DDDD500FD8A96 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		8CD03EC11E79AB9900C269C1 /* DateFormatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
 		922CDE4B1E7487C1003598D5 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		925C95B01E7DF1820019E2FC /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
 		92A77E5D1E722E7C00421A4E /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		92D7089F1E341F4C00CBD84B /* OpenMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D708A21E341F4C00CBD84B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				92D708CA1E34354B00CBD84B /* ContactsViewController.swift */,
+				925C95B01E7DF1820019E2FC /* MessageComposer.swift */,
 			);
 			name = Contacts;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				250CA7281E7C37CA00E86F5A /* TodayTableViewController.swift in Sources */,
 				8C2B93741E7740BA00A6DA00 /* ServerEndpoints.swift in Sources */,
 				92D708A31E341F4C00CBD84B /* AppDelegate.swift in Sources */,
+				925C95B11E7DF1820019E2FC /* MessageComposer.swift in Sources */,
 				92D708C71E3433DA00CBD84B /* InsightViewController.swift in Sources */,
 				92A77E5E1E722E7C00421A4E /* LineChart.swift in Sources */,
 				257847171E7B92BE00B232D1 /* TodayTableView.swift in Sources */,
