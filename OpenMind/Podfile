@@ -10,6 +10,7 @@ target 'OpenMind' do
   pod 'CDAlertView'
   pod 'SpringIndicator'
   pod 'KDCircularProgress'
+  pod 'SwiftCharts', '~> 0.5'
 
   target 'OpenMindTests' do
     inherit! :search_paths

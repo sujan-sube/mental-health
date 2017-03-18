@@ -198,9 +198,6 @@
                                                         <state key="normal" title="View Journals">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
-                                                        <connections>
-                                                            <segue destination="Vh9-RJ-Lo6" kind="show" id="U1U-FT-lvn"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -263,7 +260,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ewd-1S-sh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2221.5999999999999" y="-1639.4302848575715"/>
+            <point key="canvasLocation" x="-17" y="-2525"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="oaD-Ge-vWe">
+            <objects>
+                <viewController id="thY-nl-F0g" customClass="DashBoardViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="udA-D8-Knh"/>
+                        <viewControllerLayoutGuide type="bottom" id="qe6-9z-7Jt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PeT-YB-0at">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="IzM-Kl-dRP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4i-mP-mSv">
+                                <rect key="frame" x="0.0" y="338" width="187.5" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Emotion"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unD-Jv-9ww">
+                                <rect key="frame" x="0.0" y="478" width="187.5" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Home"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-6u-bRv">
+                                <rect key="frame" x="187" y="478" width="187.5" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Sleep"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSX-hd-5dT">
+                                <rect key="frame" x="187" y="338" width="188" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="imageEdgeInsets" minX="60" minY="40" maxX="20" maxY="20"/>
+                                <state key="normal" title="Journal"/>
+                                <connections>
+                                    <action selector="Journal:" destination="thY-nl-F0g" eventType="touchUpInside" id="yHg-AJ-QNE"/>
+                                    <segue destination="Vh9-RJ-Lo6" kind="show" id="913-X6-ksl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="130-x4-ufi"/>
+                    <connections>
+                        <outlet property="Activity" destination="unD-Jv-9ww" id="v57-ft-Op2"/>
+                        <outlet property="Emotion" destination="X4i-mP-mSv" id="ZQ3-8X-PYD"/>
+                        <outlet property="Journal" destination="QSX-hd-5dT" id="keI-hK-po1"/>
+                        <outlet property="Sleep" destination="Lkl-6u-bRv" id="rjN-Ck-O2x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="95B-e9-qP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2301.5999999999999" y="-1541.3793103448277"/>
         </scene>
         <!--Trends-->
         <scene sceneID="wg7-f3-ORb">
@@ -339,7 +396,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ALN-My-GaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5206" y="-674"/>
+            <point key="canvasLocation" x="3052" y="-658"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="SfH-f3-Aqr">
@@ -413,7 +470,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BCp-4c-kUI" kind="relationship" relationship="rootViewController" id="MpY-b2-RVr"/>
+                        <segue destination="thY-nl-F0g" kind="relationship" relationship="rootViewController" id="HrD-sf-QHG"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85b-Mk-cIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -538,7 +595,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAC-sl-Htz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4756" y="-1639.4302848575715"/>
+            <point key="canvasLocation" x="3526" y="-1541"/>
         </scene>
         <!--Add Journal-->
         <scene sceneID="Bux-eb-ihy">
@@ -591,7 +648,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ea9-r9-AKd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6392.8000000000002" y="-1674.5127436281859"/>
+            <point key="canvasLocation" x="4566" y="-1541"/>
         </scene>
         <!--Trends-->
         <scene sceneID="UUd-5T-Ghg">
@@ -669,7 +726,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6f-Ob-9gL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3301.5999999999999" y="-1138.8305847076463"/>
+            <point key="canvasLocation" x="884" y="-2524"/>
         </scene>
         <!--Individual Journal Page View Controller-->
         <scene sceneID="TWI-62-nf4">
@@ -730,7 +787,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piQ-Sh-kTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6393" y="-954"/>
+            <point key="canvasLocation" x="4566" y="-810"/>
         </scene>
     </scenes>
     <resources>

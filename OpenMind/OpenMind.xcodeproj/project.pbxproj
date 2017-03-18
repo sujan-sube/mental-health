@@ -25,6 +25,9 @@
 		8CA22CF71E679EE600E19B6E /* JournalHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */; };
 		8CA22CF81E679EE600E19B6E /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF41E679EE600E19B6E /* History.swift */; };
 		8CBB1DEC1E7B2111003BCE89 /* IndividualJournalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBB1DEB1E7B2111003BCE89 /* IndividualJournalPageViewController.swift */; };
+		8CCC4DE41E7DBF6200FD8A96 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC4DE31E7DBF6200FD8A96 /* DashBoardViewController.swift */; };
+		8CCC4DE81E7DDA9D00FD8A96 /* ExampleDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC4DE71E7DDA9D00FD8A96 /* ExampleDefaults.swift */; };
+		8CCC4DEA1E7DDDD500FD8A96 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC4DE91E7DDDD500FD8A96 /* Env.swift */; };
 		8CD03EC21E79AB9900C269C1 /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD03EC11E79AB9900C269C1 /* DateFormatting.swift */; };
 		922CDE4C1E7487C2003598D5 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CDE4B1E7487C1003598D5 /* GraphViewController.swift */; };
 		92A77E5E1E722E7C00421A4E /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A77E5D1E722E7C00421A4E /* LineChart.swift */; };
@@ -87,6 +90,9 @@
 		8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalHistoryTableViewController.swift; sourceTree = "<group>"; };
 		8CA22CF41E679EE600E19B6E /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		8CBB1DEB1E7B2111003BCE89 /* IndividualJournalPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualJournalPageViewController.swift; sourceTree = "<group>"; };
+		8CCC4DE31E7DBF6200FD8A96 /* DashBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
+		8CCC4DE71E7DDA9D00FD8A96 /* ExampleDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleDefaults.swift; sourceTree = "<group>"; };
+		8CCC4DE91E7DDDD500FD8A96 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		8CD03EC11E79AB9900C269C1 /* DateFormatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
 		922CDE4B1E7487C1003598D5 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		92A77E5D1E722E7C00421A4E /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
@@ -211,6 +217,9 @@
 		8C2B936F1E77403900A6DA00 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8CCC4DE91E7DDDD500FD8A96 /* Env.swift */,
+				8CCC4DE71E7DDA9D00FD8A96 /* ExampleDefaults.swift */,
+				8CCC4DE31E7DBF6200FD8A96 /* DashBoardViewController.swift */,
 				92D708CC1E34356A00CBD84B /* HomeViewController.swift */,
 				257847161E7B92BE00B232D1 /* TodayTableView.swift */,
 				257847181E7B935E00B232D1 /* TodayTableViewCell.swift */,
@@ -487,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92D708CF1E34358300CBD84B /* TrendsViewController.swift in Sources */,
+				8CCC4DEA1E7DDDD500FD8A96 /* Env.swift in Sources */,
 				92D708CD1E34356A00CBD84B /* HomeViewController.swift in Sources */,
 				250CA7281E7C37CA00E86F5A /* TodayTableViewController.swift in Sources */,
 				8C2B93741E7740BA00A6DA00 /* ServerEndpoints.swift in Sources */,
@@ -498,9 +508,11 @@
 				8CD03EC21E79AB9900C269C1 /* DateFormatting.swift in Sources */,
 				922CDE4C1E7487C2003598D5 /* GraphViewController.swift in Sources */,
 				25100AA91E5B92FA005B0348 /* RESTCommunication.swift in Sources */,
+				8CCC4DE81E7DDA9D00FD8A96 /* ExampleDefaults.swift in Sources */,
 				257847191E7B935E00B232D1 /* TodayTableViewCell.swift in Sources */,
 				8C2B93731E7740BA00A6DA00 /* APIConnection.swift in Sources */,
 				25E82B0C1E4BE8D800BEE11F /* SignInViewController.swift in Sources */,
+				8CCC4DE41E7DBF6200FD8A96 /* DashBoardViewController.swift in Sources */,
 				8CA22CF81E679EE600E19B6E /* History.swift in Sources */,
 				8C2B93751E7740BA00A6DA00 /* testViewController.swift in Sources */,
 				8CA22CF51E679EE600E19B6E /* AddJournalEntryViewController.swift in Sources */,

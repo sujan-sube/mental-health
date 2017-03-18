@@ -45,12 +45,14 @@ PODS:
     - GTMSessionFetcher/Core (= 1.1.8)
   - KDCircularProgress (1.5.2)
   - SpringIndicator (1.4.1)
+  - SwiftCharts (0.5.1)
 
 DEPENDENCIES:
   - CDAlertView
   - Google/SignIn
   - KDCircularProgress
   - SpringIndicator
+  - SwiftCharts (~> 0.5)
 
 SPEC CHECKSUMS:
   CDAlertView: e6f365fa0fac7349197e7ea4bd7810c069215cf4
@@ -67,7 +69,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   KDCircularProgress: 12f677b2deb02409ab48c6cae1898d146b8ad549
   SpringIndicator: d2be83cf7dbab52d91d378a5d3a267187b4959e5
+  SwiftCharts: d263289cdc7fc955fef54ae3bc6529f696e69933
 
-PODFILE CHECKSUM: 00b9b8534fb74281d774430bb0e4b0f86f73edae
+PODFILE CHECKSUM: 38011e14205351f050643d4c383bc3ba6a3bed87
 
 COCOAPODS: 1.2.0
