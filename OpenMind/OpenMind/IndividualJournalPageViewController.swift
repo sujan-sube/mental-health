@@ -29,6 +29,9 @@ class IndividualJournalPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.JournalEntryTextView.layer.cornerRadius = 15.0
+
+        
         self.DateLabel.text = "\(self.date!) at  \(self.time!)"
         
         NotificationCenter.default.addObserver(
@@ -147,7 +150,7 @@ class IndividualJournalPageViewController: UIViewController {
             } else {
                 print("animation stopped, was interrupted")
             }
-            self.JournalFeedbackLabel.text = "Score : \(angle)   \(self.analysis_comment)"
+            self.JournalFeedbackLabel.text = "Score : \(angle)   \(self.analysis_comment!)"
         }
         
         return

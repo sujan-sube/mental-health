@@ -25,6 +25,8 @@ class AddJournalEntryViewController: UIViewController, UITextFieldDelegate, UINa
     
     //Listen to notification with name of endpoint and call the catchNotification method once data is received from server
     override func viewDidLoad() {
+        
+        self.JournalTextView.layer.cornerRadius = 15.0
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(
