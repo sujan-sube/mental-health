@@ -8,9 +8,10 @@
 
 import UIKit
 
-class JournalHistoryTableViewController: UITableViewController {
+class JournalHistoryTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     
+    @IBOutlet weak var tableview: UITableView!
     //MARK: Properties
     
     var history = [History]()
@@ -18,6 +19,8 @@ class JournalHistoryTableViewController: UITableViewController {
     //Listen to notification with name of endpoint and call the catchNotification method once data is received from server
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableview.backgroundColor = UIColor.clear
         
         NotificationCenter.default.addObserver(
             self,
@@ -81,7 +84,7 @@ class JournalHistoryTableViewController: UITableViewController {
             
             
             history.append(newEntry!)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            self.tableview.insertRows(at: [newIndexPath], with: .automatic)
             
             //self.textview.font?.withSize(2)
             //self.textview.text = self.textview.text.appending("the content is \(content) and the date is " + date + "\n\n")
@@ -101,7 +104,7 @@ class JournalHistoryTableViewController: UITableViewController {
             let newIndexPath = IndexPath(row: history.count, section: 0)
             
             history.append(newentry)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            self.tableview.insertRows(at: [newIndexPath], with: .automatic)
         }
     }
     
@@ -120,16 +123,16 @@ class JournalHistoryTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return history.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellidentifier = "HistoryTableViewCell"
         
@@ -137,6 +140,11 @@ class JournalHistoryTableViewController: UITableViewController {
             as? HistoryTableViewCell else {
                 fatalError("The dequeued cell is not an instance of HistoryTableViewCell")
         }
+        
+        cell.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7).cgColor
+        cell.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        cell.layer.borderWidth = 1.0
+        //cell.contentView.backgroundColor = UIColor.clear
         
         //Fetches appropriate history entry for data source layout
         
@@ -151,7 +159,7 @@ class JournalHistoryTableViewController: UITableViewController {
     }
     
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //if such cell exists and destination controller (the one to show) exists too..
         if let JournalEntryCell = tableView.cellForRow(at: indexPath) as? HistoryTableViewCell, let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "DestinationVC") as? IndividualJournalPageViewController{
             //This is a bonus, I will be showing at destionation controller the same text of the cell from where it comes...
@@ -172,6 +180,8 @@ class JournalHistoryTableViewController: UITableViewController {
             navigationController?.pushViewController(destinationViewController, animated: true)
         }
     }
+    
+
 
     /*
     // Override to support conditional editing of the table view.
