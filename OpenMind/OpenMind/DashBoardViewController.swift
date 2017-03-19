@@ -23,6 +23,7 @@ class DashBoardViewController: UIViewController {
     @IBOutlet weak var Emotion: UIButton!
     @IBOutlet weak var Activity: UIButton!
     @IBOutlet weak var Sleep: UIButton!
+    @IBOutlet weak var progressView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,10 @@ class DashBoardViewController: UIViewController {
         self.setupJournalAnalysisProgressBar()
         self.animateProgress(angle: 300)
         self.setupButtons()
-        
+        //self.progressView.layer.backgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 1).cgColor
+        self.progressView.layer.backgroundColor = UIColor(red: 131/255, green: 197/255, blue: 253/255, alpha: 1).cgColor
+        self.progressView.layer.borderWidth = CGFloat(buttonborderwidth)
+        self.progressView.layer.borderColor = buttonbordercolor.cgColor
         // Do any additional setup after loading the view.
     }
     
