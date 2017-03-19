@@ -17,6 +17,7 @@ class ContactsViewController: UIViewController {
     @IBOutlet weak var MomCell: UIView!
     @IBOutlet weak var DadCell: UIView!
     @IBOutlet weak var DrCell: UIView!
+    @IBOutlet weak var MessageCell: UIView!
     
     let messageComposer = MessageComposer()
     
@@ -31,6 +32,9 @@ class ContactsViewController: UIViewController {
         
         DrCell.layer.cornerRadius = 5
         DrCell.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7).cgColor
+        
+        MessageCell.layer.cornerRadius = 10
+        MessageCell.layer.backgroundColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 100/255.0, alpha: 1).cgColor
         
         MomImage.image = #imageLiteral(resourceName: "Mompic")
         DrImage.image = #imageLiteral(resourceName: "DrPic")
