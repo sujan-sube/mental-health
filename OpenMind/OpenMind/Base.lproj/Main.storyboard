@@ -982,11 +982,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="q5a-o5-dQ7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="135" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="knb-eY-8f1">
                                 <rect key="frame" x="0.0" y="64" width="375" height="623"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1001,8 +996,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QQd-iX-Fak">
+                                                    <rect key="frame" x="8" y="5" width="359" height="127"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xx5-Of-BB9">
-                                                    <rect key="frame" x="8" y="8" width="359" height="127"/>
+                                                    <rect key="frame" x="8" y="5" width="359" height="127"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vx-77-NSo">
@@ -1055,6 +1055,7 @@
                                             <outlet property="insightsImage" destination="0vx-77-NSo" id="7LX-kK-qdM"/>
                                             <outlet property="insightsMainView" destination="xx5-Of-BB9" id="qIk-HP-ePO"/>
                                             <outlet property="insightsTopic" destination="TdG-Ze-e3X" id="p5w-6L-8eZ"/>
+                                            <outlet property="shadowView" destination="QQd-iX-Fak" id="6L4-BJ-drM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
