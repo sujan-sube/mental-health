@@ -14,7 +14,8 @@ class DashBoardViewController: UIViewController {
         
     @IBOutlet weak var progress: KDCircularProgress!
     
-    let buttonBackgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 0.95)
+//    let buttonBackgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 0.95)
+    let buttonBackgroundColor = UIColor(red: 20/255, green: 97/255, blue: 160/255, alpha: 1)
     let buttonborderwidth = 0.5
     let buttonbordercolor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
     
@@ -44,8 +45,8 @@ class DashBoardViewController: UIViewController {
         self.setupJournalAnalysisProgressBar()
         self.animateProgress(angle: 300)
         self.setupButtons()
-        self.progressView.layer.backgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 1).cgColor
-//        self.progressView.layer.backgroundColor = UIColor(red: 131/255, green: 197/255, blue: 253/255, alpha: 1).cgColor
+//        self.progressView.layer.backgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 1).cgColor
+        self.progressView.layer.backgroundColor = UIColor(red: 20/255, green: 97/255, blue: 160/255, alpha: 1).cgColor
         self.progressView.layer.borderWidth = CGFloat(buttonborderwidth)
         self.progressView.layer.borderColor = buttonbordercolor.cgColor
         // Do any additional setup after loading the view.

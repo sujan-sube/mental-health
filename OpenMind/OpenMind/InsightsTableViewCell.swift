@@ -25,7 +25,7 @@ class InsightsTableViewCell: UITableViewCell {
         insightsMainView.layer.cornerRadius = 5
         insightsMainView.layer.masksToBounds = true
         insightsMainView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7).cgColor
-        insightsDismissView.layer.backgroundColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 100/255.0, alpha: 1).cgColor
+//        insightsDismissView.layer.backgroundColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 100/255.0, alpha: 1).cgColor
         
 //        let size = insightsMainView.bounds.size
 //        let width = insightsMainView.bounds.width

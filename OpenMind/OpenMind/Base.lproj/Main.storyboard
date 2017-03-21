@@ -440,7 +440,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OpenMind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9i-ho-5tX">
-                                        <rect key="frame" x="0.0" y="13" width="368" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -530,9 +530,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Journal Entries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfu-7A-97m">
-                                <rect key="frame" x="20" y="20" width="129" height="21"/>
+                                <rect key="frame" x="20" y="20" width="152" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1146,7 +1146,7 @@
             </objects>
             <point key="canvasLocation" x="981.60000000000002" y="930.58470764617698"/>
         </scene>
-        <!--Insights Table View Controller-->
+        <!--Insights-->
         <scene sceneID="mc5-cJ-sNE">
             <objects>
                 <viewController id="9Wa-tw-sJW" customClass="InsightsTableViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
@@ -1158,27 +1158,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="135" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="knb-eY-8f1">
-                                <rect key="frame" x="0.0" y="64" width="375" height="623"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="knb-eY-8f1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="687"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="insightsCell" rowHeight="135" id="xKb-G2-bFR" customClass="InsightsTableViewCell" customModule="OpenMind" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="135"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="insightsCell" rowHeight="97" id="xKb-G2-bFR" customClass="InsightsTableViewCell" customModule="OpenMind" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xKb-G2-bFR" id="h9q-2D-ax4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QQd-iX-Fak">
-                                                    <rect key="frame" x="8" y="5" width="359" height="127"/>
+                                                    <rect key="frame" x="8" y="5" width="359" height="92"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xx5-Of-BB9">
-                                                    <rect key="frame" x="8" y="5" width="359" height="127"/>
+                                                    <rect key="frame" x="8" y="5" width="359" height="91"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vx-77-NSo">
@@ -1192,26 +1192,6 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1t-Yl-RfI">
-                                                            <rect key="frame" x="0.0" y="83" width="359" height="44"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5z-Ma-pQO">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="44"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                    <state key="normal" title="Dismiss">
-                                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </state>
-                                                                    <connections>
-                                                                        <action selector="dismissOnClick:" destination="9Wa-tw-sJW" eventType="touchUpInside" id="trZ-4w-Gtj"/>
-                                                                        <action selector="dismissoOnClick:" destination="xKb-G2-bFR" eventType="touchUpInside" id="qq4-JS-EXi"/>
-                                                                    </connections>
-                                                                </button>
-                                                            </subviews>
-                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdG-Ze-e3X">
                                                             <rect key="frame" x="102" y="0.0" width="257" height="34"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1229,7 +1209,6 @@
                                         <gestureRecognizers/>
                                         <connections>
                                             <outlet property="insightsDetails" destination="3Nf-l4-mbo" id="anO-3P-ADx"/>
-                                            <outlet property="insightsDismissView" destination="u5z-Ma-pQO" id="sEK-h0-C7i"/>
                                             <outlet property="insightsImage" destination="0vx-77-NSo" id="7LX-kK-qdM"/>
                                             <outlet property="insightsMainView" destination="xx5-Of-BB9" id="qIk-HP-ePO"/>
                                             <outlet property="insightsTopic" destination="TdG-Ze-e3X" id="p5w-6L-8eZ"/>
@@ -1242,7 +1221,7 @@
                                     <outlet property="dataSource" destination="9Wa-tw-sJW" id="38n-jW-hqz"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Insights" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3r-mb-9F8">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Insights" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3r-mb-9F8">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -1252,7 +1231,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="C7q-MI-p4t"/>
+                    <navigationItem key="navigationItem" title="Insights" id="C7q-MI-p4t"/>
                     <connections>
                         <outlet property="tableView" destination="knb-eY-8f1" id="enU-Fs-G6l"/>
                     </connections>
@@ -1274,7 +1253,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9Wa-tw-sJW" kind="relationship" relationship="rootViewController" id="Her-jQ-dSv"/>
+                        <segue destination="9Wa-tw-sJW" kind="relationship" relationship="rootViewController" id="0ks-80-pcl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uQ-Sj-xXe" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -47,13 +47,13 @@ class InsightsTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         //self.animateProgress(angle: 300)
-        self.navigationController?.navigationBar.isHidden = true
+//        self.navigationController?.navigationBar.isHidden = true
         
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-        self.navigationController?.navigationBar.isHidden = false
+//        self.navigationController?.navigationBar.isHidden = false
         
     }
     
@@ -98,10 +98,10 @@ class InsightsTableViewController: UIViewController, UITableViewDelegate, UITabl
         return true
     }
     
-    func tableView(tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             insights.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.left)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.fade)
             tableView.reloadData()
         }
     }
