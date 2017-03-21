@@ -14,7 +14,7 @@ class DashBoardViewController: UIViewController {
         
     @IBOutlet weak var progress: KDCircularProgress!
     
-    let buttonBackgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 1)
+    let buttonBackgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 0.95)
     let buttonborderwidth = 0.5
     let buttonbordercolor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
     
@@ -31,7 +31,14 @@ class DashBoardViewController: UIViewController {
     @IBOutlet weak var activityShadowView: UIView!
     @IBOutlet weak var sleepShadowView: UIView!
     
+    
+    @IBOutlet weak var emotionButtonView: UIView!
+    
+    @IBOutlet weak var journalButtonView: UIView!
+    @IBOutlet weak var activityButtonView: UIView!
+    @IBOutlet weak var sleepButtonView: UIView!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         self.setupJournalAnalysisProgressBar()
@@ -79,35 +86,35 @@ class DashBoardViewController: UIViewController {
     
     
     func setupButtons() -> Void {
-        self.Journal.backgroundColor = buttonBackgroundColor
-        self.Emotion.backgroundColor = buttonBackgroundColor
-        self.Activity.backgroundColor = buttonBackgroundColor
-        self.Sleep.backgroundColor = buttonBackgroundColor
+        self.emotionButtonView.backgroundColor = buttonBackgroundColor
+        self.journalButtonView.backgroundColor = buttonBackgroundColor
+        self.activityButtonView.backgroundColor = buttonBackgroundColor
+        self.sleepButtonView.backgroundColor = buttonBackgroundColor
         
-//        self.Journal.layer.borderWidth = CGFloat(buttonborderwidth)
-//        self.Journal.layer.borderColor = buttonbordercolor.cgColor
-//        
-//        self.Emotion.layer.borderWidth = CGFloat(buttonborderwidth)
-//        self.Emotion.layer.borderColor = buttonbordercolor.cgColor
-//        
-//        self.Activity.layer.borderWidth = CGFloat(buttonborderwidth)
-//        self.Activity.layer.borderColor = buttonbordercolor.cgColor
-//        
-//        self.Sleep.layer.borderWidth = CGFloat(buttonborderwidth)
-//        self.Sleep.layer.borderColor = buttonbordercolor.cgColor
-//        
-//        
+        self.emotionButtonView.layer.borderWidth = CGFloat(buttonborderwidth)
+        self.emotionButtonView.layer.borderColor = buttonbordercolor.cgColor
+        
+        self.journalButtonView.layer.borderWidth = CGFloat(buttonborderwidth)
+        self.journalButtonView.layer.borderColor = buttonbordercolor.cgColor
+        
+        self.activityButtonView.layer.borderWidth = CGFloat(buttonborderwidth)
+        self.activityButtonView.layer.borderColor = buttonbordercolor.cgColor
+        
+        self.sleepButtonView.layer.borderWidth = CGFloat(buttonborderwidth)
+        self.sleepButtonView.layer.borderColor = buttonbordercolor.cgColor
+        
+        
 //        let Journalimage = UIImage(named: "PositiveEntry")
 //        let Emotionimage = UIImage(named: "PositiveEntry")
 //        let Activityimage = UIImage(named: "PositiveEntry")
 //        let Sleepimage = UIImage(named: "PositiveEntry")
-//        
+//
         //self.Journal.imageEdgeInsets = UIEdgeInsetsMake(45, 45, 70, 45)
         //self.Journal.setImage(Journalimage, for: UIControlState.normal)
-        self.Journal.setTitle("Journal", for: UIControlState.normal)
-        self.Emotion.setTitle("Emotion", for: UIControlState.normal)
-        self.Activity.setTitle("Activity", for: UIControlState.normal)
-        self.Sleep.setTitle("Sleep", for: UIControlState.normal)
+//        self.Journal.setTitle("Journal", for: UIControlState.normal)
+//        self.Emotion.setTitle("Emotion", for: UIControlState.normal)
+//        self.Activity.setTitle("Activity", for: UIControlState.normal)
+//        self.Sleep.setTitle("Sleep", for: UIControlState.normal)
         
     }
     

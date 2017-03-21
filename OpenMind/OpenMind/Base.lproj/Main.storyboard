@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -279,17 +279,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mFe-Qj-7sG">
-                                <rect key="frame" x="16" y="342" width="152" height="130"/>
+                                <rect key="frame" x="16" y="342" width="162" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sme-lO-p6m">
+                                <rect key="frame" x="16" y="342" width="162" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4i-mP-mSv">
-                                        <rect key="frame" x="0.0" y="0.0" width="152" height="130"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="85" maxX="105" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="85" maxX="110" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="30" minY="10" maxX="25" maxY="45"/>
                                         <state key="normal" title="Emotion" image="emotion">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -298,7 +308,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
@@ -306,17 +316,27 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E67-Yq-lUs">
-                                <rect key="frame" x="203" y="342" width="156" height="130"/>
+                                <rect key="frame" x="195" y="342" width="164" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KtC-tw-tWL">
+                                <rect key="frame" x="195" y="342" width="164" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSX-hd-5dT">
-                                        <rect key="frame" x="0.0" y="0.0" width="156" height="130"/>
+                                        <rect key="frame" x="4" y="0.0" width="156" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="85" maxX="105" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="30" minY="10" maxX="30" maxY="45"/>
-                                        <state key="normal" title="Journal" image="journal">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="80" maxX="110" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="27" minY="15" maxX="33" maxY="30"/>
+                                        <state key="normal" title="Journal" image="journalButton">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -329,7 +349,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
@@ -337,7 +357,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3i-3l-jNS">
-                                <rect key="frame" x="16" y="480" width="152" height="130"/>
+                                <rect key="frame" x="16" y="480" width="162" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -346,18 +366,18 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dQ3-4D-xx7">
-                                <rect key="frame" x="203" y="480" width="156" height="130"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmB-nX-sql">
+                                <rect key="frame" x="16" y="480" width="162" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-6u-bRv">
-                                        <rect key="frame" x="0.0" y="0.0" width="156" height="130"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unD-Jv-9ww">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="85" maxX="100" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="30" minY="10" maxX="30" maxY="45"/>
-                                        <state key="normal" title="Sleep" image="Heart">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="70" maxX="110" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="45" minY="30" maxX="45" maxY="50"/>
+                                        <state key="normal" title="Activity" image="physicalButton">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -366,6 +386,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dQ3-4D-xx7">
+                                <rect key="frame" x="195" y="480" width="164" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -373,21 +403,33 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unD-Jv-9ww">
-                                <rect key="frame" x="16" y="480" width="152" height="130"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gui-yr-fSC">
+                                <rect key="frame" x="195" y="480" width="164" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="85" maxX="105" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="30" minY="10" maxX="25" maxY="45"/>
-                                <state key="normal" title="Activity" image="phy act">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-6u-bRv">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="70" maxX="105" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="45" minY="30" maxX="45" maxY="50"/>
+                                        <state key="normal" title="Sleep" image="sleepButton">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </button>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gmj-f0-p5i">
                                 <rect key="frame" x="16" y="32" width="343" height="297"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -439,12 +481,16 @@
                         <outlet property="Emotion" destination="X4i-mP-mSv" id="ZQ3-8X-PYD"/>
                         <outlet property="Journal" destination="QSX-hd-5dT" id="keI-hK-po1"/>
                         <outlet property="Sleep" destination="Lkl-6u-bRv" id="rjN-Ck-O2x"/>
+                        <outlet property="activityButtonView" destination="kmB-nX-sql" id="MMh-QL-bTt"/>
                         <outlet property="activityShadowView" destination="g3i-3l-jNS" id="CSx-jv-RLT"/>
+                        <outlet property="emotionButtonView" destination="Sme-lO-p6m" id="O5D-NI-XI0"/>
                         <outlet property="emotionShadowView" destination="mFe-Qj-7sG" id="GY9-uL-yah"/>
+                        <outlet property="journalButtonView" destination="KtC-tw-tWL" id="QCB-2n-LYU"/>
                         <outlet property="journalShadowView" destination="E67-Yq-lUs" id="v7g-q3-1aD"/>
                         <outlet property="progress" destination="T1n-cJ-VQl" id="CHT-oo-EME"/>
                         <outlet property="progressShadowView" destination="Gmj-f0-p5i" id="LuY-BI-IHa"/>
                         <outlet property="progressView" destination="n9b-hT-j96" id="cae-vV-hSj"/>
+                        <outlet property="sleepButtonView" destination="gui-yr-fSC" id="060-Yv-iix"/>
                         <outlet property="sleepShadowView" destination="dQ3-4D-xx7" id="lGC-2j-7BG"/>
                     </connections>
                 </viewController>
@@ -1158,6 +1204,7 @@
                                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
+                                                                        <action selector="dismissOnClick:" destination="9Wa-tw-sJW" eventType="touchUpInside" id="trZ-4w-Gtj"/>
                                                                         <action selector="dismissoOnClick:" destination="xKb-G2-bFR" eventType="touchUpInside" id="qq4-JS-EXi"/>
                                                                     </connections>
                                                                 </button>
@@ -1179,6 +1226,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="insightsDetails" destination="3Nf-l4-mbo" id="anO-3P-ADx"/>
                                             <outlet property="insightsDismissView" destination="u5z-Ma-pQO" id="sEK-h0-C7i"/>
@@ -1186,6 +1234,7 @@
                                             <outlet property="insightsMainView" destination="xx5-Of-BB9" id="qIk-HP-ePO"/>
                                             <outlet property="insightsTopic" destination="TdG-Ze-e3X" id="p5w-6L-8eZ"/>
                                             <outlet property="shadowView" destination="QQd-iX-Fak" id="6L4-BJ-drM"/>
+                                            <outletCollection property="gestureRecognizers" destination="hRH-qo-SZZ" appends="YES" id="4Ed-BV-fCD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1209,6 +1258,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bt3-Rn-FNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="hRH-qo-SZZ"/>
             </objects>
             <point key="canvasLocation" x="2096.8000000000002" y="90.404797601199405"/>
         </scene>
@@ -1307,13 +1357,14 @@
         <image name="Thumbsup" width="32" height="32"/>
         <image name="emotion" width="511" height="512"/>
         <image name="house-outline" width="30" height="27"/>
-        <image name="journal" width="510" height="511"/>
+        <image name="journalButton" width="1000" height="1000"/>
         <image name="light-bulb" width="24" height="30"/>
         <image name="line" width="1" height="277"/>
         <image name="maxresdefault" width="1280" height="720"/>
         <image name="multiple-users-silhouette" width="33" height="28"/>
-        <image name="phy act" width="512" height="512"/>
+        <image name="physicalButton" width="512" height="512"/>
         <image name="settings" width="26" height="26"/>
+        <image name="sleepButton" width="600" height="387"/>
         <image name="stats" width="30" height="30"/>
     </resources>
 </document>
