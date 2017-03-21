@@ -278,63 +278,107 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4i-mP-mSv">
-                                <rect key="frame" x="3" y="340" width="182" height="138"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mFe-Qj-7sG">
+                                <rect key="frame" x="16" y="342" width="152" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="85" maxX="120" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="30" minY="10" maxX="25" maxY="45"/>
-                                <state key="normal" title="Emotion" image="emotion">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4i-mP-mSv">
+                                        <rect key="frame" x="0.0" y="0.0" width="152" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="85" maxX="105" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="30" minY="10" maxX="25" maxY="45"/>
+                                        <state key="normal" title="Emotion" image="emotion">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unD-Jv-9ww">
-                                <rect key="frame" x="3" y="480" width="182" height="135"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E67-Yq-lUs">
+                                <rect key="frame" x="203" y="342" width="156" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSX-hd-5dT">
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="129"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="85" maxX="115" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="30" minY="10" maxX="30" maxY="45"/>
+                                        <state key="normal" title="Journal" image="journal">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="Journal:" destination="thY-nl-F0g" eventType="touchUpInside" id="yHg-AJ-QNE"/>
+                                            <segue destination="Vh9-RJ-Lo6" kind="show" id="913-X6-ksl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3i-3l-jNS">
+                                <rect key="frame" x="16" y="480" width="152" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dQ3-4D-xx7">
+                                <rect key="frame" x="203" y="480" width="156" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unD-Jv-9ww">
+                                <rect key="frame" x="16" y="480" width="152" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="85" maxX="120" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="30" minY="10" maxX="25" maxY="45"/>
                                 <state key="normal" title="Activity" image="phy act">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSX-hd-5dT">
-                                <rect key="frame" x="188" y="340" width="183" height="137"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="85" maxX="115" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="30" minY="10" maxX="30" maxY="45"/>
-                                <state key="normal" title="Journal" image="journal">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="Journal:" destination="thY-nl-F0g" eventType="touchUpInside" id="yHg-AJ-QNE"/>
-                                    <segue destination="Vh9-RJ-Lo6" kind="show" id="913-X6-ksl"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-6u-bRv">
-                                <rect key="frame" x="188" y="480" width="183" height="135"/>
+                                <rect key="frame" x="203" y="483" width="156" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="85" maxX="115" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="30" minY="10" maxX="30" maxY="45"/>
                                 <state key="normal" title="Sleep" image="Heart">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -342,8 +386,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gmj-f0-p5i">
+                                <rect key="frame" x="16" y="32" width="343" height="297"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n9b-hT-j96">
-                                <rect key="frame" x="3" y="20" width="368" height="317"/>
+                                <rect key="frame" x="16" y="32" width="343" height="297"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OpenMind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9i-ho-5tX">
@@ -354,7 +403,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T1n-cJ-VQl" customClass="KDCircularProgress" customModule="KDCircularProgress">
-                                        <rect key="frame" x="56" y="51" width="258" height="258"/>
+                                        <rect key="frame" x="42" y="31" width="258" height="258"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6P9-5o-YQJ">
@@ -388,8 +437,13 @@
                         <outlet property="Emotion" destination="X4i-mP-mSv" id="ZQ3-8X-PYD"/>
                         <outlet property="Journal" destination="QSX-hd-5dT" id="keI-hK-po1"/>
                         <outlet property="Sleep" destination="Lkl-6u-bRv" id="rjN-Ck-O2x"/>
+                        <outlet property="activityShadowView" destination="g3i-3l-jNS" id="CSx-jv-RLT"/>
+                        <outlet property="emotionShadowView" destination="mFe-Qj-7sG" id="GY9-uL-yah"/>
+                        <outlet property="journalShadowView" destination="E67-Yq-lUs" id="v7g-q3-1aD"/>
                         <outlet property="progress" destination="T1n-cJ-VQl" id="CHT-oo-EME"/>
+                        <outlet property="progressShadowView" destination="Gmj-f0-p5i" id="LuY-BI-IHa"/>
                         <outlet property="progressView" destination="n9b-hT-j96" id="cae-vV-hSj"/>
+                        <outlet property="sleepShadowView" destination="dQ3-4D-xx7" id="lGC-2j-7BG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95B-e9-qP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -413,7 +467,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Journal Trends"/>
                                 <connections>
-                                    <segue destination="JQj-E8-cJw" kind="show" id="kPB-4u-wMq"/>
+                                    <segue destination="JQj-E8-cJw" kind="show" id="dtf-uq-PnZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zW-xr-acf">
@@ -463,7 +517,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2Pi-6f-8tf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="w6g-Tt-s4M">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="333"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -519,7 +573,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ZL-u8-ppv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house-outline" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GKc-IC-0hi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GKc-IC-0hi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -711,13 +765,13 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uh3-NM-BO2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Trends" image="stats" id="cPa-gy-q4n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="U6O-zj-3bR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U6O-zj-3bR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="5N6-Md-IWB"/>
+                        <segue destination="CsC-zR-5ks" kind="relationship" relationship="rootViewController" id="Vm8-Qg-Bec"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDv-kv-bFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -844,6 +898,95 @@
             </objects>
             <point key="canvasLocation" x="4566" y="-810"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="4kU-em-u04">
+            <objects>
+                <viewController id="CsC-zR-5ks" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cmf-ZA-4xU"/>
+                        <viewControllerLayoutGuide type="bottom" id="DHs-Y9-KDW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wqa-zX-ORX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1617"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAn-n5-ma1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="1504"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LAD-t3-eIw">
+                                        <rect key="frame" x="0.0" y="-64" width="375" height="1500"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="biM-9N-b5c">
+                                                <rect key="frame" x="8" y="0.0" width="359" height="333"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E4V-It-wzn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="333"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                        <connections>
+                                                            <segue destination="JQj-E8-cJw" kind="embed" id="eUb-0K-qeF"/>
+                                                        </connections>
+                                                    </containerView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PTH-X9-Y3F">
+                                                <rect key="frame" x="8" y="341" width="359" height="333"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3GE-dL-178">
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="325"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                        <connections>
+                                                            <segue destination="9in-F4-06u" kind="embed" id="TNx-4D-8MQ"/>
+                                                        </connections>
+                                                    </containerView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cho-LH-uaU">
+                                                <rect key="frame" x="8" y="682" width="359" height="333"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XKJ-Pc-ulM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="325"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                    </containerView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1500" id="0rG-mM-0YK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LAD-t3-eIw" firstAttribute="top" secondItem="hAn-n5-ma1" secondAttribute="top" id="fJm-SB-piv"/>
+                                    <constraint firstAttribute="bottom" secondItem="LAD-t3-eIw" secondAttribute="bottom" id="gSN-el-Opx"/>
+                                    <constraint firstItem="LAD-t3-eIw" firstAttribute="leading" secondItem="hAn-n5-ma1" secondAttribute="leading" id="oeL-HJ-iFv"/>
+                                    <constraint firstAttribute="trailing" secondItem="LAD-t3-eIw" secondAttribute="trailing" id="yfl-Xv-sU9"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hAn-n5-ma1" firstAttribute="top" secondItem="cmf-ZA-4xU" secondAttribute="bottom" id="3KJ-1x-6O9"/>
+                            <constraint firstItem="LAD-t3-eIw" firstAttribute="width" secondItem="Wqa-zX-ORX" secondAttribute="width" id="KzY-pd-ZC3"/>
+                            <constraint firstItem="DHs-Y9-KDW" firstAttribute="top" secondItem="hAn-n5-ma1" secondAttribute="bottom" id="XJ1-ga-WW1"/>
+                            <constraint firstAttribute="trailing" secondItem="hAn-n5-ma1" secondAttribute="trailing" id="yEV-3l-ENg"/>
+                            <constraint firstItem="hAn-n5-ma1" firstAttribute="leading" secondItem="Wqa-zX-ORX" secondAttribute="leading" id="zYQ-15-c9h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OXh-8n-d4P"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="1617"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CmQ-JX-axC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4744.8000000000002" y="400.74962518740631"/>
+        </scene>
         <!--Support Group-->
         <scene sceneID="U4N-vC-I72">
             <objects>
@@ -957,7 +1100,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zUj-2H-ebj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Contacts" image="multiple-users-silhouette" id="jwf-oZ-mJE"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a9c-Xm-UYu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a9c-Xm-UYu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1088,7 +1231,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hGo-VX-p87" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Insights" image="light-bulb" id="FdZ-O1-MvY"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="24E-Xw-Cvo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="24E-Xw-Cvo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1100,6 +1243,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uQ-Sj-xXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="981.60000000000002" y="91.304347826086968"/>
+        </scene>
+        <!--Graph-->
+        <scene sceneID="6xr-pz-NMQ">
+            <objects>
+                <viewController id="9in-F4-06u" userLabel="Graph" customClass="GraphViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mFb-gn-LsG"/>
+                        <viewControllerLayoutGuide type="bottom" id="sm3-1B-akJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aXp-3q-eEI">
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="325"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65A-kS-tif" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5647" y="-306"/>
         </scene>
     </scenes>
     <resources>
@@ -1118,4 +1279,7 @@
         <image name="settings" width="26" height="26"/>
         <image name="stats" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eUb-0K-qeF"/>
+    </inferredMetricsTieBreakers>
 </document>
