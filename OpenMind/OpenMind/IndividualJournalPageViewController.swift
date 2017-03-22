@@ -21,6 +21,7 @@ class IndividualJournalPageViewController: UIViewController {
     var analysis_comment: String?
     
     
+    @IBOutlet weak var score: UILabel!
     @IBOutlet weak var progress: KDCircularProgress!
     @IBOutlet weak var JournalFeedbackLabel: UILabel!
     @IBOutlet weak var DateLabel: UILabel!
@@ -129,18 +130,20 @@ class IndividualJournalPageViewController: UIViewController {
         var barColor : [UIColor]
         
         if self.analysis! < 0.3 {
-            barColor = [UIColor.blue, UIColor.white]
+            barColor = [UIColor.blue]
         }
         else if self.analysis! > 0.3 && self.analysis! < 0.7 {
-            barColor = [UIColor.orange, UIColor.white]
+            barColor = [UIColor.orange]
         }
         else {
-            barColor = [UIColor.green, UIColor.white]
+            barColor = [UIColor.green]
         }
         
-        progress.progressColors = [UIColor(red: 1, green: 1, blue: 1, alpha: 0.8) ]
+        progress.progressColors = barColor
 
-        var angle = self.analysis!*360
+        var score = self.analysis!*100
+        var angle = score*3.6
+        score = Int(score)
         angle = round(angle)
         
         
@@ -150,7 +153,9 @@ class IndividualJournalPageViewController: UIViewController {
             } else {
                 print("animation stopped, was interrupted")
             }
-            self.JournalFeedbackLabel.text = "Score : \(angle)   \(self.analysis_comment!)"
+            
+            self.score.text = "\(score)"
+            self.JournalFeedbackLabel.text = "\(self.analysis_comment!)"
         }
         
         return

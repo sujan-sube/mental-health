@@ -23,6 +23,9 @@
 		8C2B93731E7740BA00A6DA00 /* APIConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B93701E7740BA00A6DA00 /* APIConnection.swift */; };
 		8C2B93741E7740BA00A6DA00 /* ServerEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B93711E7740BA00A6DA00 /* ServerEndpoints.swift */; };
 		8C2B93751E7740BA00A6DA00 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B93721E7740BA00A6DA00 /* testViewController.swift */; };
+		8C5916041E82CE9300929AB1 /* EmotionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5916011E82CE9300929AB1 /* EmotionHistoryViewController.swift */; };
+		8C5916051E82CE9300929AB1 /* EmotionIndividualEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5916021E82CE9300929AB1 /* EmotionIndividualEntryViewController.swift */; };
+		8C5916061E82CE9300929AB1 /* EmotionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5916031E82CE9300929AB1 /* EmotionAddViewController.swift */; };
 		8CA22CF51E679EE600E19B6E /* AddJournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF11E679EE600E19B6E /* AddJournalEntryViewController.swift */; };
 		8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF21E679EE600E19B6E /* HistoryTableViewCell.swift */; };
 		8CA22CF71E679EE600E19B6E /* JournalHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */; };
@@ -93,6 +96,9 @@
 		8C2B93701E7740BA00A6DA00 /* APIConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnection.swift; sourceTree = "<group>"; };
 		8C2B93711E7740BA00A6DA00 /* ServerEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerEndpoints.swift; sourceTree = "<group>"; };
 		8C2B93721E7740BA00A6DA00 /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		8C5916011E82CE9300929AB1 /* EmotionHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionHistoryViewController.swift; sourceTree = "<group>"; };
+		8C5916021E82CE9300929AB1 /* EmotionIndividualEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionIndividualEntryViewController.swift; sourceTree = "<group>"; };
+		8C5916031E82CE9300929AB1 /* EmotionAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionAddViewController.swift; sourceTree = "<group>"; };
 		8CA22CF11E679EE600E19B6E /* AddJournalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddJournalEntryViewController.swift; sourceTree = "<group>"; };
 		8CA22CF21E679EE600E19B6E /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalHistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +249,16 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
+		8C5916001E82CE6D00929AB1 /* Emotion */ = {
+			isa = PBXGroup;
+			children = (
+				8C5916011E82CE9300929AB1 /* EmotionHistoryViewController.swift */,
+				8C5916021E82CE9300929AB1 /* EmotionIndividualEntryViewController.swift */,
+				8C5916031E82CE9300929AB1 /* EmotionAddViewController.swift */,
+			);
+			name = Emotion;
+			sourceTree = "<group>";
+		};
 		92D708961E341F4C00CBD84B = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +283,7 @@
 		92D708A11E341F4C00CBD84B /* OpenMind */ = {
 			isa = PBXGroup;
 			children = (
+				8C5916001E82CE6D00929AB1 /* Emotion */,
 				8C2B936F1E77403900A6DA00 /* Home */,
 				8C2B936E1E773F1000A6DA00 /* Settings */,
 				8C2B936D1E773F0B00A6DA00 /* Trends */,
@@ -523,7 +540,10 @@
 				92A77E5E1E722E7C00421A4E /* LineChart.swift in Sources */,
 				257847171E7B92BE00B232D1 /* TodayTableView.swift in Sources */,
 				8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */,
+				8C5916041E82CE9300929AB1 /* EmotionHistoryViewController.swift in Sources */,
+				8C5916051E82CE9300929AB1 /* EmotionIndividualEntryViewController.swift in Sources */,
 				8CD03EC21E79AB9900C269C1 /* DateFormatting.swift in Sources */,
+				8C5916061E82CE9300929AB1 /* EmotionAddViewController.swift in Sources */,
 				922CDE4C1E7487C2003598D5 /* GraphViewController.swift in Sources */,
 				25100AA91E5B92FA005B0348 /* RESTCommunication.swift in Sources */,
 				8CCC4DE81E7DDA9D00FD8A96 /* ExampleDefaults.swift in Sources */,
