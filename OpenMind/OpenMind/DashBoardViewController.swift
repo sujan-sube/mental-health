@@ -14,7 +14,8 @@ class DashBoardViewController: UIViewController {
         
     @IBOutlet weak var progress: KDCircularProgress!
     
-    let buttonBackgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
+//    let buttonBackgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 0.95)
+    let buttonBackgroundColor = UIColor(red: 20/255, green: 97/255, blue: 160/255, alpha: 1)
     let buttonborderwidth = 0.5
     let buttonbordercolor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
     
@@ -31,19 +32,36 @@ class DashBoardViewController: UIViewController {
     @IBOutlet weak var activityShadowView: UIView!
     @IBOutlet weak var sleepShadowView: UIView!
     
+    
+    @IBOutlet weak var emotionButtonView: UIView!
+    
+    @IBOutlet weak var journalButtonView: UIView!
+    @IBOutlet weak var activityButtonView: UIView!
+    @IBOutlet weak var sleepButtonView: UIView!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         self.setupJournalAnalysisProgressBar()
         self.animateProgress(angle: 300)
         self.setupButtons()
-        self.progressView.layer.backgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 1).cgColor
-//        self.progressView.layer.backgroundColor = UIColor(red: 131/255, green: 197/255, blue: 253/255, alpha: 1).cgColor
+//        self.progressView.layer.backgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 1).cgColor
+        self.progressView.layer.backgroundColor = UIColor(red: 20/255, green: 97/255, blue: 160/255, alpha: 1).cgColor
         self.progressView.layer.borderWidth = CGFloat(buttonborderwidth)
         self.progressView.layer.borderColor = buttonbordercolor.cgColor
         // Do any additional setup after loading the view.
         
         self.createShadows()
+        
+        let gradient: CAGradientLayer = CAGradientLayer()
+        
+        gradient.colors = [UIColor(red: 177.0/255.0, green: 222.0/255.0, blue: 253.0/255.0, alpha: 1.0).cgColor, UIColor(red: 75.0/255.0, green: 176.0/255.0, blue: 255.0/255.0, alpha: 1.0).cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        
+        self.view.layer.insertSublayer(gradient, at: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,35 +87,35 @@ class DashBoardViewController: UIViewController {
     
     
     func setupButtons() -> Void {
-//        self.Journal.backgroundColor = buttonBackgroundColor
-//        self.Emotion.backgroundColor = buttonBackgroundColor
-//        self.Activity.backgroundColor = buttonBackgroundColor
-//        self.Sleep.backgroundColor = buttonBackgroundColor
+        self.emotionButtonView.backgroundColor = buttonBackgroundColor
+        self.journalButtonView.backgroundColor = buttonBackgroundColor
+        self.activityButtonView.backgroundColor = buttonBackgroundColor
+        self.sleepButtonView.backgroundColor = buttonBackgroundColor
         
-        self.Journal.layer.borderWidth = CGFloat(buttonborderwidth)
-        self.Journal.layer.borderColor = buttonbordercolor.cgColor
+        self.emotionButtonView.layer.borderWidth = CGFloat(buttonborderwidth)
+        self.emotionButtonView.layer.borderColor = buttonbordercolor.cgColor
         
-        self.Emotion.layer.borderWidth = CGFloat(buttonborderwidth)
-        self.Emotion.layer.borderColor = buttonbordercolor.cgColor
+        self.journalButtonView.layer.borderWidth = CGFloat(buttonborderwidth)
+        self.journalButtonView.layer.borderColor = buttonbordercolor.cgColor
         
-        self.Activity.layer.borderWidth = CGFloat(buttonborderwidth)
-        self.Activity.layer.borderColor = buttonbordercolor.cgColor
+        self.activityButtonView.layer.borderWidth = CGFloat(buttonborderwidth)
+        self.activityButtonView.layer.borderColor = buttonbordercolor.cgColor
         
-        self.Sleep.layer.borderWidth = CGFloat(buttonborderwidth)
-        self.Sleep.layer.borderColor = buttonbordercolor.cgColor
+        self.sleepButtonView.layer.borderWidth = CGFloat(buttonborderwidth)
+        self.sleepButtonView.layer.borderColor = buttonbordercolor.cgColor
         
         
-        let Journalimage = UIImage(named: "PositiveEntry")
-        let Emotionimage = UIImage(named: "PositiveEntry")
-        let Activityimage = UIImage(named: "PositiveEntry")
-        let Sleepimage = UIImage(named: "PositiveEntry")
-        
+//        let Journalimage = UIImage(named: "PositiveEntry")
+//        let Emotionimage = UIImage(named: "PositiveEntry")
+//        let Activityimage = UIImage(named: "PositiveEntry")
+//        let Sleepimage = UIImage(named: "PositiveEntry")
+//
         //self.Journal.imageEdgeInsets = UIEdgeInsetsMake(45, 45, 70, 45)
         //self.Journal.setImage(Journalimage, for: UIControlState.normal)
-        self.Journal.setTitle("Journal", for: UIControlState.normal)
-        self.Emotion.setTitle("Emotion", for: UIControlState.normal)
-        self.Activity.setTitle("Activity", for: UIControlState.normal)
-        self.Sleep.setTitle("Sleep", for: UIControlState.normal)
+//        self.Journal.setTitle("Journal", for: UIControlState.normal)
+//        self.Emotion.setTitle("Emotion", for: UIControlState.normal)
+//        self.Activity.setTitle("Activity", for: UIControlState.normal)
+//        self.Sleep.setTitle("Sleep", for: UIControlState.normal)
         
     }
     

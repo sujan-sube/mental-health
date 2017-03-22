@@ -28,15 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().serverClientID = "244090642066-789ii5nf638o81ojcslbqflgqobn114p.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
         
-        UINavigationBar.appearance().isTranslucent = false
+//        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().isOpaque = true
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir", size: 20.0)!, NSForegroundColorAttributeName : UIColor.white]
         UINavigationBar.appearance().barTintColor = UIColor(red: 20.0/255.0, green: 97.0/255.0, blue: 160.0/255.0, alpha: 1.0)
-        UINavigationBar.appearance().tintColor = UIColor(red: 255.0/255.0, green: 133.0/255.0, blue: 61.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         UIApplication.shared.statusBarStyle = .default
         
-        UITabBar.appearance().isTranslucent = false
+//        UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barTintColor = UIColor(red: 20.0/255.0, green: 97.0/255.0, blue: 160.0/255.0, alpha: 1.0)
-        UITabBar.appearance().tintColor = UIColor(red: 255.0/255.0, green: 133.0/255.0, blue: 61.0/255.0, alpha: 1.0)
+        UITabBar.appearance().tintColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
 //        UITabBar.appearance() = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
         
         return true
