@@ -14,9 +14,9 @@ class EmotionHistoryViewController: UIViewController, UITableViewDelegate, UITab
     var history = [History]()
     let numberofcells = 5
     
-    let dates = ["Saturday, March 18", "Saturday, March 18", "Saturday, March 18", "Saturday, March 18", "Saturday, March 18"]
+    let dates = ["Tuesday, April 18", "Wednesday, April 19", "Saturday, April 22", "Sunday, April 23", "Monday, April 24"]
     
-    let times = ["7:15 PM", "7:15 PM", "7:15 PM", "7:15 PM", "7:15 PM" ]
+    let times = ["7:15 PM", "5:26 PM", "8:40 PM", "2:17 PM", "9:35 PM" ]
     
     
     override func viewDidLoad() {
@@ -83,11 +83,11 @@ class EmotionHistoryViewController: UIViewController, UITableViewDelegate, UITab
         
         
         
-        let history1 = History(date: dates[0], time: times[0], photo: UIImage(named: "ModerateEntry")!, DatabaseDate: "hello")!
-        let history2 = History(date: dates[1], time: times[1], photo: UIImage(named: "ModerateEntry")!, DatabaseDate: "hello")!
-        let history3 = History(date: dates[2], time: times[2], photo: UIImage(named: "ModerateEntry")!, DatabaseDate: "hello")!
-        let history4 = History(date: dates[3], time: times[3], photo: UIImage(named: "ModerateEntry")!, DatabaseDate: "hello")!
-        let history5 = History(date: dates[4], time: times[4], photo: UIImage(named: "ModerateEntry")!, DatabaseDate: "hello")!
+        let history1 = History(date: dates[0], time: times[0], photo: UIImage(named: "HeadEmotionHappyNeutral")!, DatabaseDate: "hello")!
+        let history2 = History(date: dates[1], time: times[1], photo: UIImage(named: "HeadEmotionAngrySad")!, DatabaseDate: "hello")!
+        let history3 = History(date: dates[2], time: times[2], photo: UIImage(named: "HeadEmotionNeutralSad")!, DatabaseDate: "hello")!
+        let history4 = History(date: dates[3], time: times[3], photo: UIImage(named: "HeadEmotionSadNeutral")!, DatabaseDate: "hello")!
+        let history5 = History(date: dates[4], time: times[4], photo: UIImage(named: "HeadEmotionHappySad")!, DatabaseDate: "hello")!
         
         
         history += [history1, history2, history3, history4, history5]

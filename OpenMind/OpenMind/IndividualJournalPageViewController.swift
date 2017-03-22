@@ -141,9 +141,8 @@ class IndividualJournalPageViewController: UIViewController {
         
         progress.progressColors = barColor
 
-        var score = self.analysis!*100
-        var angle = score*3.6
-        score = Int(score)
+        var score :Int = Int(self.analysis!*100)
+        var angle = Double(score)*3.6
         angle = round(angle)
         
         
