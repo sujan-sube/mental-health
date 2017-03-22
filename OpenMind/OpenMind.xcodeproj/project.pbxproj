@@ -31,6 +31,7 @@
 		8CCC4DE81E7DDA9D00FD8A96 /* ExampleDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC4DE71E7DDA9D00FD8A96 /* ExampleDefaults.swift */; };
 		8CCC4DEA1E7DDDD500FD8A96 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC4DE91E7DDDD500FD8A96 /* Env.swift */; };
 		8CD03EC21E79AB9900C269C1 /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD03EC11E79AB9900C269C1 /* DateFormatting.swift */; };
+		92107D461E81D09600C74EF2 /* JournalGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92107D451E81D09600C74EF2 /* JournalGraphViewController.swift */; };
 		922CDE4C1E7487C2003598D5 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CDE4B1E7487C1003598D5 /* GraphViewController.swift */; };
 		923A60B31E80DA06002D1AB9 /* TrendsScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923A60B21E80DA06002D1AB9 /* TrendsScrollViewController.swift */; };
 		925C95B11E7DF1820019E2FC /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925C95B01E7DF1820019E2FC /* MessageComposer.swift */; };
@@ -100,6 +101,7 @@
 		8CCC4DE71E7DDA9D00FD8A96 /* ExampleDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleDefaults.swift; sourceTree = "<group>"; };
 		8CCC4DE91E7DDDD500FD8A96 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		8CD03EC11E79AB9900C269C1 /* DateFormatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
+		92107D451E81D09600C74EF2 /* JournalGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalGraphViewController.swift; sourceTree = "<group>"; };
 		922CDE4B1E7487C1003598D5 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		923A60B21E80DA06002D1AB9 /* TrendsScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendsScrollViewController.swift; sourceTree = "<group>"; };
 		925C95B01E7DF1820019E2FC /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				923A60B21E80DA06002D1AB9 /* TrendsScrollViewController.swift */,
 				92D708CE1E34358300CBD84B /* TrendsViewController.swift */,
 				922CDE4B1E7487C1003598D5 /* GraphViewController.swift */,
+				92107D451E81D09600C74EF2 /* JournalGraphViewController.swift */,
 			);
 			name = Trends;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				92D708CF1E34358300CBD84B /* TrendsViewController.swift in Sources */,
 				2516222B1E7DFD07001A1337 /* InsightsTableViewController.swift in Sources */,
 				8CCC4DEA1E7DDDD500FD8A96 /* Env.swift in Sources */,
+				92107D461E81D09600C74EF2 /* JournalGraphViewController.swift in Sources */,
 				92D708CD1E34356A00CBD84B /* HomeViewController.swift in Sources */,
 				250CA7281E7C37CA00E86F5A /* TodayTableViewController.swift in Sources */,
 				8C2B93741E7740BA00A6DA00 /* ServerEndpoints.swift in Sources */,

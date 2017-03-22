@@ -472,7 +472,7 @@
         <!--Graph-->
         <scene sceneID="G6D-NN-8yP">
             <objects>
-                <viewController id="JQj-E8-cJw" userLabel="Graph" customClass="GraphViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JQj-E8-cJw" userLabel="Graph" customClass="JournalGraphViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fB2-aC-gCe"/>
                         <viewControllerLayoutGuide type="bottom" id="2Pi-6f-8tf"/>
