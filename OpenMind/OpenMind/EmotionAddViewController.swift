@@ -22,7 +22,7 @@ class EmotionAddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.SubmitButton.layer.backgroundColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 100/255.0, alpha: 1).cgColor
         // Do any additional setup after loading the view.
     }
 
