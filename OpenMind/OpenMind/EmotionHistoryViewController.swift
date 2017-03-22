@@ -74,6 +74,19 @@ class EmotionHistoryViewController: UIViewController, UITableViewDelegate, UITab
         if let JournalEntryCell = tableView.cellForRow(at: indexPath) as? HistoryTableViewCell, let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "EmotionDestinationVC") as? EmotionIndividualEntryViewController{
             //This is a bonus, I will be showing at destionation controller the same text of the cell from where it comes...
             
+            if let date = JournalEntryCell.dateLabel.text, let time = JournalEntryCell.timeeLabel.text,
+                let DatabaseDate = JournalEntryCell.DatabaseDate {
+                destinationViewController.date = date
+                destinationViewController.time = time
+                destinationViewController.DatabaseDate = DatabaseDate
+                
+            } else {
+                destinationViewController.date = "No Date"
+                destinationViewController.time = "No Time"
+                destinationViewController.DatabaseDate = "2017-03-16T22:26:55Z"
+                
+            }
+            
             navigationController?.pushViewController(destinationViewController, animated: true)
         }
     }

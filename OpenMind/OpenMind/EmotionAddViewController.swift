@@ -13,6 +13,8 @@ import SpringIndicator
 
 class EmotionAddViewController: UIViewController {
 
+    @IBOutlet weak var SubmitButton: UIButton!
+    @IBOutlet weak var CancelButton: UIButton!
     @IBOutlet weak var LoadingIndicator: SpringIndicator!
     let data = EndPointTypes.Journal
     
@@ -20,7 +22,7 @@ class EmotionAddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 

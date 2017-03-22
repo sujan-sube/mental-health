@@ -15,6 +15,12 @@ import PieCharts
 
 class EmotionIndividualEntryViewController: UIViewController, PieChartDelegate {
     
+    
+    var date : String?
+    var time : String?
+    var DatabaseDate : String?
+    
+    @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var chartView: PieChart!
     
     @IBOutlet weak var VideoView: UIView!
@@ -25,6 +31,9 @@ class EmotionIndividualEntryViewController: UIViewController, PieChartDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.DateLabel.text = "\(self.date!) at  \(self.time!)"
+
         
         // Do any additional setup after loading the view.
     }
