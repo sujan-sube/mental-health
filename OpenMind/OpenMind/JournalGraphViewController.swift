@@ -64,7 +64,8 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         
         var jourArr = [Double]()
         var convertJournal = [CGFloat]()
-        for index in 0..<5 {
+        var dates = [String]()
+        for index in 0..<6 {
             guard let user = id[index] as? [String: Any],
                 let analysis = user["analysis"] as? String,
                 let date = user["date"] as? String else {
@@ -73,14 +74,17 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
             }
             
             jourArr.append((Double(analysis)!)*100)
-            convertJournal = convertAnalysis(analysis: jourArr)
+            convertJournal = convertAnalysis(analysis: jourArr).reversed()
+            dates.append(date)
             
             
         }
         
-        self.drawGraph(journals: convertJournal)
+        dates = dates.reversed()
+        var convertedDate = convertDate(dates: dates)
         
-        //Print json elements in label
+        self.drawGraph(journals: convertJournal, dates: convertedDate)
+        
         
     }
     
@@ -93,7 +97,7 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         return converted
     }
     
-    func drawGraph(journals: [CGFloat]) {
+    func drawGraph(journals: [CGFloat], dates: [String]) {
         var views: [String: AnyObject] = [:]
         
         label.text = "..."
@@ -111,7 +115,7 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         
         
         // simple line with custom x axis labels
-        let xLabels: [String] = ["0", "1", "2", "3", "4", "5"]
+        let xLabels: [String] = dates
         
         lineChart = LineChart()
         lineChart.animation.enabled = true
@@ -147,36 +151,22 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         
     }
     
-    func findDate(x: Int) -> String {
-        let date = Date()
-        let calendar = Calendar.current
-        let curryear = calendar.component(.year, from: date)
-        let currmonth = calendar.component(.month, from: date)
-        let currday = calendar.component(.day, from: date)
-        let last = DateComponents(calendar: nil,
-                                  timeZone: nil,
-                                  era: nil,
-                                  year: curryear,
-                                  month: currmonth,
-                                  day: currday-x,
-                                  hour: nil,
-                                  minute: nil,
-                                  second: nil,
-                                  nanosecond: nil,
-                                  weekday: nil,
-                                  weekdayOrdinal: nil,
-                                  quarter: nil,
-                                  weekOfMonth: nil,
-                                  weekOfYear: nil,
-                                  yearForWeekOfYear: nil)
+    func convertDate(dates: [String]) -> [String] {
         
-        let dates = calendar.date(from: last)!
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd"
-        let strDate = dateFormatter.string(from: dates)
+        var convertDates = [String]()
         
+        for dateString in dates {
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            dateFormatter.timeZone = TimeZone(abbreviation: "ET")
+            let date = dateFormatter.date(from: dateString)
+            dateFormatter.dateFormat = "MM-dd"
+            convertDates.append(dateFormatter.string(from: date!))
+        }
         
-        return strDate
+    
+        return convertDates
     }
     
     
