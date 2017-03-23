@@ -27,7 +27,7 @@ class EmotionIndividualEntryViewController: UIViewController, PieChartDelegate {
     let red = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
     let green = UIColor(red: 0, green: 1, blue: 0, alpha: 0.5)
     let blue = UIColor(red: 0, green: 0, blue: 1, alpha: 0.5)
-    
+    var player: AVPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,23 +42,29 @@ class EmotionIndividualEntryViewController: UIViewController, PieChartDelegate {
         super.viewDidAppear(true)
         
         let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
-        let player = AVPlayer(url: videoURL!)
+        player = AVPlayer(url: videoURL!)
         var playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         playerLayer.frame = self.VideoView.frame
         self.view.layer.addSublayer(playerLayer)
         playerLayer.borderColor = UIColor.black.cgColor
         playerLayer.borderWidth = 1.0
-        
         //addtopLeftViewConstraints()
         
         
-        player.play()
+        player?.play()
         
         chartView.layers = [createTextWithLinesLayer()]
         chartView.delegate = self
         chartView.models = createModels() // order is important - models have to be set at the end
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+//        self.navigationController?.navigationBar.isHidden = false
+        player?.pause()
+        player?.replaceCurrentItem(with: nil)
     }
 
     fileprivate static let alpha: CGFloat = 0.5
