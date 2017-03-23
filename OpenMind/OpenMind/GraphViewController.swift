@@ -12,12 +12,14 @@ import HealthKit
 
 class GraphViewController: UIViewController, LineChartDelegate {
     
+    @IBOutlet weak var trendLabel: UILabel!
+    
     let healthStore = HKHealthStore()
     
     var label = UILabel()
     var lineChart: LineChart!
     var stepsArray = [Double]()
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +85,7 @@ class GraphViewController: UIViewController, LineChartDelegate {
         let dates = calendar.date(from: last)!
         
         let predicate = HKQuery.predicateForSamples(withStart: dates, end: Date(), options: [])
-        let query = HKSampleQuery(sampleType: type!, predicate: predicate, limit: 0, sortDescriptors: nil) {
+        let query = HKSampleQuery(sampleType: type!, predicate: predicate, limit: 6, sortDescriptors: nil) {
             query, results, error in
             var steps: Double = 0
             var allSteps = [Double]()
@@ -104,9 +106,17 @@ class GraphViewController: UIViewController, LineChartDelegate {
         recentSteps() { steps, allSteps, error in
             DispatchQueue.main.sync {
                 var avgStep: Double = 0
-                avgStep = steps/7
+                avgStep = steps/Double(allSteps.count)
                 var converted = self.convertSteps(steps: allSteps)
                 self.drawGraph(steps: converted)
+                
+                if allSteps.reversed()[0] > avgStep {
+                    self.trendLabel.text = "You're above your expected step count! Keep it up!"
+                    self.trendLabel.textColor = UIColor(red: 20.0/255.0, green: 125.0/255.0, blue: 63.0/255.0, alpha: 1.0)
+                } else {
+                    self.trendLabel.text = "You're a bit below your expected step count. Check out the Insights page for some tips!"
+                    self.trendLabel.textColor = UIColor.blue
+                }
                 
                 
             }
