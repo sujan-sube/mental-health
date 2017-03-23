@@ -85,7 +85,7 @@ class GraphViewController: UIViewController, LineChartDelegate {
         let dates = calendar.date(from: last)!
         
         let predicate = HKQuery.predicateForSamples(withStart: dates, end: Date(), options: [])
-        let query = HKSampleQuery(sampleType: type!, predicate: predicate, limit: 0, sortDescriptors: nil) {
+        let query = HKSampleQuery(sampleType: type!, predicate: predicate, limit: 6, sortDescriptors: nil) {
             query, results, error in
             var steps: Double = 0
             var allSteps = [Double]()
