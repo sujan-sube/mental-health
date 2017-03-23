@@ -100,7 +100,7 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
     func drawGraph(journals: [CGFloat], dates: [String]) {
         var views: [String: AnyObject] = [:]
         
-        label.text = "..."
+        label.text = ""
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = NSTextAlignment.center
         self.view.addSubview(label)
@@ -122,7 +122,7 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         lineChart.area = true
         lineChart.x.labels.visible = true
         lineChart.x.grid.count = 5
-        lineChart.y.grid.count = 5
+        lineChart.y.grid.count = 6
         lineChart.x.labels.values = xLabels
         lineChart.y.labels.visible = true
         lineChart.addLine(data)
@@ -180,7 +180,8 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
      * Line chart delegate method.
      */
     func didSelectDataPoint(_ x: CGFloat, yValues: Array<CGFloat>) {
-        label.text = "x: \(x)     y: \(yValues)"
+        label.text = "Positivity Percentage: \(yValues[0])"
+        
     }
     
     
