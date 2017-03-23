@@ -12,7 +12,7 @@ import HealthKit
 
 class JournalGraphViewController: UIViewController, LineChartDelegate {
     
-    
+    @IBOutlet weak var trendLabel: UILabel!
     
     var label = UILabel()
     var lineChart: LineChart!
@@ -148,6 +148,26 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         //        var invert = scale.invert()
         //        println(linear(x: 2.5)) // 50
         //        println(invert(x: 50)) // 2.5
+        
+        
+        
+        var total = CGFloat()
+        
+        for analysis in journals {
+            total += analysis
+        }
+        
+        
+        let average = total/CGFloat(journals.count)
+        
+        if journals.reversed()[0] > average {
+            trendLabel.text = "You're above your expected positivity rating! Keep it up!"
+            trendLabel.textColor = UIColor(red: 20.0/255.0, green: 125.0/255.0, blue: 63.0/255.0, alpha: 1.0)
+        } else {
+            trendLabel.text = "You're a bit below your expected positivity rating. Check out the Insights page for some tips!"
+            trendLabel.textColor = UIColor.blue
+        }
+        
         
     }
     
