@@ -153,7 +153,7 @@ class IndividualJournalPageViewController: UIViewController {
                 print("animation stopped, was interrupted")
             }
             
-            self.score.text = "\(score)"
+            self.score.text = "\(score)%"
             self.JournalFeedbackLabel.text = "\(self.analysis_comment!)"
         }
         

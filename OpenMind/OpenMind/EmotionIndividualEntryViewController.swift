@@ -28,6 +28,7 @@ class EmotionIndividualEntryViewController: UIViewController, PieChartDelegate {
     let green = UIColor(red: 0, green: 1, blue: 0, alpha: 0.5)
     let blue = UIColor(red: 0, green: 0, blue: 1, alpha: 0.5)
     
+    var globalplayer = AVPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class EmotionIndividualEntryViewController: UIViewController, PieChartDelegate {
         
         let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
         let player = AVPlayer(url: videoURL!)
+        self.globalplayer = player
         var playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         playerLayer.frame = self.VideoView.frame
@@ -53,11 +55,18 @@ class EmotionIndividualEntryViewController: UIViewController, PieChartDelegate {
         //addtopLeftViewConstraints()
         
         
-        player.play()
+        self.globalplayer.play()
         
         chartView.layers = [createTextWithLinesLayer()]
         chartView.delegate = self
         chartView.models = createModels() // order is important - models have to be set at the end
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        
+        self.globalplayer.pause()
         
     }
 
