@@ -10,6 +10,7 @@ import UIKit
 
 class ContactsViewController: UIViewController {
     
+    @IBOutlet weak var FindHelpButton: UIButton!
     @IBOutlet weak var MomImage: UIImageView!
     @IBOutlet weak var DrImage: UIImageView!
     @IBOutlet weak var DadImage: UIImageView!
@@ -21,24 +22,38 @@ class ContactsViewController: UIViewController {
     
     let messageComposer = MessageComposer()
     
+    let cellbordercolor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+    
+    let cellborderwidth: CGFloat = 0.1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         MomCell.layer.cornerRadius = 5
         MomCell.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7).cgColor
+        MomCell.layer.borderColor = cellbordercolor
+        MomCell.layer.borderWidth = cellborderwidth
         
         DadCell.layer.cornerRadius = 5
         DadCell.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7).cgColor
+        DadCell.layer.borderColor = cellbordercolor
+        DadCell.layer.borderWidth = cellborderwidth
         
         DrCell.layer.cornerRadius = 5
         DrCell.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7).cgColor
+        DrCell.layer.borderColor = cellbordercolor
+        DrCell.layer.borderWidth = cellborderwidth
         
         MessageCell.layer.cornerRadius = 10
         MessageCell.layer.backgroundColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 100/255.0, alpha: 1).cgColor
         
-        MomImage.image = #imageLiteral(resourceName: "Mompic")
-        DrImage.image = #imageLiteral(resourceName: "DrPic")
-        DadImage.image = #imageLiteral(resourceName: "Dadpic")
+        self.FindHelpButton.layer.cornerRadius = 10
+        self.FindHelpButton.layer.backgroundColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 100/255.0, alpha: 1).cgColor
+        self.FindHelpButton.tintColor = UIColor.white
+        
+        MomImage.image = #imageLiteral(resourceName: "ContactsIcon")
+        DrImage.image = #imageLiteral(resourceName: "ContactsIcon")
+        DadImage.image = #imageLiteral(resourceName: "ContactsIcon")
         MessageButton.tintColor = UIColor.white
         
         let gradient: CAGradientLayer = CAGradientLayer()
