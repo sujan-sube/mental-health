@@ -13,7 +13,7 @@ import PieCharts
 
 
 
-class EmotionIndividualEntryViewController: UIViewController, PieChartDelegate {
+class EmotionVideoIndividualEntryViewController: UIViewController, PieChartDelegate {
     
     
     var date : String?
@@ -36,7 +36,7 @@ class EmotionIndividualEntryViewController: UIViewController, PieChartDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.DateLabel.text = "\(self.date!) at  \(self.time!)"
+        self.DateLabel.text = "EXAMPLE VIDEO JOURNAL"
 
         
         // Do any additional setup after loading the view.

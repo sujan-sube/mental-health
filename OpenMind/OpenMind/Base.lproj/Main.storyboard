@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N6V-Xv-RlC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N6V-Xv-RlC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1491,14 +1492,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Emotion Entries" id="PIx-hS-XKP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HaW-yt-dD9">
-                            <connections>
-                                <segue destination="KFm-2k-AHZ" kind="show" id="cSG-8C-0OV"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="HaW-yt-dD9">
+                                <connections>
+                                    <segue destination="KFm-2k-AHZ" kind="show" id="cSG-8C-0OV"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Video" id="Y2G-VM-2tu">
+                                <connections>
+                                    <segue destination="uuR-I8-7jE" kind="show" id="hgD-Sw-Kuh"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="dqI-V1-OJd" id="IC9-sR-U8s"/>
+                        <outlet property="tableview" destination="dqI-V1-OJd" id="6eD-2U-BOx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0d-vm-WeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1574,10 +1582,10 @@
             </objects>
             <point key="canvasLocation" x="4572" y="-806.44677661169419"/>
         </scene>
-        <!--Emotion Individual Entry View Controller-->
+        <!--Emotion Video Individual Entry View Controller-->
         <scene sceneID="KNG-SF-pNu">
             <objects>
-                <viewController storyboardIdentifier="EmotionDestinationVC" id="uuR-I8-7jE" customClass="EmotionIndividualEntryViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmotionVideoDestinationVC" id="uuR-I8-7jE" customClass="EmotionVideoIndividualEntryViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y4j-yx-hLK"/>
                         <viewControllerLayoutGuide type="bottom" id="swg-n6-Nb0"/>
@@ -1626,7 +1634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jaR-aV-HjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5545" y="-806"/>
+            <point key="canvasLocation" x="6481" y="-806"/>
         </scene>
         <!--Individual Insights Page View Controller-->
         <scene sceneID="6le-cW-vnR">
@@ -1670,6 +1678,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFf-ff-qbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3030" y="90"/>
+        </scene>
+        <!--Emotion Image Individual Entry View Controller-->
+        <scene sceneID="TqN-HZ-sZs">
+            <objects>
+                <viewController storyboardIdentifier="EmotionImageDestinationVC" id="kSs-lW-cWl" customClass="EmotionImageIndividualEntryViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4NI-7K-v98"/>
+                        <viewControllerLayoutGuide type="bottom" id="4AT-Dy-GEX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K2H-64-eri">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="EDg-g9-0QA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="659"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Hf-0Y-2AQ">
+                                <rect key="frame" x="16" y="137" width="343" height="189"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LV7-2U-FK8" customClass="PieChart" customModule="PieCharts">
+                                <rect key="frame" x="87" y="373" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="innerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="outerRadius">
+                                        <real key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nr4-Zb-D0d">
+                                <rect key="frame" x="16" y="67" width="343" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="DateLabel" destination="nr4-Zb-D0d" id="tX1-68-FJB"/>
+                        <outlet property="VideoView" destination="1Hf-0Y-2AQ" id="nPk-dM-v4Q"/>
+                        <outlet property="chartView" destination="LV7-2U-FK8" id="qZa-NX-6K5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KWI-S2-jMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5494" y="-806"/>
         </scene>
     </scenes>
     <resources>
