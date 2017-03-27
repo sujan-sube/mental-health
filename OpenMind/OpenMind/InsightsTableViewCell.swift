@@ -26,7 +26,10 @@ class InsightsTableViewCell: UITableViewCell {
         insightsMainView.layer.masksToBounds = true
         insightsMainView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7).cgColor
 //        insightsDismissView.layer.backgroundColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 100/255.0, alpha: 1).cgColor
-        
+        insightsMainView.isUserInteractionEnabled = false
+        insightsImage.isUserInteractionEnabled = false
+        insightsTopic.isUserInteractionEnabled = false
+        insightsDetails.isUserInteractionEnabled = false
 //        let size = insightsMainView.bounds.size
 //        let width = insightsMainView.bounds.width
 //        let height = insightsMainView.bounds.height
@@ -43,6 +46,7 @@ class InsightsTableViewCell: UITableViewCell {
         shadowView.layer.shadowOpacity = 0.4
         shadowView.layer.shadowOffset = CGSize.init(width: 1, height: 1)
         shadowView.layer.shadowRadius = 2.0
+        shadowView.isUserInteractionEnabled = false
         
     }
 

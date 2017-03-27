@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08509D03DD268ED612A8DF68 /* Pods_OpenMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2626765EFE09D487AC4AB7 /* Pods_OpenMind.framework */; };
+		250889A71E89911D0068A595 /* IndividualInsightsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250889A61E89911D0068A595 /* IndividualInsightsPageViewController.swift */; };
 		250CA7281E7C37CA00E86F5A /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250CA7271E7C37CA00E86F5A /* TodayTableViewController.swift */; };
 		25100AA91E5B92FA005B0348 /* RESTCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25100AA81E5B92FA005B0348 /* RESTCommunication.swift */; };
 		2516222A1E7DFD07001A1337 /* InsightsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251622281E7DFD07001A1337 /* InsightsTableViewCell.swift */; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		053673C221E0A2C76DCDA253 /* Pods-OpenMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenMindTests/Pods-OpenMindTests.release.xcconfig"; sourceTree = "<group>"; };
+		250889A61E89911D0068A595 /* IndividualInsightsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualInsightsPageViewController.swift; sourceTree = "<group>"; };
 		250CA7271E7C37CA00E86F5A /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
 		25100AA81E5B92FA005B0348 /* RESTCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTCommunication.swift; sourceTree = "<group>"; };
 		251622281E7DFD07001A1337 /* InsightsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightsTableViewCell.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				251622291E7DFD07001A1337 /* InsightsTableViewController.swift */,
 				92D708C61E3433DA00CBD84B /* InsightViewController.swift */,
 				25F140151E81A50F004C03F0 /* Insights.swift */,
+				250889A61E89911D0068A595 /* IndividualInsightsPageViewController.swift */,
 			);
 			name = Insights;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				25920C821E457C5400B07EAB /* PhysicalActivityManager.swift in Sources */,
 				92D708D11E3436D300CBD84B /* SettingsViewController.swift in Sources */,
 				8CA22CF71E679EE600E19B6E /* JournalHistoryTableViewController.swift in Sources */,
+				250889A71E89911D0068A595 /* IndividualInsightsPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

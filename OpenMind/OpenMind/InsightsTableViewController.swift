@@ -25,7 +25,7 @@ class InsightsTableViewController: UIViewController, UITableViewDelegate, UITabl
         self.tableView.backgroundColor = UIColor.clear
         //insightsTopic = ["Physical Activity", "Emotion", "Physical Activity"]
         //insightsDetails = ["Run", "be happy", "workout"]
-        loadSampleInsights()
+//        loadSampleInsights()
         // Do any additional setup after loading the view.
         
         let gradient: CAGradientLayer = CAGradientLayer()
@@ -37,6 +37,7 @@ class InsightsTableViewController: UIViewController, UITableViewDelegate, UITabl
         gradient.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         
         self.view.layer.insertSublayer(gradient, at: 0)
+        tableView.isUserInteractionEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,13 +49,22 @@ class InsightsTableViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewWillAppear(true)
         //self.animateProgress(angle: 300)
 //        self.navigationController?.navigationBar.isHidden = true
+        insights.removeAll()
+        tableView.reloadData()
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.catchNotification(notification:)),
+            name: Notification.Name(rawValue:"MyNotification" + EndPointTypes.Insights.rawValue),
+            object: nil)
+        APICommunication.apirequest(data: EndPointTypes.Insights , httpMethod: "GET", httpBody: nil)
         
     }
     
+    //Stop listening to notifications. If not included, the catchNotification method will be run multiple times.
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-//        self.navigationController?.navigationBar.isHidden = false
         
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Table view data source
@@ -81,17 +91,14 @@ class InsightsTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let viewCell = tableView.cellForRow(at: indexPath) as? TodayTableViewCell
-//        if (viewCell?.typeLabel.text == "Journal"){
-//            if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "journalHistoryTableView") as? JournalHistoryTableViewController {
-//                //viewController.newsObj = newsObj
-//                if let navigator = navigationController {
-//                    navigator.pushViewController(viewController, animated: true)
-//                }
-//            }        }
-//
-        
+        //        let viewCell = tableView.cellForRow(at: indexPath) as? InsightsTableViewCell,
+        if let destinationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InsightsDestinationVC") as? IndividualInsightsPageViewController {
+            //                let index = tableView.indexPath(for: viewCell)
+            destinationViewController.insight = insights[indexPath.row]
+            navigationController?.pushViewController(destinationViewController, animated: true)
+        }
     }
+
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
     {
@@ -114,6 +121,70 @@ class InsightsTableViewController: UIViewController, UITableViewDelegate, UITabl
         newEntry = Insights(insightsTopic: "Emotional", insightsInfo: "Review your journal", photo: #imageLiteral(resourceName: "green"))
         insights.append(newEntry!)
     }
+    
+    func catchNotification(notification: Notification) -> Void {
+        print("Caught Graph notification")
+        
+        guard let jsonResponse = notification.userInfo else {
+            print("No userInfo found in notification")
+            return
+        }
+        
+        //Convert data received to dictionary of [String:Any] to parse later
+        let json = APICommunication.convertDatatoDictionary(data: jsonResponse["response"] as! Data)
+        
+        
+        //Parse json response
+        guard let id = json?["results"] as? [Any] else {
+            print ("Could not find results element")
+            return
+        }
+        
+        
+        for index in 0..<id.count
+        {
+            guard let insight = id[index] as? [String: Any],
+                let topic = insight["topic"] as? String,
+                let info = insight["info"] as? String,
+                let detail = insight["detail"] as? String,
+                let insight_date = insight ["date"] as? String else {
+                    print ("key-value pairs do not match JSON response")
+                    return
+            }
+            
+//            let dateTime = DateFormatting.getStringFromDate(datestring: insight_date)
+           
+            
+//            let DateandTime = DateFormatting.getStringFromDate(datestring: journal_date)
+            
+            var photo : UIImage!
+            
+            photo = #imageLiteral(resourceName: "green")
+//            if  Double(analysis)! < 0.4 {
+//                photo = UIImage(named: "SadEntry")
+//            }
+//            else if Double(analysis)! > 0.4 && Double(analysis)! < 0.7 {
+//                photo = UIImage(named: "ModerateEntry")
+//            }
+//            else
+//            {
+//                photo = UIImage(named: "PositiveEntry")
+//            }
+//            
+            let newEntry = Insights(insightsTopic: topic, insightsInfo: info, photo: photo, detail: detail)
+            
+            let newIndexPath = IndexPath(row: insights.count, section: 0)
+            
+            
+            
+            insights.append(newEntry!)
+            self.tableView.insertRows(at: [newIndexPath], with: .automatic)
+            //self.textview.font?.withSize(2)
+            //self.textview.text = self.textview.text.appending("the content is \(content) and the date is " + date + "\n\n")
+            
+        }
+    }
+
     /*
     // MARK: - Navigation
 

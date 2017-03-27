@@ -31,12 +31,14 @@ class JournalHistoryTableViewController: UIViewController, UITableViewDelegate, 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        history.removeAll()
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.catchNotification(notification:)),
             name: Notification.Name(rawValue:"MyNotification" + self.data.rawValue),
             object: nil)
         APICommunication.apirequest(data: EndPointTypes.Journal , httpMethod: "GET", httpBody: nil)
+        tableview.reloadData()
         
     }
     

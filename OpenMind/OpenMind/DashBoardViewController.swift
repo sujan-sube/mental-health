@@ -15,7 +15,8 @@ class DashBoardViewController: UIViewController {
     @IBOutlet weak var progress: KDCircularProgress!
     
 //    let buttonBackgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 0.95)
-    let buttonBackgroundColor = UIColor(red: 20/255, green: 97/255, blue: 160/255, alpha: 1)
+//    let buttonBackgroundColor = UIColor(red: 20/255, green: 97/255, blue: 160/255, alpha: 1)
+    let buttonBackgroundColor = UIColor(red: 30/255, green: 144/255, blue: 255/255, alpha: 1)
     let buttonborderwidth = 0.5
     let buttonbordercolor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
     
@@ -46,7 +47,9 @@ class DashBoardViewController: UIViewController {
         self.animateProgress(angle: 300)
         self.setupButtons()
 //        self.progressView.layer.backgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 1).cgColor
-        self.progressView.layer.backgroundColor = UIColor(red: 20/255, green: 97/255, blue: 160/255, alpha: 1).cgColor
+//        self.progressView.layer.backgroundColor = UIColor(red: 20/255, green: 97/255, blue: 160/255, alpha: 0.7).cgColor
+        self.progressView.layer.backgroundColor = UIColor(red: 0/255, green: 191/255, blue: 255/255, alpha: 1).cgColor
+
         self.progressView.layer.borderWidth = CGFloat(buttonborderwidth)
         self.progressView.layer.borderColor = buttonbordercolor.cgColor
         // Do any additional setup after loading the view.
@@ -156,7 +159,7 @@ class DashBoardViewController: UIViewController {
     func createShadows(){
         
         progressShadowView.layer.shadowPath = UIBezierPath(roundedRect: progressShadowView.layer.bounds, cornerRadius: 5).cgPath
-        //        insightsMainView.layer.shouldRasterize = true
+                progressShadowView.layer.shouldRasterize = true
         progressShadowView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8).cgColor
         progressShadowView.layer.shouldRasterize = true
         progressShadowView.layer.cornerRadius = 5
@@ -166,7 +169,7 @@ class DashBoardViewController: UIViewController {
         progressShadowView.layer.shadowRadius = 2.0
         
         emotionShadowView.layer.shadowPath = UIBezierPath(roundedRect: emotionShadowView.layer.bounds, cornerRadius: 5).cgPath
-        //        insightsMainView.layer.shouldRasterize = true
+                emotionShadowView.layer.shouldRasterize = true
         emotionShadowView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8).cgColor
         emotionShadowView.layer.shouldRasterize = true
         emotionShadowView.layer.cornerRadius = 5
@@ -176,7 +179,7 @@ class DashBoardViewController: UIViewController {
         emotionShadowView.layer.shadowRadius = 2.0
         
         journalShadowView.layer.shadowPath = UIBezierPath(roundedRect: journalShadowView.layer.bounds, cornerRadius: 5).cgPath
-        //        insightsMainView.layer.shouldRasterize = true
+                journalShadowView.layer.shouldRasterize = true
         journalShadowView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8).cgColor
         journalShadowView.layer.shouldRasterize = true
         journalShadowView.layer.cornerRadius = 5
@@ -186,7 +189,7 @@ class DashBoardViewController: UIViewController {
         journalShadowView.layer.shadowRadius = 2.0
         
         activityShadowView.layer.shadowPath = UIBezierPath(roundedRect: activityShadowView.layer.bounds, cornerRadius: 5).cgPath
-        //        insightsMainView.layer.shouldRasterize = true
+                activityShadowView.layer.shouldRasterize = true
         activityShadowView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8).cgColor
         activityShadowView.layer.shouldRasterize = true
         activityShadowView.layer.cornerRadius = 5
@@ -196,7 +199,7 @@ class DashBoardViewController: UIViewController {
         activityShadowView.layer.shadowRadius = 2.0
         
         sleepShadowView.layer.shadowPath = UIBezierPath(roundedRect: sleepShadowView.layer.bounds, cornerRadius: 5).cgPath
-        //        insightsMainView.layer.shouldRasterize = true
+                sleepShadowView.layer.shouldRasterize = true
         sleepShadowView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8).cgColor
         sleepShadowView.layer.shouldRasterize = true
         sleepShadowView.layer.cornerRadius = 5
