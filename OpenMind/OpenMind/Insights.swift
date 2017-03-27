@@ -12,16 +12,24 @@ class Insights {
     
     var insightsTopic: String
     var insightsInfo: String
-    var photo: UIImage
+    var insightsDetails: String
+    var photo: UIImage?
     
-    init?(insightsTopic: String, insightsInfo:String, photo: UIImage) {
+    
+    init? (){
+        self.insightsDetails = ""
+        self.insightsTopic = ""
+        self.insightsInfo = ""
+    }
+    
+    init?(insightsTopic: String, insightsInfo:String, photo: UIImage, detail: String = "") {
         
         //Initialization should fail if there is insights topic
         
         if insightsTopic.isEmpty {
             return nil
         }
-        
+        self.insightsDetails = detail
         self.insightsTopic = insightsTopic
         self.insightsInfo = insightsInfo
         self.photo = photo

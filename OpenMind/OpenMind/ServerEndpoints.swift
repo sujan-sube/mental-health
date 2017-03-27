@@ -18,6 +18,7 @@ enum EndPointTypes : String {
     case Emotion = "Emotion"
     case History = "History"
     case SignIn = "SignIn"
+    case Insights = "Insights"
 
 }
 
@@ -27,24 +28,28 @@ func getserveraddress (data: EndPointTypes) -> String
     switch data{
         
     case .Journal:
-        print("journal passed in")
+//        print("journal passed in")
         EndPoint = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/journal/"
         NotificationName = data.rawValue
     case .Emotion:
-        print("emotion passed in")
+//        print("emotion passed in")
         EndPoint = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/emotion/"
         NotificationName = data.rawValue
     case .History:
-        print("history passed in")
+//        print("history passed in")
         EndPoint = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/rest-auth/login/"
         NotificationName = data.rawValue
     case .Graph:
-        print("graph passed in")
+//        print("graph passed in")
         EndPoint = "https://jsonplaceholder.typicode.com/posts/1"
         NotificationName = data.rawValue
     case .SignIn:
-        print("SignIn passed in")
+//        print("SignIn passed in")
         EndPoint = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/rest-auth/google/"
+        NotificationName = data.rawValue
+    case .Insights:
+//        print("journal passed in")
+        EndPoint = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/insight/"
         NotificationName = data.rawValue
     }
     

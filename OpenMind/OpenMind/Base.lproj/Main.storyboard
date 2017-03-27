@@ -789,13 +789,7 @@
                                 <rect key="frame" x="56" y="127" width="263" height="341"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Lets talk about your day!">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="14"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ojs-RF-Zh0" customClass="SpringIndicator" customModule="SpringIndicator">
@@ -972,7 +966,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piQ-Sh-kTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5544.8000000000002" y="-1541.3793103448277"/>
+            <point key="canvasLocation" x="5494" y="-1541"/>
         </scene>
         <!--Your Trends-->
         <scene sceneID="4kU-em-u04">
@@ -1255,12 +1249,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QQd-iX-Fak">
+                                                <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QQd-iX-Fak">
                                                     <rect key="frame" x="8" y="5" width="359" height="92"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xx5-Of-BB9">
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xx5-Of-BB9">
                                                     <rect key="frame" x="8" y="5" width="359" height="91"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
@@ -1296,7 +1290,6 @@
                                             <outlet property="insightsMainView" destination="xx5-Of-BB9" id="qIk-HP-ePO"/>
                                             <outlet property="insightsTopic" destination="TdG-Ze-e3X" id="p5w-6L-8eZ"/>
                                             <outlet property="shadowView" destination="QQd-iX-Fak" id="6L4-BJ-drM"/>
-                                            <outletCollection property="gestureRecognizers" destination="hRH-qo-SZZ" appends="YES" id="4Ed-BV-fCD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1320,7 +1313,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bt3-Rn-FNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="hRH-qo-SZZ"/>
             </objects>
             <point key="canvasLocation" x="2096.8000000000002" y="90.404797601199405"/>
         </scene>
@@ -1635,6 +1627,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jaR-aV-HjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5545" y="-806"/>
+        </scene>
+        <!--Individual Insights Page View Controller-->
+        <scene sceneID="6le-cW-vnR">
+            <objects>
+                <viewController storyboardIdentifier="InsightsDestinationVC" id="HKx-DE-LIT" customClass="IndividualInsightsPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cKA-yM-DW2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Okk-UE-aul"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wgK-kZ-MPX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="kXo-Cv-coA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FNP-eg-T1B">
+                                <rect key="frame" x="16" y="138" width="343" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCb-Bj-ItA">
+                                <rect key="frame" x="16" y="68" width="343" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="insightTitleLabel" destination="SCb-Bj-ItA" id="8pO-UL-RNH"/>
+                        <outlet property="insightsDetailTextView" destination="FNP-eg-T1B" id="Fho-um-bt1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sFf-ff-qbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3030" y="90"/>
         </scene>
     </scenes>
     <resources>
