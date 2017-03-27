@@ -71,7 +71,8 @@ class EmotionHistoryViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //if such cell exists and destination controller (the one to show) exists too..
-        if let JournalEntryCell = tableView.cellForRow(at: indexPath) as? HistoryTableViewCell, let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "EmotionDestinationVC") as? EmotionIndividualEntryViewController{
+        if let JournalEntryCell = tableView.cellForRow(at: indexPath) as? HistoryTableViewCell,
+            let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "EmotionDestinationVC") as? EmotionIndividualEntryViewController{
             //This is a bonus, I will be showing at destionation controller the same text of the cell from where it comes...
             
             if let date = JournalEntryCell.dateLabel.text, let time = JournalEntryCell.timeeLabel.text,

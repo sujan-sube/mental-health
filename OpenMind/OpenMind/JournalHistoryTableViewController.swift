@@ -22,25 +22,32 @@ class JournalHistoryTableViewController: UIViewController, UITableViewDelegate, 
         
         self.tableview.backgroundColor = UIColor.clear
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(self.catchNotification(notification:)),
-            name: Notification.Name(rawValue:"MyNotification" + self.data.rawValue),
-            object: nil)
         
-        APICommunication.apirequest(data: EndPointTypes.Journal , httpMethod: "GET", httpBody: nil)
+        
+//        APICommunication.apirequest(data: EndPointTypes.Journal , httpMethod: "GET", httpBody: nil)
 //        loadSampleHistory()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.catchNotification(notification:)),
+            name: Notification.Name(rawValue:"MyNotification" + self.data.rawValue),
+            object: nil)
+        APICommunication.apirequest(data: EndPointTypes.Journal , httpMethod: "GET", httpBody: nil)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableview.reloadData()
     }
     
     //Stop listening to notifications. If not included, the catchNotification method will be run multiple times.
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
+        
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -98,15 +105,18 @@ class JournalHistoryTableViewController: UIViewController, UITableViewDelegate, 
             
             
             history.append(newEntry!)
+            self.tableview.beginUpdates()
             self.tableview.insertRows(at: [newIndexPath], with: .automatic)
-            
+            self.tableview.endUpdates()
             //self.textview.font?.withSize(2)
             //self.textview.text = self.textview.text.appending("the content is \(content) and the date is " + date + "\n\n")
             
         }
         
         //Print json elements in label
-        
+        DispatchQueue.main.async{
+            self.tableview.reloadData()
+        }
     }
     
     //MARK :Actions

@@ -145,7 +145,7 @@ class DashBoardViewController: UIViewController {
         
         progress.animate(fromAngle: 0, toAngle: angle, duration: 1.0) { completed in
             if completed {
-                print("animation stopped, completed")
+//                print("animation stopped, completed")
             } else {
                 print("animation stopped, was interrupted")
             }

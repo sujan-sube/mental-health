@@ -12,6 +12,9 @@ import GoogleSignIn
 
 class SignInViewController: UIViewController, GIDSignInUIDelegate {
 
+    
+    let data = EndPointTypes.SignIn
+
     // [START viewcontroller_vars]
     @IBOutlet weak var signInButton: GIDSignInButton!
     //@IBOutlet weak var signOutButton: UIButton!
@@ -43,13 +46,16 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         self.view.addSubview(signInButton)
         
         // Uncomment to automatically sign in the user.
-        //GIDSignIn.sharedInstance().signInSilently()
+        GIDSignIn.sharedInstance().signInSilently()
         // TODO(developer) Configure the sign-in button look/feel
         // [START_EXCLUDE]
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(SignInViewController.receiveToggleAuthUINotification(_:)),
-                                               name: NSNotification.Name(rawValue: "ToggleAuthUINotification"),
-                                               object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.catchNotification(notification:)),
+            name: Notification.Name(rawValue:"MyNotification" + self.data.rawValue),
+            object: nil)
+        
         
         
         
@@ -95,6 +101,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         }
     }
     // [END toggle_auth]
+ */
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }
@@ -103,7 +110,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         NotificationCenter.default.removeObserver(self,
                                                   name: NSNotification.Name(rawValue: "ToggleAuthUINotification"),
                                                   object: nil)
-    }*/
+    }
     
     @objc func receiveToggleAuthUINotification(_ notification: NSNotification) {
         if notification.name.rawValue == "ToggleAuthUINotification" {
@@ -114,4 +121,29 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
             }
         }
     }
+    
+    
+    func catchNotification(notification: Notification) -> Void {
+        print("Caught Graph notification")
+        
+//        guard let jsonResponse = notification.userInfo else {
+//            print("No userInfo found in notification")
+//            return
+//        }
+//        
+        //Convert data received to dictionary of [String:Any] to parse later
+//        let json = APICommunication.convertDatatoDictionary(data: jsonResponse["response"] as! Data)
+        let homeViewController:UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+        
+//        self.navigationController?.show(homeViewController, sender: nil)
+        homeViewController.selectedIndex = 0
+        self.view.window?.rootViewController = homeViewController
+        
+        
+//        window?.rootViewController = homeViewController
+        
+        //Print json elements in label
+        
+    }
+    
  }

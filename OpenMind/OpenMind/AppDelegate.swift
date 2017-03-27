@@ -13,6 +13,10 @@ import GoogleSignIn
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
+    
+//    let data = EndPointTypes.SignIn
+
+    
     var window: UIWindow?
 
     // [START didfinishlaunching]
@@ -70,35 +74,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let familyName = user.profile.familyName
             let email = user.profile.email
            
+            
             // [START_EXCLUDE]
-            NotificationCenter.default.post(
-                name: Notification.Name(rawValue: "ToggleAuthUINotification"),
-                object: nil,
-                userInfo: ["statusText": "Signed in user:\n\(fullName)"])
+//            NotificationCenter.default.post(
+//                name: Notification.Name(rawValue: "signedIn"),
+//                object: user,
+//                userInfo: ["statusText": "Signed in user:\n\(fullName)"])
             
 //            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SignIn_Google"), object: nil)
 
+            let httpBody = ["token":idToken]
             
-            window?.becomeKey()
-            // [END_EXCLUDE]
-            
-            
-            // Once signed in redirect to Home Page
+            APICommunication.apirequest(data: EndPointTypes.SignIn, httpMethod: "POST", httpBody: httpBody, signInBool: true)
+
             
             
-            let homeViewController:UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-            
-            
-            
-            homeViewController.selectedIndex = 0
-            window?.rootViewController = homeViewController
             
 //            let server = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/rest-auth/google/"
-            let server = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/journal/"
+            //let server = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/journal/"
             
+//            print ("ID TOKEN: " + userId!)
 //            RESTCommunication.getToken(server, serverAuthCode!)
             
-            GIDSignIn.sharedInstance().signOut()
+            //GIDSignIn.sharedInstance().signOut()
 //            print(serverAuthCode)
             
 //            let alert = UIAlertController(title: "Alert", message: idToken, preferredStyle: UIAlertControllerStyle.alert)

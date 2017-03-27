@@ -38,8 +38,8 @@ class AddJournalEntryViewController: UIViewController, UITextFieldDelegate, UINa
     }
     
     //Stop listening to notifications. If not included, the catchNotification method will be run multiple times.
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(true)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
         NotificationCenter.default.removeObserver(self)
     }
     

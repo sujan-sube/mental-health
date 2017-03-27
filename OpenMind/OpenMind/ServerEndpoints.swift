@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Google
+import GoogleSignIn
 
 //Different server endpoints to hit and obtain data
 
@@ -15,6 +17,8 @@ enum EndPointTypes : String {
     case Graph = "Graph"
     case Emotion = "Emotion"
     case History = "History"
+    case SignIn = "SignIn"
+
 }
 
 
@@ -37,6 +41,10 @@ func getserveraddress (data: EndPointTypes) -> String
     case .Graph:
         print("graph passed in")
         EndPoint = "https://jsonplaceholder.typicode.com/posts/1"
+        NotificationName = data.rawValue
+    case .SignIn:
+        print("SignIn passed in")
+        EndPoint = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/rest-auth/google/"
         NotificationName = data.rawValue
     }
     
