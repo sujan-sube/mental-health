@@ -161,9 +161,11 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         let average = total/CGFloat(journals.count)
         
         if journals.reversed()[0] > average {
+            print(journals.reversed()[0])
             trendLabel.text = "You're above your expected positivity rating! Keep it up!"
             trendLabel.textColor = UIColor(red: 20.0/255.0, green: 125.0/255.0, blue: 63.0/255.0, alpha: 1.0)
         } else {
+            print(journals.reversed()[0])
             trendLabel.text = "You're a bit below your expected positivity rating. Check out the Insights page for some tips!"
             trendLabel.textColor = UIColor.blue
         }

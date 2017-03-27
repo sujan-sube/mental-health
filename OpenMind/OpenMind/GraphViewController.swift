@@ -43,7 +43,7 @@ class GraphViewController: UIViewController, LineChartDelegate {
         
         if HKHealthStore.isHealthDataAvailable() {
             
-            print("Health Data is Available")
+//            print("Health Data is Available")
             
             let stepsCount = NSSet(object: HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount))
             
@@ -85,15 +85,26 @@ class GraphViewController: UIViewController, LineChartDelegate {
         let dates = calendar.date(from: last)!
         
         let predicate = HKQuery.predicateForSamples(withStart: dates, end: Date(), options: [])
-        let query = HKSampleQuery(sampleType: type!, predicate: predicate, limit: 6, sortDescriptors: nil) {
+        let query = HKSampleQuery(sampleType: type!, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: nil) {
             query, results, error in
             var steps: Double = 0
             var allSteps = [Double]()
+            var counter: Int = 5
             if let myResults = results {
                 for result in myResults as! [HKQuantitySample] {
-                    print(myResults)
-                    steps += result.quantity.doubleValue(for: HKUnit.count())
-                    allSteps.append(result.quantity.doubleValue(for: HKUnit.count()))
+//                    print(myResults)
+                    let resultDate = result.endDate
+                    let resultDay = Calendar.current.component(.day, from: resultDate)
+                    if (currday-counter) == resultDay {
+                        steps += result.quantity.doubleValue(for: HKUnit.count())
+                    }
+                    else {
+                        allSteps.append(steps)
+                        counter -= 1
+                        steps = 0
+                        
+                        steps += result.quantity.doubleValue(for: HKUnit.count())
+                    }
                 }
             }
             completion(steps, allSteps, error as NSError?)
@@ -105,8 +116,12 @@ class GraphViewController: UIViewController, LineChartDelegate {
     @IBAction func getStepCount(sender: AnyObject) {
         recentSteps() { steps, allSteps, error in
             DispatchQueue.main.sync {
+                var total: Double = 0
+                for steps in allSteps {
+                    total += steps
+                }
                 var avgStep: Double = 0
-                avgStep = steps/Double(allSteps.count)
+                avgStep = total/Double(allSteps.count)
                 var converted = self.convertSteps(steps: allSteps)
                 self.drawGraph(steps: converted)
                 
