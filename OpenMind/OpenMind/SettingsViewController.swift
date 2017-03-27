@@ -12,6 +12,17 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var SignOut: UIButton!
     
+    @IBAction func signoutButtonOnClick(_ sender: Any) {
+        
+        GIDSignIn.sharedInstance().signOut()
+        let signInViewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignInController") 
+        
+        //        self.navigationController?.show(homeViewController, sender: nil)
+//        homeViewController.selectedIndex = 0
+        self.view.window?.rootViewController = signInViewController
+        
+        
+    }
     @IBOutlet weak var textview: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
