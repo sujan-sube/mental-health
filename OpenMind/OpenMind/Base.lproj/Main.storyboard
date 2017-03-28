@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N6V-Xv-RlC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N6V-Xv-RlC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -637,7 +637,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ZL-u8-ppv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house-outline" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GKc-IC-0hi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GKc-IC-0hi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1336,7 +1336,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hGo-VX-p87" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Insights" image="light-bulb" id="FdZ-O1-MvY"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="24E-Xw-Cvo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="24E-Xw-Cvo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

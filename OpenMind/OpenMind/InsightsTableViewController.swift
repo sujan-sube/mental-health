@@ -168,7 +168,7 @@ class InsightsTableViewController: UIViewController, UITableViewDelegate, UITabl
                 let detail = insight["detail"] as? String,
                 let insight_date = insight ["date"] as? String else {
                     print ("key-value pairs do not match JSON response")
-                    return
+                    continue
             }
             
 //            let dateTime = DateFormatting.getStringFromDate(datestring: insight_date)
