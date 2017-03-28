@@ -20,6 +20,7 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
     var time : String?
     var DatabaseDate : String?
     var imageurl : String?
+    var expressions : [String:Any]?
     
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var chartView: PieChart!
@@ -30,7 +31,17 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
     let green = UIColor(red: 0, green: 1, blue: 0, alpha: 0.5)
     let blue = UIColor(red: 0, green: 0, blue: 1, alpha: 0.5)
     
+    var emotionvalues = [String:Double]()
     
+    
+    var anger : Double?
+    var contempt : Double?
+    var disgust : Double?
+    var fear : Double?
+    var happiness : Double?
+    var neutral : Double?
+    var sadness : Double?
+    var surprise : Double?
     
     
     override func viewDidLoad() {
@@ -39,7 +50,8 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
         self.DateLabel.text = "\(self.date!) at  \(self.time!)"
         
         self.ImageView.downloadedFrom(link: self.imageurl!)
-
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -84,11 +96,28 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
     
     fileprivate func createModels() -> [PieSliceModel] {
         
+        
+        for individualexpression in self.expressions! {
+            print(individualexpression.value)
+            
+            var expressionvalue = Double(((individualexpression.value) as? String)!)!
+            
+            if (expressionvalue >= 0.99){
+                expressionvalue = 0.99
+            }
+            if (expressionvalue <= 0.02){
+                expressionvalue = 0.02
+            }
+            
+            self.emotionvalues["\(individualexpression.key)"] = expressionvalue*100
+            
+        }
+        
         let models = [
-            PieSliceModel(value: 60, color: colors[0]),
-            PieSliceModel(value: 20, color: colors[1]),
-            PieSliceModel(value: 10, color: colors[2]),
-            PieSliceModel(value: 10, color: colors[3])
+            PieSliceModel(value: (self.emotionvalues["happiness"])!, color: colors[0]),
+            PieSliceModel(value: (self.emotionvalues["neutral"])!, color: colors[1]),
+            PieSliceModel(value: (self.emotionvalues["sadness"])!, color: colors[2]),
+            PieSliceModel(value: (self.emotionvalues["anger"])!, color: colors[3])
         ]
         
         
@@ -140,7 +169,7 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
                     return "Sad"
                 }
                 else{
-                    return "Angry"
+                    return "Anger"
                 }
                 
                 //return formatter.string(from: slice.data.model.value as NSNumber).map{"\($0)"} ?? ""
@@ -158,6 +187,10 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
     }
     
 }
+
+
+
+
 
 extension UIImageView {
     func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {

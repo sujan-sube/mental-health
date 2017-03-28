@@ -90,10 +90,12 @@ class EmotionHistoryViewController: UIViewController, UITableViewDelegate, UITab
                 let emotion_date = user["date"] as? String,
                 let emotion_image_url = user["image"] as? String,
                 let emotion_max_expression = user["max_expression"] as? String,
-                let expressions = user["expressions"] as? [String: Any]
+                let expressions = user["expressions"] as? [String:Any]
                 else {
                     print ("key-value pairs do not match JSON response")
-                    return
+                    
+                    
+                    continue
             }
             
             
@@ -118,7 +120,7 @@ class EmotionHistoryViewController: UIViewController, UITableViewDelegate, UITab
                 photo = UIImage(named: "SadEntry")
             }
             
-            let newEntry = EmotionModel(date: DateandTime["date"]!, time: DateandTime["time"]!, photo: photo!, DatabaseDate: emotion_date, imageurl : emotion_image_url)
+            let newEntry = EmotionModel(date: DateandTime["date"]!, time: DateandTime["time"]!, photo: photo!, DatabaseDate: emotion_date, imageurl : emotion_image_url, expressions: expressions)
             
             
             let newIndexPath = IndexPath(row: emotionHistory.count, section: 0)
@@ -230,6 +232,7 @@ class EmotionHistoryViewController: UIViewController, UITableViewDelegate, UITab
         cell.photoImageView.image = currenthistory.photo
         cell.DatabaseDate = currenthistory.DatabaseDate
         cell.imageurl = currenthistory.imageurl
+        cell.expressions = currenthistory.expressions
         
         return cell
     }
@@ -240,12 +243,13 @@ class EmotionHistoryViewController: UIViewController, UITableViewDelegate, UITab
         if let EmotionEntryCell = tableView.cellForRow(at: indexPath) as? EmotionTableViewCell, let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "EmotionImageDestinationVC") as? EmotionImageIndividualEntryViewController{
             //This is a bonus, I will be showing at destionation controller the same text of the cell from where it comes...
             
-            if let date = EmotionEntryCell.dateLabel.text, let time = EmotionEntryCell.timeeLabel.text, let imageurl = EmotionEntryCell.imageurl,
+            if let date = EmotionEntryCell.dateLabel.text, let time = EmotionEntryCell.timeeLabel.text, let imageurl = EmotionEntryCell.imageurl, let expressions = EmotionEntryCell.expressions,
                 let DatabaseDate = EmotionEntryCell.DatabaseDate {
                 destinationViewController.date = date
                 destinationViewController.time = time
                 destinationViewController.imageurl = imageurl
                 destinationViewController.DatabaseDate = DatabaseDate
+                destinationViewController.expressions = expressions
                 
             } else {
                 destinationViewController.date = "No Date"
