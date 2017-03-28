@@ -23,7 +23,8 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var chartView: PieChart!
     
-    @IBOutlet weak var ImageView: UIView!
+    @IBOutlet weak var ImageView: UIImageView!
+    
     let red = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
     let green = UIColor(red: 0, green: 1, blue: 0, alpha: 0.5)
     let blue = UIColor(red: 0, green: 0, blue: 1, alpha: 0.5)
