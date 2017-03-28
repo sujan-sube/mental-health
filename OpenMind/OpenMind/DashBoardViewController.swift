@@ -48,7 +48,7 @@ class DashBoardViewController: UIViewController {
         self.setupButtons()
 //        self.progressView.layer.backgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 1).cgColor
 //        self.progressView.layer.backgroundColor = UIColor(red: 20/255, green: 97/255, blue: 160/255, alpha: 0.7).cgColor
-        self.progressView.layer.backgroundColor = UIColor(red: 0/255, green: 191/255, blue: 255/255, alpha: 1).cgColor
+        self.progressView.layer.backgroundColor = UIColor(red: 30/255, green: 144/255, blue: 255/255, alpha: 1).cgColor
 
         self.progressView.layer.borderWidth = CGFloat(buttonborderwidth)
         self.progressView.layer.borderColor = buttonbordercolor.cgColor

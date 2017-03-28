@@ -30,7 +30,6 @@ class IndividualInsightsPageViewController: UIViewController {
         insightTitleLabel.text = insight?.insightsTopic
         insightsDetailTextView.text = insight?.insightsDetails
         insightsDetailTextView.isEditable = false
-        
     }
     /*
     // MARK: - Navigation
