@@ -16,11 +16,11 @@ class EmotionModel {
     var photo: UIImage
     var DatabaseDate:String
     var imageurl: String
-    var expressions :[String:String]
+    var expressions :[String:Any]
     
     //Mark: Initialization
     
-    init?(date: String, time:String, photo: UIImage, DatabaseDate: String, imageurl: String, expressions: [String:String]) {
+    init?(date: String, time:String, photo: UIImage, DatabaseDate: String, imageurl: String, expressions: [String:Any]) {
         
         //Initialization should fail if there is no date
         
