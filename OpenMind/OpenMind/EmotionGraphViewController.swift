@@ -78,62 +78,66 @@ class EmotionGraphViewController: UIViewController, LineChartDelegate {
         var emotionArr = [Double]()
         var convertEmotion = [CGFloat]()
         var dates = [String]()
-        
+        var check = true
         var points: Int = 0
         if id1.count >= 6 {
             points = 6
         }
-        else if (id1.count < 6) && (id1.count > 2) {
-            points = id1.count - 1
+        else if (id1.count < 6) && (id1.count >= 2) {
+            points = id1.count
         }
         else {
-            points = -1
+            check = false
         }
         
-        for index in 0..<points {
-            guard let user = id1[index] as? [String: Any],
-                let analysis = user["max_expression"] as? String,
-                let date = user["date"] as? String else {
-                    print ("key-value pairs do not match JSON response")
-                    continue
+        if (check) {
+            
+            for index in 0..<points {
+                guard let user = id1[index] as? [String: Any],
+                    let analysis = user["max_expression"] as? String,
+                    let date = user["date"] as? String else {
+                        print ("key-value pairs do not match JSON response")
+                        continue
+                }
+                
+                var emotionNum: Double = 0
+                if analysis == "happiness" {
+                    emotionNum = 8
+                }
+                else if analysis == "surprise" {
+                    emotionNum = 7
+                }
+                else if analysis == "neutral" {
+                    emotionNum = 6
+                }
+                else if analysis == "disgust" {
+                    emotionNum = 5
+                }
+                else if analysis == "contempt" {
+                    emotionNum = 4
+                }
+                else if analysis == "anger" {
+                    emotionNum = 3
+                }
+                else if analysis == "sadness" {
+                    emotionNum = 2
+                }
+                else if analysis == "fear" {
+                    emotionNum = 1
+                }
+                emotionArr.append(emotionNum)
+                convertEmotion = convertAnalysis(analysis: emotionArr).reversed()
+                dates.append(date)
+                
+                
             }
             
-            var emotionNum: Double = 0
-            if analysis == "happiness" {
-                emotionNum = 8
-            }
-            else if analysis == "surprise" {
-                emotionNum = 7
-            }
-            else if analysis == "neutral" {
-                emotionNum = 6
-            }
-            else if analysis == "disgust" {
-                emotionNum = 5
-            }
-            else if analysis == "contempt" {
-                emotionNum = 4
-            }
-            else if analysis == "anger" {
-                emotionNum = 3
-            }
-            else if analysis == "sadness" {
-                emotionNum = 2
-            }
-            else if analysis == "fear" {
-                emotionNum = 1
-            }
-            emotionArr.append(emotionNum)
-            convertEmotion = convertAnalysis(analysis: emotionArr).reversed()
-            dates.append(date)
+            dates = dates.reversed()
+            var convertedDate = convertDate(dates: dates)
             
+            self.drawGraph(emotions: convertEmotion, dates: convertedDate)
             
         }
-        
-        dates = dates.reversed()
-        var convertedDate = convertDate(dates: dates)
-        
-        self.drawGraph(emotions: convertEmotion, dates: convertedDate)
         
         
     }
