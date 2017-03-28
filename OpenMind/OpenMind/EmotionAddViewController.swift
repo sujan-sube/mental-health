@@ -10,6 +10,8 @@ import UIKit
 import os.log
 import CDAlertView
 import SpringIndicator
+import Google
+import GoogleSignIn
 
 class EmotionAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -126,7 +128,7 @@ class EmotionAddViewController: UIViewController, UIImagePickerControllerDelegat
         
         let boundary = generateBoundaryString()
         
-        request.setValue("eyJhbGciOiJSUzI1NiIsImtpZCI6IjZiZjVlYTM1MWJiMzJjNmZlNjE5ZWM5YTBmOGU4MDMyOWJjZGFkNTEifQ.eyJhenAiOiIyNDQwOTA2NDIwNjYtMDNpcWxwcTU0b205dTRkYTRodTZnZmtibm8xMHBxbGIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyNDQwOTA2NDIwNjYtNzg5aWk1bmY2MzhvODFvamNzbGJxZmxncW9ibjExNHAuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTE0Nzk5Nzk5NTk5NTE3MzM3NTkiLCJlbWFpbCI6Im9wZW5taW5kaGVhbHRoQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiQzI5MGpQNy10VVAxSERzcHg3QVVKdyIsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5MDY2MjA5NywiZXhwIjoxNDkwNjY1Njk3fQ.q1VG0-ClqUJT2-twuuwzcGt90snsSqOUw_EaF1rohyrC9y2b6a3oQhG5Bi6b3VCpEdGr0exSHcnvunMzh_h0wgLEIDrr9tMjCEkZejhid1Rf01KfLWBy9XFHAPEp2ITjR7Wsvj71g3BRj8PkyKBSci1uc5_gydnJMTLITliXGE3_nLRsvmcpyDrLmnGUw-8j7l5TBWWJ6RxJnw40_RNf8EthbAj-Y4dcNNe1huGmE6bCGf-sobNfBfnCDDnEA25EcQFTjBhc3c09dRa1gyz45jtuNW1AglehQtf9cA0KS6Qa6BQSsOFb8nsY2M0nXPQ_s3PvUiEu2iJQeYWAOHf8cQ", forHTTPHeaderField: "token")
+        request.setValue(GIDSignIn.sharedInstance().currentUser.authentication.idToken, forHTTPHeaderField: "token")
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
         
