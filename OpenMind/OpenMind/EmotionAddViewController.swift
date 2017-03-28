@@ -164,7 +164,9 @@ class EmotionAddViewController: UIViewController, UIImagePickerControllerDelegat
                 
                 DispatchQueue.main.async(execute: {
                     self.myActivityIndicator.stopAnimating()
-                    self.myImageView.image = nil;
+                    self.myImageView.image = nil
+                    self.TakeImageLabel.isHidden = false
+                    self.TakeImageLabel.text = "Thank you"
                 });
                 
             }catch

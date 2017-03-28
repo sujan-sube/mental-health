@@ -19,6 +19,7 @@ enum EndPointTypes : String {
     case History = "History"
     case SignIn = "SignIn"
     case Insights = "Insights"
+    case Profile = "Profile"
 
 }
 
@@ -50,6 +51,10 @@ func getserveraddress (data: EndPointTypes) -> String
     case .Insights:
 //        print("journal passed in")
         EndPoint = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/insight/"
+        NotificationName = data.rawValue
+    case .Profile:
+        //        print("journal passed in")
+        EndPoint = "http://ec2-52-39-73-116.us-west-2.compute.amazonaws.com/rest-auth/user/"
         NotificationName = data.rawValue
     }
     
