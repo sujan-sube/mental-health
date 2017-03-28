@@ -185,14 +185,14 @@ class InsightsTableViewController: UIViewController, UITableViewDelegate, UITabl
             }
             else if topic == "Sleep Activity"
             {
-                photo = #imageLiteral(resourceName: "green")
+                photo = #imageLiteral(resourceName: "sleep")
             }
             else if topic == "Physical Activity"
             {
                 photo = #imageLiteral(resourceName: "phy act")
             }
             else{
-                photo = #imageLiteral(resourceName: "green")
+                photo = #imageLiteral(resourceName: "lightbulb")
             }
 //            if  Double(analysis)! < 0.4 {
 //                photo = UIImage(named: "SadEntry")
