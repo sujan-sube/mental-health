@@ -11,8 +11,12 @@ import os.log
 import CDAlertView
 import SpringIndicator
 
-class EmotionAddViewController: UIViewController {
+class EmotionAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    
+    let picker = UIImagePickerController()
+    @IBOutlet weak var myImageView: UIImageView!
+    
     @IBOutlet weak var SubmitButton: UIButton!
     @IBOutlet weak var CancelButton: UIButton!
     @IBOutlet weak var LoadingIndicator: SpringIndicator!
@@ -23,6 +27,8 @@ class EmotionAddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.SubmitButton.layer.backgroundColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 100/255.0, alpha: 1).cgColor
+        
+        picker.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -32,24 +38,55 @@ class EmotionAddViewController: UIViewController {
     }
     
 
-    
-    @IBAction func submitButton(_ sender: Any) {
-//        let httpbody = createHttpBody()
-//        LoadingIndicator.lineColor=UIColor.lightGray
-//        LoadingIndicator.lineWidth=CGFloat(2.0)
-//        LoadingIndicator.startAnimation()
-//        APICommunication.apirequest(data: self.data, httpMethod: "POST", httpBody: httpbody)
         
-    }
+        @IBAction func photoFromLibrary(_ sender: UIBarButtonItem) {
+            picker.allowsEditing = false
+            picker.sourceType = .photoLibrary
+            picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            picker.modalPresentationStyle = .popover
+            present(picker, animated: true, completion: nil)
+            picker.popoverPresentationController?.barButtonItem = sender
+        }
+        
+        @IBAction func shootPhoto(_ sender: UIButton) {
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                picker.allowsEditing = false
+                picker.sourceType = UIImagePickerControllerSourceType.camera
+                picker.cameraCaptureMode = .photo
+                picker.modalPresentationStyle = .fullScreen
+                present(picker,animated: true,completion: nil)
+            } else {
+                noCamera()
+            }
+        }
+        func noCamera(){
+            let alertVC = UIAlertController(
+                title: "No Camera",
+                message: "Sorry, this device has no camera",
+                preferredStyle: .alert)
+            let okAction = UIAlertAction(
+                title: "OK",
+                style:.default,
+                handler: nil)
+            alertVC.addAction(okAction)
+            present(
+                alertVC,
+                animated: true,
+                completion: nil)
+        }
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+        //MARK: - Delegates
+        func imagePickerController(_ picker: UIImagePickerController,
+                                   didFinishPickingMediaWithInfo info: [String : AnyObject])
+        {
+            var  chosenImage = UIImage()
+            chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+            myImageView.contentMode = .scaleAspectFit //3
+            myImageView.image = chosenImage //4
+            dismiss(animated:true, completion: nil) //5
+        }
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            dismiss(animated: true, completion: nil)
+        }
 }

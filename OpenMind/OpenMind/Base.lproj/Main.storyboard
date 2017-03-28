@@ -1533,6 +1533,9 @@
                                 <rect key="frame" x="16" y="82" width="343" height="449"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="shootPhoto:" destination="KFm-2k-AHZ" eventType="touchUpInside" id="sGY-9b-Ip5"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="ftH-Bm-hTZ">
                                 <rect key="frame" x="67" y="263" width="240" height="141"/>
@@ -1576,6 +1579,7 @@
                     <connections>
                         <outlet property="LoadingIndicator" destination="reC-w5-5Z9" id="7zz-9E-oOf"/>
                         <outlet property="SubmitButton" destination="CrS-PK-mrf" id="YSf-mX-c6x"/>
+                        <outlet property="myImageView" destination="ftH-Bm-hTZ" id="hYL-sK-TFA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jO3-SE-Hge" sceneMemberID="firstResponder"/>
