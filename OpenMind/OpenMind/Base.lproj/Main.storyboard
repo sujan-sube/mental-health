@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N6V-Xv-RlC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N6V-Xv-RlC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -521,10 +521,10 @@
             </objects>
             <point key="canvasLocation" x="982" y="92"/>
         </scene>
-        <!--Graph-->
+        <!--Journal Graph-->
         <scene sceneID="G6D-NN-8yP">
             <objects>
-                <viewController id="JQj-E8-cJw" userLabel="Graph" customClass="JournalGraphViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JQj-E8-cJw" userLabel="Journal Graph" customClass="JournalGraphViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fB2-aC-gCe"/>
                         <viewControllerLayoutGuide type="bottom" id="2Pi-6f-8tf"/>
@@ -823,7 +823,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uh3-NM-BO2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Trends" image="stats" id="cPa-gy-q4n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U6O-zj-3bR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="U6O-zj-3bR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1211,7 +1211,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zUj-2H-ebj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Contacts" image="multiple-users-silhouette" id="jwf-oZ-mJE"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a9c-Xm-UYu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a9c-Xm-UYu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1349,10 +1349,10 @@
             </objects>
             <point key="canvasLocation" x="981.60000000000002" y="91.304347826086968"/>
         </scene>
-        <!--Graph-->
+        <!--Emotion Graph-->
         <scene sceneID="6xr-pz-NMQ">
             <objects>
-                <viewController id="9in-F4-06u" userLabel="Graph" customClass="GraphViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9in-F4-06u" userLabel="Emotion Graph" customClass="EmotionGraphViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mFb-gn-LsG"/>
                         <viewControllerLayoutGuide type="bottom" id="sm3-1B-akJ"/>
@@ -1386,7 +1386,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="trendLabel" destination="7cx-L6-fyo" id="q9O-LB-Yb0"/>
+                        <outlet property="trendLabel" destination="7cx-L6-fyo" id="5bj-Br-Sw9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65A-kS-tif" userLabel="First Responder" sceneMemberID="firstResponder"/>

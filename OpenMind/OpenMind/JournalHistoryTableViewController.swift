@@ -79,7 +79,7 @@ class JournalHistoryTableViewController: UIViewController, UITableViewDelegate, 
                 let analysis = user["analysis"] as? String,
                 let journal_date = user["date"] as? String else {
                 print ("key-value pairs do not match JSON response")
-                    return
+                    continue
             }
             
             

@@ -17,11 +17,7 @@ class PhysicalActivityManager{
     {
         // 1. Set the types you want to read from HK Store
         let healthKitTypesToRead: Set<HKObjectType> = [
-            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
-            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.bloodType)!,
-            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.biologicalSex)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
             HKObjectType.workoutType()
             ]
         
