@@ -16,6 +16,9 @@ import PieCharts
 class EmotionImageIndividualEntryViewController: UIViewController, PieChartDelegate {
     
     
+    @IBOutlet weak var myActivityIndicator: UIActivityIndicatorView!
+
+    
     var date : String?
     var time : String?
     var DatabaseDate : String?
@@ -62,6 +65,9 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
         chartView.layers = [createTextWithLinesLayer()]
         chartView.delegate = self
         chartView.models = createModels() // order is important - models have to be set at the end
+        
+        myActivityIndicator.startAnimating();
+
         
     }
     
@@ -204,6 +210,7 @@ extension UIImageView {
                 else { return }
             DispatchQueue.main.async() { () -> Void in
                 self.image = image
+
             }
             }.resume()
     }
