@@ -71,37 +71,41 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         var jourArr = [Double]()
         var convertJournal = [CGFloat]()
         var dates = [String]()
-        
+        var check = true
         var points: Int = 0
         if id.count >= 6 {
             points = 6
         }
-        else if (id.count < 6) && (id.count > 2) {
-            points = id.count - 1
+        else if (id.count < 6) && (id.count >= 2) {
+            points = id.count
         }
         else {
-            points = -1
+            check = false
         }
         
-        for index in 0..<points {
-            guard let user = id[index] as? [String: Any],
-                let analysis = user["analysis"] as? String,
-                let date = user["date"] as? String else {
-                    print ("key-value pairs do not match JSON response")
-                    return
+        if check {
+            
+            for index in 0..<points {
+                guard let user = id[index] as? [String: Any],
+                    let analysis = user["analysis"] as? String,
+                    let date = user["date"] as? String else {
+                        print ("key-value pairs do not match JSON response")
+                        return
+                }
+                
+                jourArr.append((Double(analysis)!)*100)
+                convertJournal = convertAnalysis(analysis: jourArr).reversed()
+                dates.append(date)
+                
+                
             }
             
-            jourArr.append((Double(analysis)!)*100)
-            convertJournal = convertAnalysis(analysis: jourArr).reversed()
-            dates.append(date)
+            dates = dates.reversed()
+            var convertedDate = convertDate(dates: dates)
             
+            self.drawGraph(journals: convertJournal, dates: convertedDate)
             
         }
-        
-        dates = dates.reversed()
-        var convertedDate = convertDate(dates: dates)
-        
-        self.drawGraph(journals: convertJournal, dates: convertedDate)
         
         
     }

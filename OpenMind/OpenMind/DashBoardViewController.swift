@@ -65,6 +65,20 @@ class DashBoardViewController: UIViewController {
         gradient.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         
         self.view.layer.insertSublayer(gradient, at: 0)
+        
+        let physical:PhysicalActivityManager = PhysicalActivityManager()
+        physical.authorizeHealthKit { (authorized, error) in
+            if authorized {
+                
+                // Add code for authorization
+                //self.setHeight()
+            } else {
+                if error != nil {
+                    //print(error)
+                }
+                print("Permission denied.")
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
