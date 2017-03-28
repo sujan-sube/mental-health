@@ -191,6 +191,9 @@ class InsightsTableViewController: UIViewController, UITableViewDelegate, UITabl
             {
                 photo = #imageLiteral(resourceName: "phy act")
             }
+            else{
+                photo = #imageLiteral(resourceName: "green")
+            }
 //            if  Double(analysis)! < 0.4 {
 //                photo = UIImage(named: "SadEntry")
 //            }

@@ -89,8 +89,8 @@ class EmotionHistoryViewController: UIViewController, UITableViewDelegate, UITab
             guard let user = id[index] as? [String: Any],
                 let emotion_date = user["date"] as? String,
                 let emotion_image_url = user["image"] as? String,
-                let emotion_max_expression = user["max_expression"] as? String
-                //let expressions = user["expressions"] as? [String:String]
+                let emotion_max_expression = user["max_expression"] as? String,
+                let expressions = user["expressions"] as? [String: Any]
                 else {
                     print ("key-value pairs do not match JSON response")
                     return
