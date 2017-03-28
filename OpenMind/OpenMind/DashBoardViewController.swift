@@ -11,6 +11,9 @@ import KDCircularProgress
 
 
 class DashBoardViewController: UIViewController {
+    
+    let data = EndPointTypes.Profile
+    var email : String?
         
     @IBOutlet weak var progress: KDCircularProgress!
     
@@ -43,8 +46,8 @@ class DashBoardViewController: UIViewController {
         
         super.viewDidLoad()
         
-        self.setupJournalAnalysisProgressBar()
-        self.animateProgress(angle: 300)
+//        self.setupJournalAnalysisProgressBar()
+//        self.animateProgress(angle: 300)
         self.setupButtons()
 //        self.progressView.layer.backgroundColor = UIColor(red: 131/255, green: 197/255, blue: 249/255, alpha: 1).cgColor
 //        self.progressView.layer.backgroundColor = UIColor(red: 20/255, green: 97/255, blue: 160/255, alpha: 0.7).cgColor
@@ -83,14 +86,24 @@ class DashBoardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.animateProgress(angle: 300)
+        //self.animateProgress(angle: 300)
         self.navigationController?.navigationBar.isHidden = true
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.catchNotification(notification:)),
+            name: Notification.Name(rawValue:"MyNotification" + self.data.rawValue),
+            object: nil)
+        
+        APICommunication.apirequest(data: self.data, httpMethod: "GET", httpBody: nil)
         
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         self.navigationController?.navigationBar.isHidden = false
+        
+        NotificationCenter.default.removeObserver(self)
         
     }
 
@@ -140,7 +153,7 @@ class DashBoardViewController: UIViewController {
     
     
     
-    func setupJournalAnalysisProgressBar() -> Void {
+    func setupJournalAnalysisProgressBar(color : UIColor) -> Void {
         
         progress.progressThickness = 0.1
         progress.trackThickness = 0.1
@@ -151,8 +164,8 @@ class DashBoardViewController: UIViewController {
         progress.roundedCorners = false
         progress.glowMode = .constant
         progress.glowAmount = 0.5
-        progress.progressColors = [UIColor.green, UIColor.white]
-        progress.progressColors = [UIColor(red: 1, green: 1, blue: 1, alpha: 0.8) ]
+        progress.progressColors = [color]
+        //progress.progressColors = [UIColor( ]
         
         
         return
@@ -223,6 +236,57 @@ class DashBoardViewController: UIViewController {
         sleepShadowView.layer.shadowRadius = 2.0
         
     }
+    
+    
+    func catchNotification(notification: Notification) -> Void {
+        print("Caught Graph notification")
+        
+        guard let jsonResponse = notification.userInfo else {
+            print("No userInfo found in notification")
+            return
+        }
+        
+        //Convert data received to dictionary of [String:Any] to parse later
+        let json = APICommunication.convertDatatoDictionary(data: jsonResponse["response"] as! Data)
+        
+        
+        //Parse json response
+        guard let profile = json?["email"] as? String else {
+            print ("Could not find email element")
+            self.email = "openmindhealth@gmail.com"
+            updateprogress()
+            return
+        }
+        
+        self.email = profile
+        
+        updateprogress()
+        
+        //Print json elements in label
+        
+    }
+
+    
+    func updateprogress() -> Void {
+        
+        if (self.email == "openmindhealth@gmail.com") {
+            
+            self.setupJournalAnalysisProgressBar(color: UIColor.green)
+            self.animateProgress(angle: 300)
+        }
+        else if self.email == "openmindhealthn@gmail.com"{
+            
+            self.setupJournalAnalysisProgressBar(color: UIColor.blue)
+            self.animateProgress(angle: 100)
+        }
+        else
+        {
+            self.setupJournalAnalysisProgressBar(color: UIColor.orange)
+            self.animateProgress(angle: 200)
+        }
+    }
+    
+    
 }
 
     /*

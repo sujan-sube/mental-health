@@ -105,7 +105,7 @@ class EmotionHistoryViewController: UIViewController, UITableViewDelegate, UITab
             var photo : UIImage!
             
             if  (emotion_max_expression == "happiness") {
-                photo = UIImage(named: "SadEntry")
+                photo = UIImage(named: "PositiveEntry")
             }
                 
             else if  (emotion_max_expression == "neutral") {
@@ -117,7 +117,7 @@ class EmotionHistoryViewController: UIViewController, UITableViewDelegate, UITab
             }
                 
             else {
-                photo = UIImage(named: "SadEntry")
+                photo = UIImage(named: "ModerateEntry")
             }
             
             let newEntry = EmotionModel(date: DateandTime["date"]!, time: DateandTime["time"]!, photo: photo!, DatabaseDate: emotion_date, imageurl : emotion_image_url, expressions: expressions)
