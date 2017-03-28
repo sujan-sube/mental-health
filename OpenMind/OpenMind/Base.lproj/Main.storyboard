@@ -637,7 +637,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ZL-u8-ppv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house-outline" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GKc-IC-0hi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GKc-IC-0hi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -823,7 +823,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uh3-NM-BO2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Trends" image="stats" id="cPa-gy-q4n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="U6O-zj-3bR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U6O-zj-3bR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1211,7 +1211,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zUj-2H-ebj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Contacts" image="multiple-users-silhouette" id="jwf-oZ-mJE"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a9c-Xm-UYu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a9c-Xm-UYu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1323,7 +1323,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hGo-VX-p87" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Insights" image="light-bulb" id="FdZ-O1-MvY"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="24E-Xw-Cvo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="24E-Xw-Cvo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1513,7 +1513,7 @@
             </objects>
             <point key="canvasLocation" x="3526" y="-805"/>
         </scene>
-        <!--Record Video Journal-->
+        <!--Submit Image-->
         <scene sceneID="f9d-ZF-df5">
             <objects>
                 <viewController id="KFm-2k-AHZ" customClass="EmotionAddViewController" customModule="OpenMind" customModuleProvider="target" sceneMemberID="viewController">
@@ -1534,18 +1534,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="shootPhoto:" destination="KFm-2k-AHZ" eventType="touchUpInside" id="sGY-9b-Ip5"/>
+                                    <action selector="shootPhoto:" destination="KFm-2k-AHZ" eventType="touchUpInside" id="dMX-UN-NQN"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="ftH-Bm-hTZ">
                                 <rect key="frame" x="67" y="263" width="240" height="141"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="reC-w5-5Z9" customClass="SpringIndicator" customModule="SpringIndicator">
-                                <rect key="frame" x="162" y="272" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to Record Video Journal!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DE-XI-k9u">
                                 <rect key="frame" x="71" y="205" width="233" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1565,21 +1560,29 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="SubmitImage:" destination="KFm-2k-AHZ" eventType="touchUpInside" id="RmL-BL-9wp"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xcs-c4-FaW">
+                                <rect key="frame" x="177" y="134" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Record Video Journal" id="4vz-CL-b58">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Ws3-dx-Kg2">
+                    <navigationItem key="navigationItem" title="Submit Image" id="4vz-CL-b58">
+                        <barButtonItem key="rightBarButtonItem" title="From Gallery" id="Ws3-dx-Kg2">
                             <connections>
-                                <action selector="submitButton:" destination="KFm-2k-AHZ" id="Jid-ZO-seE"/>
+                                <action selector="photoFromLibrary:" destination="KFm-2k-AHZ" id="4wh-QL-1Hi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="LoadingIndicator" destination="reC-w5-5Z9" id="7zz-9E-oOf"/>
-                        <outlet property="SubmitButton" destination="CrS-PK-mrf" id="YSf-mX-c6x"/>
-                        <outlet property="myImageView" destination="ftH-Bm-hTZ" id="hYL-sK-TFA"/>
+                        <outlet property="SubmitButton" destination="CrS-PK-mrf" id="s8a-Ft-DnK"/>
+                        <outlet property="TakeImageLabel" destination="4DE-XI-k9u" id="Uwm-u8-seb"/>
+                        <outlet property="myActivityIndicator" destination="xcs-c4-FaW" id="gMt-1N-nNR"/>
+                        <outlet property="myImageView" destination="ftH-Bm-hTZ" id="5Gh-Ud-CgD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jO3-SE-Hge" sceneMemberID="firstResponder"/>
@@ -1699,7 +1702,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="659"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Hf-0Y-2AQ">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Hf-0Y-2AQ" userLabel="ImageView">
                                 <rect key="frame" x="16" y="137" width="343" height="189"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1729,6 +1732,7 @@
                     </view>
                     <connections>
                         <outlet property="DateLabel" destination="nr4-Zb-D0d" id="tX1-68-FJB"/>
+                        <outlet property="ImageView" destination="1Hf-0Y-2AQ" id="2yN-vH-eAs"/>
                         <outlet property="VideoView" destination="1Hf-0Y-2AQ" id="nPk-dM-v4Q"/>
                         <outlet property="chartView" destination="LV7-2U-FK8" id="qZa-NX-6K5"/>
                     </connections>

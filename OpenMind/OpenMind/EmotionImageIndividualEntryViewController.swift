@@ -23,13 +23,11 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var chartView: PieChart!
     
-    @IBOutlet weak var VideoView: UIView!
+    @IBOutlet weak var ImageView: UIView!
     let red = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
     let green = UIColor(red: 0, green: 1, blue: 0, alpha: 0.5)
     let blue = UIColor(red: 0, green: 0, blue: 1, alpha: 0.5)
     
-    var globalplayer = AVPlayer()
-    var playerLayer = AVPlayerLayer()
     
     
     
@@ -38,26 +36,14 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
         
         self.DateLabel.text = "\(self.date!) at  \(self.time!)"
         
+        self.ImageView.downloadedFrom(link: "http://www.apple.com/euro/ios/ios8/a/generic/images/og.png")
+
         
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
-        let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
-        globalplayer = AVPlayer(url: videoURL!)
-        //        self.globalplayer = player
-        playerLayer = AVPlayerLayer(player: globalplayer)
-        playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        playerLayer.frame = self.VideoView.frame
-        self.view.layer.addSublayer(playerLayer)
-        playerLayer.borderColor = UIColor.black.cgColor
-        playerLayer.borderWidth = 1.0
-        //addtopLeftViewConstraints()
-        
-        
-        self.globalplayer.play()
         
         chartView.layers = [createTextWithLinesLayer()]
         chartView.delegate = self
@@ -67,11 +53,6 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-        
-        self.globalplayer.pause()
-        self.globalplayer.replaceCurrentItem(with: nil)
-        self.playerLayer.removeFromSuperlayer()
-        //        globalplayer = nil
     }
     
     fileprivate static let alpha: CGFloat = 0.5
@@ -174,6 +155,27 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
         if currentColorIndex == 2 {currentColorIndex += 1} // avoid same contiguous color
     }
     
+}
+
+extension UIImageView {
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { () -> Void in
+                self.image = image
+            }
+            }.resume()
+    }
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloadedFrom(url: url, contentMode: mode)
+    }
 }
 
 //extension CGFloat {
