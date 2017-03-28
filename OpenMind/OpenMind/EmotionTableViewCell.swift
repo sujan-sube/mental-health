@@ -19,6 +19,7 @@ class EmotionTableViewCell: UITableViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
     var DatabaseDate : String?
     var imageurl : String?
+    var expressions :[String:String]?
     
     
     

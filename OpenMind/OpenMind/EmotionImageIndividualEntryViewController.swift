@@ -20,6 +20,7 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
     var time : String?
     var DatabaseDate : String?
     var imageurl : String?
+    var expressions : [String:String]?
     
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var chartView: PieChart!
@@ -30,16 +31,29 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
     let green = UIColor(red: 0, green: 1, blue: 0, alpha: 0.5)
     let blue = UIColor(red: 0, green: 0, blue: 1, alpha: 0.5)
     
+    var emotionvalues : [String:Double]?
     
+    
+    var anger : Double?
+    var contempt : Double?
+    var disgust : Double?
+    var fear : Double?
+    var happiness : Double?
+    var neutral : Double?
+    var sadness : Double?
+    var surprise : Double?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setexpressionvalues()
+        
         self.DateLabel.text = "\(self.date!) at  \(self.time!)"
         
         self.ImageView.downloadedFrom(link: self.imageurl!)
-
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -84,11 +98,17 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
     
     fileprivate func createModels() -> [PieSliceModel] {
         
+        
+        for individualexpression in self.expressions! {
+            print(individualexpression.value)
+            self.emotionvalues?[individualexpression.key] = Double(individualexpression.value)
+        }
+        
         let models = [
-            PieSliceModel(value: 60, color: colors[0]),
-            PieSliceModel(value: 20, color: colors[1]),
-            PieSliceModel(value: 10, color: colors[2]),
-            PieSliceModel(value: 10, color: colors[3])
+            PieSliceModel(value: 100, color: colors[0]),
+            PieSliceModel(value: 2, color: colors[1]),
+            PieSliceModel(value: 2, color: colors[2]),
+            PieSliceModel(value: 2, color: colors[3])
         ]
         
         
@@ -157,7 +177,33 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
         if currentColorIndex == 2 {currentColorIndex += 1} // avoid same contiguous color
     }
     
+    
+    func setexpressionvalues() -> Void {
+        
+        
+        anger = Double((self.expressions?["anger"]!)!)
+        contempt = Double((self.expressions?["contempt"]!)!)
+        disgust = Double((self.expressions?["disgust"]!)!)
+        fear = Double((self.expressions?["fear"]!)!)
+        happiness = Double((self.expressions?["happiness"]!)!)
+        neutral = Double((self.expressions?["neutral"]!)!)
+        sadness = Double((self.expressions?["sadness"]!)!)
+        surprise = Double((self.expressions?["surprise"]!)!)
+        
+        
+        
+        return
+        
+    }
+    
+    
+    
+    
 }
+
+
+
+
 
 extension UIImageView {
     func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
