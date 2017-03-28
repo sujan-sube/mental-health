@@ -19,6 +19,7 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
     var date : String?
     var time : String?
     var DatabaseDate : String?
+    var imageurl : String?
     
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var chartView: PieChart!
@@ -37,7 +38,7 @@ class EmotionImageIndividualEntryViewController: UIViewController, PieChartDeleg
         
         self.DateLabel.text = "\(self.date!) at  \(self.time!)"
         
-        self.ImageView.downloadedFrom(link: "http://www.apple.com/euro/ios/ios8/a/generic/images/og.png")
+        self.ImageView.downloadedFrom(link: self.imageurl!)
 
         
         // Do any additional setup after loading the view.

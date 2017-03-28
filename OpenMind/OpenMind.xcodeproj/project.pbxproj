@@ -28,6 +28,8 @@
 		8C5916051E82CE9300929AB1 /* EmotionVideoIndividualEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5916021E82CE9300929AB1 /* EmotionVideoIndividualEntryViewController.swift */; };
 		8C5916061E82CE9300929AB1 /* EmotionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5916031E82CE9300929AB1 /* EmotionAddViewController.swift */; };
 		8C6026141E89D97800B61F96 /* EmotionImageIndividualEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6026131E89D97700B61F96 /* EmotionImageIndividualEntryViewController.swift */; };
+		8C6026161E89F3FF00B61F96 /* EmotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6026151E89F3FF00B61F96 /* EmotionTableViewCell.swift */; };
+		8C6026181E89F4E900B61F96 /* EmotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6026171E89F4E900B61F96 /* EmotionModel.swift */; };
 		8CA22CF51E679EE600E19B6E /* AddJournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF11E679EE600E19B6E /* AddJournalEntryViewController.swift */; };
 		8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF21E679EE600E19B6E /* HistoryTableViewCell.swift */; };
 		8CA22CF71E679EE600E19B6E /* JournalHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */; };
@@ -104,6 +106,8 @@
 		8C5916021E82CE9300929AB1 /* EmotionVideoIndividualEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionVideoIndividualEntryViewController.swift; sourceTree = "<group>"; };
 		8C5916031E82CE9300929AB1 /* EmotionAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionAddViewController.swift; sourceTree = "<group>"; };
 		8C6026131E89D97700B61F96 /* EmotionImageIndividualEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionImageIndividualEntryViewController.swift; sourceTree = "<group>"; };
+		8C6026151E89F3FF00B61F96 /* EmotionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionTableViewCell.swift; sourceTree = "<group>"; };
+		8C6026171E89F4E900B61F96 /* EmotionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionModel.swift; sourceTree = "<group>"; };
 		8CA22CF11E679EE600E19B6E /* AddJournalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddJournalEntryViewController.swift; sourceTree = "<group>"; };
 		8CA22CF21E679EE600E19B6E /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		8CA22CF31E679EE600E19B6E /* JournalHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalHistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 				8C5916021E82CE9300929AB1 /* EmotionVideoIndividualEntryViewController.swift */,
 				8C5916031E82CE9300929AB1 /* EmotionAddViewController.swift */,
 				8C6026131E89D97700B61F96 /* EmotionImageIndividualEntryViewController.swift */,
+				8C6026151E89F3FF00B61F96 /* EmotionTableViewCell.swift */,
+				8C6026171E89F4E900B61F96 /* EmotionModel.swift */,
 			);
 			name = Emotion;
 			sourceTree = "<group>";
@@ -545,9 +551,11 @@
 				8C2B93741E7740BA00A6DA00 /* ServerEndpoints.swift in Sources */,
 				923A60B31E80DA06002D1AB9 /* TrendsScrollViewController.swift in Sources */,
 				92D708A31E341F4C00CBD84B /* AppDelegate.swift in Sources */,
+				8C6026161E89F3FF00B61F96 /* EmotionTableViewCell.swift in Sources */,
 				925C95B11E7DF1820019E2FC /* MessageComposer.swift in Sources */,
 				92D708C71E3433DA00CBD84B /* InsightViewController.swift in Sources */,
 				92A77E5E1E722E7C00421A4E /* LineChart.swift in Sources */,
+				8C6026181E89F4E900B61F96 /* EmotionModel.swift in Sources */,
 				257847171E7B92BE00B232D1 /* TodayTableView.swift in Sources */,
 				8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */,
 				8C5916041E82CE9300929AB1 /* EmotionHistoryViewController.swift in Sources */,
