@@ -244,7 +244,7 @@ class GraphViewController: UIViewController, LineChartDelegate {
      * Line chart delegate method.
      */
     func didSelectDataPoint(_ x: CGFloat, yValues: Array<CGFloat>) {
-        label.text = "x: \(x)     y: \(yValues)"
+        label.text = "Steps: \(yValues[0])"
     }
     
     

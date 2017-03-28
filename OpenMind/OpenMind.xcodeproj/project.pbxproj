@@ -40,6 +40,7 @@
 		8CCC4DEA1E7DDDD500FD8A96 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC4DE91E7DDDD500FD8A96 /* Env.swift */; };
 		8CD03EC21E79AB9900C269C1 /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD03EC11E79AB9900C269C1 /* DateFormatting.swift */; };
 		92107D461E81D09600C74EF2 /* JournalGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92107D451E81D09600C74EF2 /* JournalGraphViewController.swift */; };
+		922AEC871E8A10C40037297D /* EmotionGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922AEC861E8A10C40037297D /* EmotionGraphViewController.swift */; };
 		922CDE4C1E7487C2003598D5 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CDE4B1E7487C1003598D5 /* GraphViewController.swift */; };
 		923A60B31E80DA06002D1AB9 /* TrendsScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923A60B21E80DA06002D1AB9 /* TrendsScrollViewController.swift */; };
 		925C95B11E7DF1820019E2FC /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925C95B01E7DF1820019E2FC /* MessageComposer.swift */; };
@@ -118,6 +119,7 @@
 		8CCC4DE91E7DDDD500FD8A96 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		8CD03EC11E79AB9900C269C1 /* DateFormatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
 		92107D451E81D09600C74EF2 /* JournalGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalGraphViewController.swift; sourceTree = "<group>"; };
+		922AEC861E8A10C40037297D /* EmotionGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionGraphViewController.swift; sourceTree = "<group>"; };
 		922CDE4B1E7487C1003598D5 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		923A60B21E80DA06002D1AB9 /* TrendsScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendsScrollViewController.swift; sourceTree = "<group>"; };
 		925C95B01E7DF1820019E2FC /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				923A60B21E80DA06002D1AB9 /* TrendsScrollViewController.swift */,
 				92D708CE1E34358300CBD84B /* TrendsViewController.swift */,
 				922CDE4B1E7487C1003598D5 /* GraphViewController.swift */,
+				922AEC861E8A10C40037297D /* EmotionGraphViewController.swift */,
 				92107D451E81D09600C74EF2 /* JournalGraphViewController.swift */,
 			);
 			name = Trends;
@@ -556,6 +559,7 @@
 				92D708C71E3433DA00CBD84B /* InsightViewController.swift in Sources */,
 				92A77E5E1E722E7C00421A4E /* LineChart.swift in Sources */,
 				8C6026181E89F4E900B61F96 /* EmotionModel.swift in Sources */,
+				922AEC871E8A10C40037297D /* EmotionGraphViewController.swift in Sources */,
 				257847171E7B92BE00B232D1 /* TodayTableView.swift in Sources */,
 				8CA22CF61E679EE600E19B6E /* HistoryTableViewCell.swift in Sources */,
 				8C5916041E82CE9300929AB1 /* EmotionHistoryViewController.swift in Sources */,

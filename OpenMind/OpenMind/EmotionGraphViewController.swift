@@ -1,8 +1,8 @@
 //
-//  TrendGraphViewController.swift
+//  EmotionGraphViewController.swift
 //  OpenMind
 //
-//  Created by Aly Haji on 2017-03-21.
+//  Created by Aly Haji on 2017-03-27.
 //  Copyright © 2017 Aly Haji. All rights reserved.
 //
 
@@ -10,22 +10,31 @@ import UIKit
 import QuartzCore
 import HealthKit
 
-class JournalGraphViewController: UIViewController, LineChartDelegate {
+class EmotionGraphViewController: UIViewController, LineChartDelegate {
+    
+    
     
     @IBOutlet weak var trendLabel: UILabel!
     
     var label = UILabel()
     var lineChart: LineChart!
     var dateArray = [String]()
-//    var jourArr = [Double]()
+    //    var jourArr = [Double]()
     
     //Declare type of endpoint to hit
-    let data1 = EndPointTypes.Journal
+    let data = EndPointTypes.Emotion
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        NotificationCenter.default.addObserver(
+//            self,
+//            selector: #selector(self.catchNotification2(notification:)),
+//            name: Notification.Name(rawValue:"MyNotification" + self.data.rawValue),
+//            object: nil)
+//        
+//        APICommunication.apirequest(data: data , httpMethod: "GET", httpBody: nil)
         
     }
     
@@ -34,12 +43,10 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(self.catchNotification(notification:)),
-            name: Notification.Name(rawValue:"MyNotification" + self.data1.rawValue),
+            selector: #selector(self.catchNotification2(notification:)),
+            name: Notification.Name(rawValue:"MyNotification" + self.data.rawValue),
             object: nil)
-        
-        APICommunication.apirequest(data: data1 , httpMethod: "GET", httpBody: nil)
-        
+        APICommunication.apirequest(data: EndPointTypes.Emotion , httpMethod: "GET", httpBody: nil)
     }
     
     //Stop listening to notifications. If not included, the catchNotification method will be run multiple times.
@@ -50,8 +57,8 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
     
     //Method called once data is received from the server
     
-    func catchNotification(notification: Notification) -> Void {
-        print("Caught Graph notification")
+    func catchNotification2(notification: Notification) -> Void {
+        print("Caught Emotion notification")
         
         guard let jsonResponse = notification.userInfo else {
             print("No userInfo found in notification")
@@ -63,36 +70,61 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         
         
         //Parse json response
-        guard let id = json?["results"] as? [Any] else {
+        guard let id1 = json?["results"] as? [Any] else {
             print ("Could not find results element")
             return
         }
         
-        var jourArr = [Double]()
-        var convertJournal = [CGFloat]()
+        var emotionArr = [Double]()
+        var convertEmotion = [CGFloat]()
         var dates = [String]()
         
         var points: Int = 0
-        if id.count >= 6 {
+        if id1.count >= 6 {
             points = 6
         }
-        else if (id.count < 6) && (id.count > 2) {
-            points = id.count - 1
+        else if (id1.count < 6) && (id1.count > 2) {
+            points = id1.count - 1
         }
         else {
             points = -1
         }
         
         for index in 0..<points {
-            guard let user = id[index] as? [String: Any],
-                let analysis = user["analysis"] as? String,
+            guard let user = id1[index] as? [String: Any],
+                let analysis = user["max_expression"] as? String,
                 let date = user["date"] as? String else {
                     print ("key-value pairs do not match JSON response")
-                    return
+                    continue
             }
             
-            jourArr.append((Double(analysis)!)*100)
-            convertJournal = convertAnalysis(analysis: jourArr).reversed()
+            var emotionNum: Double = 0
+            if analysis == "happiness" {
+                emotionNum = 8
+            }
+            else if analysis == "surprise" {
+                emotionNum = 7
+            }
+            else if analysis == "neutral" {
+                emotionNum = 6
+            }
+            else if analysis == "disgust" {
+                emotionNum = 5
+            }
+            else if analysis == "contempt" {
+                emotionNum = 4
+            }
+            else if analysis == "anger" {
+                emotionNum = 3
+            }
+            else if analysis == "sadness" {
+                emotionNum = 2
+            }
+            else if analysis == "fear" {
+                emotionNum = 1
+            }
+            emotionArr.append(emotionNum)
+            convertEmotion = convertAnalysis(analysis: emotionArr).reversed()
             dates.append(date)
             
             
@@ -101,7 +133,7 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         dates = dates.reversed()
         var convertedDate = convertDate(dates: dates)
         
-        self.drawGraph(journals: convertJournal, dates: convertedDate)
+        self.drawGraph(emotions: convertEmotion, dates: convertedDate)
         
         
     }
@@ -115,7 +147,7 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         return converted
     }
     
-    func drawGraph(journals: [CGFloat], dates: [String]) {
+    func drawGraph(emotions: [CGFloat], dates: [String]) {
         var views: [String: AnyObject] = [:]
         
         label.text = ""
@@ -127,7 +159,7 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-80-[label]", options: [], metrics: nil, views: views))
         
         // Data Arrays
-        let data = journals
+        let data = emotions
         //        let data2: [CGFloat] = [1, 3, 5, 13, 17, 20]
         
         
@@ -171,20 +203,21 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
         
         var total = CGFloat()
         
-        for analysis in journals {
+        for analysis in emotions {
             total += analysis
         }
         
         
-        let average = total/CGFloat(journals.count)
+        let average = total/CGFloat(emotions.count)
+        print(emotions.count)
         
-        if journals.reversed()[0] > average {
-            print(journals.reversed()[0])
-            trendLabel.text = "You're above your expected positivity rating! Keep it up!"
+        if emotions.reversed()[0] > average {
+            print(emotions.reversed()[0])
+            trendLabel.text = "Looks like you're feeling good! Keep it up!"
             trendLabel.textColor = UIColor(red: 20.0/255.0, green: 125.0/255.0, blue: 63.0/255.0, alpha: 1.0)
         } else {
-            print(journals.reversed()[0])
-            trendLabel.text = "You're a bit below your expected positivity rating. Check out the Insights page for some tips!"
+            print(emotions.reversed()[0])
+            trendLabel.text = "You're a bit below your expected emotion rating. Check out the Insights page for some tips!"
             trendLabel.textColor = UIColor.blue
         }
         
@@ -205,7 +238,7 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
             convertDates.append(dateFormatter.string(from: date!))
         }
         
-    
+        
         return convertDates
     }
     
@@ -220,7 +253,31 @@ class JournalGraphViewController: UIViewController, LineChartDelegate {
      * Line chart delegate method.
      */
     func didSelectDataPoint(_ x: CGFloat, yValues: Array<CGFloat>) {
-        label.text = "Positivity Percentage: \(yValues[0])"
+        
+        if yValues[0] == 8 {
+            label.text = "Emotion Displayed: Happiness"
+        }
+        else if yValues[0] == 7 {
+            label.text = "Emotion Displayed: Surprise"
+        }
+        else if yValues[0] == 6 {
+            label.text = "Emotion Displayed: Neutral"
+        }
+        else if yValues[0] == 5 {
+            label.text = "Emotion Displayed: Disgust"
+        }
+        else if yValues[0] == 4 {
+            label.text = "Emotion Displayed: Contempt"
+        }
+        else if yValues[0] == 3 {
+            label.text = "Emotion Displayed: Anger"
+        }
+        else if yValues[0] == 2 {
+            label.text = "Emotion Displayed: Sadness"
+        }
+        else if yValues[0] == 1 {
+            label.text = "Emotion Displayed: Fear"
+        }
         
     }
     
